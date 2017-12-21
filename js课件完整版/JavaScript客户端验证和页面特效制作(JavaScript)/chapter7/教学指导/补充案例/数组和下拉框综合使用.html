@@ -1,0 +1,32 @@
+脚本说明:
+第一步:把如下代码加入<head>区域中
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin	   
+var messages = new Array(6); 
+messages[0] = "";
+messages[1] = "Have you ever seen anything like this before?";
+messages[2] = "Can you imagine how you could use it on your site?";	   
+messages[3] = "It's great for sharing lots of information.";
+messages[4] = "And doesn't take up much space! ";
+messages[5] = "So, get the code and put it on your site!";
+function messageReveal() {
+var messageindex = document.messageForm.messagePick.selectedIndex
+document.messageForm.messageField.value = messages[messageindex];
+}
+// End -->
+</SCRIPT>
+
+
+第二步:把如下代码加入<body>区域中
+<form name="messageForm">
+<select name="messagePick" OnChange="messageReveal()">
+<option value="0">The Menu Message
+<option>Seen this before?
+<option>Possible uses?
+<option>Shares Information
+<option>Saves space
+<option>Get the code!
+</select>
+<br><p>
+<textarea name="messageField" rows=6 cols=50 wrap=virtual></textarea>
+</form>

@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<TITLE>改变按钮背景图3</TITLE>
+<STYLE type="text/css" >
+.mouseOverStyle{
+   background-image: url(images/back2.jpg);
+   color:#CC0099;
+   border:0px;
+	margin:0px;
+	padding:0px;
+	height:23px;
+	width: 82px;
+	font-size: 14px;    }
+.mouseOutStyle{
+   background-image: url(images/back1.jpg);
+   color:#0000FF;
+   border:0px;
+   margin:0px;
+   padding:0px;
+   height:23px;
+   width:82px;
+   font-size: 14px;	 }
+</STYLE>
+</HEAD>
+<BODY>
+<FORM name="form1" method="post" action="">
+  <INPUT type="submit" name="Submit" value="提交" class="mouseOutStyle" 
+  onmouseover="this.className='mouseOverStyle'"   onmouseout="this.className='mouseOutStyle'">
+</FORM>
+</BODY>
+</HTML>

@@ -1,0 +1,130 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>横向菜单</TITLE>
+<STYLE type="text/css">
+td {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 22px;
+}
+div{/*设置层背景样式*/
+background-color:#669933;
+text-align:center;position:absolute;z-index:2;}
+A {FONT-SIZE: 13px; COLOR: #FFFFFF; TEXT-DECORATION: none;
+/*文字链接的背影样式*/
+background-color:#669933;
+width:100px;line-height:22px;text-align:center;border-bottom:1 #FFFFFF solid;}
+A:hover {FONT-SIZE: 13px; COLOR: #ffffff;
+/*鼠标在文字链接上时的文字背景样式*/
+background-color:#FE9D01;
+width:100px;line-height:22px;text-align:center;}
+
+.red {color: #FF0000}
+</STYLE>
+<SCRIPT language="JavaScript">
+function show(d1){
+document.getElementById(d1).style.display='block';  //显示层
+}
+
+function hide(d1){
+document.getElementById(d1).style.display='none';  //隐藏层
+}
+</SCRIPT>
+</HEAD>
+
+<BODY  oncontextmenu="return false;">
+<DIV  style="display:block;background-color:#FFFFFF;font-size:13px;line-height:30px;padding-left:50px;">一、横向菜单效果(<SPAN class="red">鼠标放在下面的菜单上查看效果</SPAN>)</DIV><BR><BR>
+<TABLE width="303" border="0" cellspacing="0" cellpadding="0" align="center">
+<TR>
+    <TD><A href="#"  onMouseMove="show(1)" onMouseOut="hide(1)">手机数码</A></TD>
+    <TD><A href="#" onMouseMove="show(2)" onMouseOut="hide(2)">淘宝集市</A></TD>
+    <TD><A href="#" onMouseMove="show(3)" onMouseOut="hide(3)">品牌商城</A></TD>
+  </TR>
+  <TR>
+    <TD><DIV  id="1"    onMouseMove="show(1)" onMouseOut="hide(1)" style="display:none;"><A href="#">手机数码1</A><BR><A href="#">手机数码2</A><BR><A href="#">手机数码3</A></DIV></TD>
+    <TD><DIV  id="2"    onMouseMove="show(2)" onMouseOut="hide(2)" style="display:none;"><A href="#">淘宝集市1</A><BR><A href="#">淘宝集市2</A><BR><A href="#">淘宝集市3</A></DIV></TD>
+    <TD><DIV  id="3"    onMouseMove="show(3)" onMouseOut="hide(3)" style="display:none;"><A href="#">品牌商城1</A><BR><A href="#">品牌商城2</A><BR><A href="#">品牌商城3</A></DIV></TD>
+  </TR></TABLE>
+
+<TABLE width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <TR>
+    <TD><BR>二、实现的思路
+</TD>
+  </TR>
+  <TR>
+    <TD style="padding-left:20px;">1、一级菜单制作<BR>< A href="#"  <SPAN class="red">onMouseMove="show(二级菜单层ID名称)" onMouseOut="hide(二级菜单层ID名称)</SPAN>">手机数码< /A><BR>说明：当鼠标在“手机数码”超链接上时，调用show( )函数显示二级菜单，当鼠标离开“手机数码”超链接时，二级菜单隐藏<BR>
+	2、“手机数码”下二级菜单制作<BR>
+	< DIV  <SPAN class="red">id="层ID名称"    onMouseMove="show(层ID名称)" onMouseOut="hide(层ID名称)" style="display:none;"</SPAN>><BR>
+	< A href="#">fhfghfgjghj </A><BR>< A href="#">手机数码1< /A><BR>< A href="#">手机数码2< /A><BR>< A href="#">手机数码3< /A><BR>< A href="#">手机数码4< /A>< /DIV><BR>
+	说明：二级菜单层被触动显示时，如果鼠标移动二级层上，层显示，如果离开层，那么层隐藏；style="display:none;"当层没有被触动时，层处于隐藏状态；<BR>
+3、设置超级链接样式表<BR>
+A {FONT-SIZE: 13px; COLOR: #FFFFFF; TEXT-DECORATION: none;
+<BR>/*文字链接的背影样式*/
+<BR>
+<SPAN class="red">background-color:#669933;</SPAN><BR>
+width:100px;line-height:22px;text-align:center;
+
+<BR>border-bottom:1 #FFFFFF solid;}
+<BR><BR>A:hover {FONT-SIZE: 13px; COLOR: #ffffff;
+<BR>/*鼠标在文字链接上时的文字背景样式*/
+<BR>
+<SPAN class="red">background-color:#FE9D01;</SPAN><BR>
+width:100px;line-height:22px;text-align:center;}<BR>
+说明：设置超级链接在鼠标划过链接及离开链接不同的文字颜色、背景等样式表<BR>
+4、效果：当鼠标在“手机数码”上时，对应的二级菜单“fhfghfgjghj、手机数码1、手机数码2、手机数码3”层显示，如果鼠标移出，层隐藏;<BR>
+5、一个完整的一级、二级菜单制作完成，请依照例子做其他菜单
+	
+	</TD>
+  </TR>
+  <TR>
+    <TD>三、菜单实现的源代码
+</TD>
+  </TR><TR>
+    <TD style="padding-left:20px;background-color:#efefef;">
+     &lt;HTML&gt;<BR>
+        &lt;HEAD&gt;<BR>
+        &lt;META http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot;&gt;<BR>
+        &lt;TITLE&gt;横向菜单&lt;/TITLE&gt;<BR>
+        &lt;STYLE type=&quot;text/css&quot;&gt;<BR>
+        td {FONT-SIZE: 13px; COLOR: #000000; LINE-HEIGHT: 22px;}<BR>
+        div{/*设置层背景样式*/<BR>
+        <SPAN class="red">background-color:#669933;</SPAN><BR>
+        text-align:center;position:absolute;z-index:2;display:none; }<BR>
+        A {FONT-SIZE: 13px; COLOR: #FFFFFF; TEXT-DECORATION: none;<BR>
+        /*文字链接的背影样式*/<BR>
+        <SPAN class="red">background-color:#669933;</SPAN><BR>
+        width:100px;line-height:22px;text-align:center;border-bottom:1 #FFFFFF solid;}<BR>
+        A:hover {FONT-SIZE: 13px; COLOR: #ffffff;<BR>
+        /*鼠标在文字链接上时的文字背景样式*/<BR>
+        <SPAN class="red">background-color:#FE9D01;</SPAN><BR>
+        width:100px;line-height:22px;text-align:center;}<BR>
+      &lt;/STYLE&gt;<BR>
+        &lt;SCRIPT language=&quot;JavaScript&quot;&gt;<BR>
+        <SPAN class="red">function show(d1){<BR>
+        document.getElementById(d1).style.display='block';</SPAN>  //显示层<BR>
+        }<BR><SPAN class="red">     function hide(d1){<BR>
+     document.getElementById(d1).style.display='none'; </SPAN>//隐藏层<BR>
+        }<BR>
+        &lt;/SCRIPT&gt;<BR>
+        &lt;/HEAD&gt;<BR>
+        &lt;BODY&gt;<BR>
+        &lt;TABLE width=&quot;303&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; align=&quot;center&quot;&gt;<BR>
+        &lt;TR&gt;<BR>
+  &lt;TD&gt;&lt;A href=&quot;#&quot;  <SPAN class="red">onMouseMove=&quot;show(1)&quot; onMouseOut=&quot;hide(1)&quot;</SPAN>&gt;手机数码&lt;/A&gt;&lt;/TD&gt;<BR>
+  &lt;TD&gt;&lt;A href=&quot;#&quot;<SPAN class="red"> onMouseMove=&quot;show(2)&quot; onMouseOut=&quot;hide(2)&quot;</SPAN>&gt;淘宝集市&lt;/A&gt;&lt;/TD&gt;<BR>
+  &lt;TD&gt;&lt;A href=&quot;#&quot;<SPAN class="red"> onMouseMove=&quot;show(3)&quot; onMouseOut=&quot;hide(3)&quot;</SPAN>&gt;品牌商城&lt;/A&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;<BR>
+  &lt;TR&gt;<BR>
+  &lt;TD&gt;&lt;DIV  id=&quot;1&quot;<SPAN class="red"> onMouseMove=&quot;show(1)&quot; onMouseOut=&quot;hide(1)&quot;</SPAN>&gt;&lt;A href=&quot;#&quot;&gt;手机数码1&lt;/A&gt;&lt;BR&gt;&lt;A href=&quot;#&quot;&gt;手机数码2&lt;/A&gt;&lt;BR&gt;&lt;A href=&quot;#&quot;&gt;手机数码3&lt;/A&gt;&lt;/DIV&gt;&lt;/TD&gt;<BR>
+  &lt;TD&gt;&lt;DIV  id=&quot;2&quot;<SPAN class="red"> onMouseMove=&quot;show(2)&quot; onMouseOut=&quot;hide(2)&quot;</SPAN>&gt;&lt;A href=&quot;#&quot;&gt;淘宝集市1&lt;/A&gt;&lt;BR&gt;&lt;A href=&quot;#&quot;&gt;淘宝集市2&lt;/A&gt;&lt;BR&gt;&lt;A href=&quot;#&quot;&gt;淘宝集市3&lt;/A&gt;&lt;/DIV&gt;&lt;/TD&gt;<BR>
+  &lt;TD&gt;&lt;DIV  id=&quot;3&quot;<SPAN class="red"> onMouseMove=&quot;show(3)&quot; onMouseOut=&quot;hide(3)&quot;</SPAN>&gt;&lt;A href=&quot;#&quot;&gt;品牌商城1&lt;/A&gt;&lt;BR&gt;&lt;A href=&quot;#&quot;&gt;品牌商城2&lt;/A&gt;&lt;BR&gt;&lt;A href=&quot;#&quot;&gt;品牌商城3&lt;/A&gt;&lt;/DIV&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;&lt;/TABLE&gt;<BR>
+  &lt;/BODY&gt;<BR>
+  &lt;/HTML&gt;    </TD>
+  </TR>
+  <TR>
+    <TD>四、制作中国中信集团横向菜单，<A href="z-1.html" target="_blank">效果查看链接</A>
+</TD>
+  </TR>
+  </TABLE>
+</BODY>
+</HTML>

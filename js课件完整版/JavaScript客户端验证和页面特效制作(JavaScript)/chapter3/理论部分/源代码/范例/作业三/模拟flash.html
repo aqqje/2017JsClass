@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>多幅图片切换的特效</TITLE>
+<SCRIPT type="text/javascript">
+var count =1;
+function init(){
+	for(var i=1;i<5;i++){
+		if(count==i){
+		document.getElementById("pic"+i).style.display="block";
+		}else{
+		document.getElementById("pic"+i).style.display="none";
+		}
+
+	}
+	count++;
+	if(count==5){
+		count=1;
+	}	
+	setTimeout("init()",3000);
+}
+</SCRIPT>
+</HEAD>
+
+<BODY onLoad="init()">
+<DIV id="pic1"><IMG src="images/pic1.jpg" width="400" height="300"></DIV>
+<DIV id="pic2" style="display:none"><IMG src="images/pic2.jpg" width="400" height="300"></DIV>
+<DIV id="pic3" style="display:none"><IMG src="images/pic3.jpg" width="400" height="300"></DIV>
+<DIV id="pic4" style="display:none"><IMG src="images/pic4.jpg" width="400" height="300"></DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>javascript基本语法</TITLE>
+<SCRIPT type="text/javascript" language="javascript">
+/*
+javascript 中带参数的自定义函数调用
+*/
+function change(color){
+	if(color=="r"){
+		document.bgColor="red";
+	}else if(color=="b"){
+		document.bgColor="blue";
+	}else  if(color=="g"){
+		document.bgColor="green"
+	}
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM action="" method="get" name="myform">
+<TABLE width="459" border="0" cellspacing="0" cellpadding="0" align="center">
+  <TR align="center">
+    <TD width="143">
+	<INPUT type="button" name="btn1" value="  不许碰我  " onClick="change('b')"></TD>
+	<TD width="153">
+	<INPUT type="button" name="btn2" value=" 警告你别碰我 " onClick="change('r')"></TD>
+	<TD width="163">
+	<INPUT name="btn3" type="button" value="给你点颜色看看" onClick="change('g')"></TD>
+  </TR>
+</TABLE>
+
+</FORM>
+</BODY>
+</HTML>

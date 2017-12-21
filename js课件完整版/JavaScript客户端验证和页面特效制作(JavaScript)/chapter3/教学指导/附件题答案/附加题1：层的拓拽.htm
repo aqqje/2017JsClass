@@ -1,0 +1,41 @@
+<!--ÊµÏÖ²ãÒÆ¶¯-->
+<script language="javascript">
+var Obj=''  ;
+document.onmouseup=MUp ;
+document.onmousemove=MMove;
+
+function MDown(Object){
+Obj=Object.id
+document.all(Obj).setCapture()
+pX=event.x-document.all(Obj).style.pixelLeft;
+pY=event.y-document.all(Obj).style.pixelTop;
+}
+
+function MMove(){
+if(Obj!=''){
+	document.all(Obj).style.left=event.x-pX;
+	document.all(Obj).style.top=event.y-pY;
+	}
+}
+
+function MUp(){
+if(Obj!=''){
+	document.all(Obj).releaseCapture();
+	Obj='';
+	}
+}
+</script>
+  
+<DIV id="Layer1" onmousedown=MDown(Layer1) style="position:absolute;
+	left:426px;
+	top:178px;
+	width:18px;
+	height:15px;
+	z-index:2;"><IMG src="images/black.jpg" width="15" height="14"></DIV>
+<DIV id="Layer2" onmousedown=MDown(Layer2) style="position:absolute;
+	left:558px;
+	top:162px;
+	width:18px;
+	height:12px;
+	z-index:2;"><IMG src="images/white.jpg" width="14" height="14"></DIV>
+<center><IMG src="images/human.jpg" width="487" height="316"></center>

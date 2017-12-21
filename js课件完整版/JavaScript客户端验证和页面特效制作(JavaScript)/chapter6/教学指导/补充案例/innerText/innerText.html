@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<TITLE>动态显示内容</TITLE>
+<SCRIPT type="text/javascript">
+function changeSrc()
+  {
+  var img=document.getElementById("myImage");	//获得对象
+  img.src="images/cat2.gif";							//改变属性
+  document.getElementById("btn").innerText="吃的太快,噎着了";		//替换文字显示
+  }
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<center>
+<IMG id="myImage" src="images/cat.gif"  /><BR>
+<INPUT type="button" id="btn" onClick="changeSrc()" value="我吃,我吃,我吃吃吃！！！">
+</BODY>
+
+</HTML>
+

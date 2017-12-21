@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>可关闭的浮动广告</TITLE>
+<SCRIPT language="javascript">
+ 
+var  picTop = 0;
+var advTop = 0;
+function init( )
+{
+   picTop=document.getElementById("advLayer").style.pixelTop;
+}
+function move( )
+{
+   document.getElementById("advLayer").style.pixelTop=picTop+document.body.scrollTop; 
+}
+function closeAdv(){
+	document.getElementById("advLayer").style.display="none";
+	document.getElementById("closeAdv").style.display="none";
+}
+	 
+window.onscroll=move ;  //窗口的滚动事件，当页面滚动时调用move( )函数
+
+</SCRIPT>
+</HEAD>
+
+<BODY onLoad="init()">
+<IMG src="images/top.jpg"><IMG src="images/content1.jpg"><IMG src="images/content2.jpg"><IMG src="images/foot.jpg">
+ <DIV id="advLayer" style="position:absolute;	left:736px;	top:76px;	width:258px;	height:140px;	z-index:1;"><A href="#"><IMG src="images/lady_0007.jpg" width="260" height="142" border="0"></A></DIV>
+</BODY>
+</HTML>

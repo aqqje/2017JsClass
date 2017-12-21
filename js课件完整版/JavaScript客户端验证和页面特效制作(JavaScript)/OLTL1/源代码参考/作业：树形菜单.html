@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>作业：树形菜单</TITLE>
+<STYLE type="text/css">
+DIV {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 22px;
+}
+A{FONT-SIZE: 13px; COLOR: #000000; TEXT-DECORATION: none}
+A:hover {FONT-SIZE: 13px; COLOR: #999999}
+.red {color: #FF0000}
+</STYLE>
+<SCRIPT language="JavaScript">
+function show(d1){
+if(document.getElementById(d1).style.display=='none'){
+document.getElementById(d1).style.display='block';  //触动的层如果处于隐藏状态，即显示
+}
+else{document.getElementById(d1).style.display='none';  //触动的层如果处于显示状态，即隐藏
+}
+}
+</SCRIPT>
+</HEAD>
+
+<BODY><div style="padding-left:100px;">
+<DIV>       
+<A href="javascript:onClick=show('1') "><IMG src="image/z-1.jpg"  border="0" align="absmiddle" >分类讨论区</A></DIV>
+<DIV id="1" style="display:none;padding-left:15px;"><IMG src="image/z-top.gif" align="absmiddle">BBS 系统<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">共建水木<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">站务公告栏<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">妆点水木<BR>
+            <IMG src="image/z-end.gif" align="absmiddle">申请版主</DIV>
+          <DIV><A href="javascript: onClick=show('2') "><IMG src="image/z-2.jpg" border="0" align="absmiddle">社会信息</A></DIV>
+          <DIV id="2" style="display:none;padding-left:15px;" ><IMG src="image/z-top.gif" align="absmiddle">美容品与饰品代理<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">考研资料市场<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">商海纵横<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">动物保护者<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">动物世界<BR>
+            <IMG src="image/z-end.gif" align="absmiddle">中国风·神州各地</DIV>
+<DIV><A href="javascript: onClick=show('3') "><IMG src="image/z-3.jpg" border="0" align="absmiddle">休闲娱乐</A></DIV>
+          <DIV id="3" style="display:none;padding-left:15px;" ><IMG src="image/z-top.gif" align="absmiddle">ASCIIArt全国转信<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">七彩水木<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">网友聚会<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">醉品人生<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">花木园艺<BR>
+            <IMG src="image/z-end.gif" align="absmiddle">祝福</DIV>
+			<DIV><A href="javascript: onClick=show('4') "><IMG src="image/z-4.jpg" border="0" align="absmiddle">电脑技术</A></DIV>
+          <DIV id="4" style="display:none;padding-left:15px;" ><IMG src="image/z-top.gif" align="absmiddle">BBS安装管理<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">CAD技术<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">数字图像设计<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">电脑音乐制作<BR>
+            <IMG src="image/z-top.gif" align="absmiddle">软件加密与解密<BR>
+            <IMG src="image/z-end.gif" align="absmiddle">计算机体系结构</DIV>
+
+
+</DIV>
+
+</BODY>
+</HTML>

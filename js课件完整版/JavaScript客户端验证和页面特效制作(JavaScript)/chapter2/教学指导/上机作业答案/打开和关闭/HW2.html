@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<TITLE>使用 Window 对象</TITLE>
+<SCRIPT>
+var w;
+function openwindow() 
+{
+	alert("欢迎使用功能强大的Google搜索引擎")
+  window.open("google.htm");
+
+}
+function closewindow()
+{
+  window.close();
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM>
+<INPUT TYPE=button VALUE="打开Google" onClick="openwindow()">
+<INPUT TYPE=button VALUE="关闭本页" onClick="closewindow()">
+</FORM>
+<BODY>
+</HTML>

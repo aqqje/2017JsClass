@@ -1,0 +1,24 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE> 左侧图片关闭</TITLE>
+<STYLE type="text/css">
+A{
+color:#ffffff;
+text-decoration:none;
+font-size:13px;}
+</STYLE>
+<SCRIPT language="JavaScript">
+function show(){
+document.getElementById("left").style.display='none';
+document.getElementById("close").style.display='none';
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<DIV style='position:absolute;left:5px;top:10px;z-index:2' id="left"><IMG src="left.jpg"></DIV>
+<DIV style='position:absolute;left:115px;top:12px;z-index:3' id="close"><A href="javascript:show();"><B>关闭</B></A></DIV>
+<DIV align="center"><IMG src="sohu.jpg"></DIV>
+</BODY>
+</HTML>

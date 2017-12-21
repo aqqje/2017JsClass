@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>模式窗口练习</TITLE>
+<SCRIPT language="javascript" type="text/javascript">
+
+function openWindow(){
+    var address=window.showModalDialog("address.html","","dialogWidth=340px;dialogHeight=270px");
+	document.myform.address.value=address;
+	
+}
+
+function showInfo(){
+	var address=document.myform.address.value;
+	var flage=confirm("您本次购买的商品信息如下：\n商品名称：跑跑游戏道具；\n商品数量：5件；\n商品单价：12.5美金；\n运费：10美金；\n费用总计：72.5美金；\n送货地址:"+address+"\n请确认以上信息是否有误！！！");
+	if(flage){
+		alert("您的订单已提交");
+	}
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM action="" method="post" name="myform">
+<TABLE width="533" height="133" border="1" bgcolor="#FFC8C8" align="center" cellpadding="0" cellspacing="0">
+  <TR>
+    <TH colspan="5">简易购物车</TH>
+    </TR>
+  <TR  align="center">
+    <TD width="92">商品名称</TD>
+    <TD width="100">数量(件)</TD>
+    <TD width="110">单价(美元)</TD>
+    <TD width="101">运费(美元)</TD>
+    <TD width="130">合计</TD>
+  </TR>
+   <TR align="center">
+    <TD>跑跑道具</TD>
+    <TD>5</TD>
+    <TD>12.5</TD>
+    <TD>10</TD>
+    <TD>72.5美元</TD>
+   </TR>
+   <TR align="center">
+   	<TD colspan="5"><A href="javascript:openWindow()">填写你的邮寄地址</A><INPUT name="address" type="text" size="40" disabled>&nbsp;<INPUT name="sub" onClick="showInfo()" type="button" value="提交定单"></TD>
+   </TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

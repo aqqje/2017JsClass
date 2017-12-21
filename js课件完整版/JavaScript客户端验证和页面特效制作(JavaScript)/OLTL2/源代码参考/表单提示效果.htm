@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>新用户注册</TITLE>
+<SCRIPT language="javascript" src="reg-check.js"></SCRIPT>
+<STYLE  type="text/css">
+.p1{font-size:12px;text-align:right; height:28px;}
+div{font-size:12px;}
+.font_error{font-size:12px;color:#ff0000;}
+.font_true{font-size:12px;color:#61b16a;}
+</STYLE>
+</HEAD>
+
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<TABLE width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <FORM action="" method="post" name="myform"><TR>
+    <TD><IMG src="image/reg1-top.jpg"></TD>
+  </TR>
+  <TR>
+    <TD style="border-left:1 #7Bcc87 solid;border-right:1 #7Bcc87 solid;" bgcolor="#F9F8FF"><TABLE width="80%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <TR><TD class="p1" width="100"> 用户名：</TD>
+    <TD width="180"> <INPUT name="username" type="text" size="25" onBlur="checkUser(username);"></TD>
+	<TD> <DIV id="userinfor">用户名以字母开头，4-16位字母、数字组成</DIV></TD>
+  </TR>
+  <TR><TD class="p1" > 密&nbsp;&nbsp;码：</TD>
+    <TD><INPUT name="pwd" type="password" size="28" onBlur="checkpwd(pwd);"></TD>
+	<TD> <DIV id="pwdinfor">设置登陆密码，由6-16位字母、数字、符号组成！</DIV></TD>
+  </TR>
+  <TR><TD class="p1" >确认密码：</TD>
+    <TD><INPUT name="repwd" type="password" size="28" onBlur="checkrepwd(pwd,repwd);"></TD>
+	<TD> <DIV id="repwdinfor">请再输入一次您的密码！</DIV></TD>
+  </TR>
+  <TR><TD class="p1" > Email邮箱：</TD>
+    <TD><INPUT name="email" type="text" size="25" onBlur="checkemail(email);"></TD>
+	<TD> <DIV id="emailinfor">请填写您常用邮箱，因用此邮箱来取回密码！</DIV></TD>
+  </TR><TR><TD class="p1" > 提&nbsp;&nbsp;问：</TD>
+    <TD><SELECT name="question" onBlur="checkquest(question);">
+									<OPTION value="">-=请您选择=-</OPTION>
+									<OPTION value="place">我的出生地点是那里？</OPTION>
+									<OPTION value="birthday">我的生日是什么？</OPTION>
+									<OPTION value="girlfriend">我的女朋友叫什么？</OPTION>
+									<OPTION value="girlbirthday">我女朋友的生日是什么？</OPTION>
+									<OPTION value="father">我的父亲叫什么？</OPTION>
+									<OPTION value="fatherbirthday">我父亲的生日是什么？</OPTION>
+									<OPTION value="mather">我的母亲叫什么？</OPTION>
+									<OPTION value="matherbirthday">我母亲的生日是什么？</OPTION>
+									<OPTION value="address">我的家庭住址是那里？</OPTION>
+									<OPTION value="love">我的初恋叫什么？</OPTION>
+									<OPTION value="pet">我最喜欢的宠物是什么？</OPTION>
+									<OPTION value="prettyplace">我最想去的地方是那里？</OPTION>
+									</SELECT></TD>
+									<TD> <DIV id="questinfor">请选择密码找回问题！</DIV></TD>
+  </TR><TR><TD class="p1"> 回&nbsp;&nbsp;答：</TD>
+    <TD><INPUT name="answer" type="text" size="25" onBlur="checkans(answer)"></TD>
+	<TD> <DIV id="ansinfor">填写问题答案！</DIV></TD>
+  </TR>
+</TABLE>
+</TD>
+  </TR>
+  <TR>
+    <TD background="image/reg1-end.jpg" height="63" align="center"><IMG src="image/reg1-button.gif" border="0"></TD>
+  </TR></FORM>
+</TABLE>
+
+
+</BODY>
+</HTML>

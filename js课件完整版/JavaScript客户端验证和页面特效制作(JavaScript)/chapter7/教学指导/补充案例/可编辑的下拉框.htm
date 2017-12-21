@@ -1,0 +1,22 @@
+方法一：
+<center>
+<div style="position:relative;"> 
+      <span style="margin-left:100px;width:18px;overflow:hidden;"> 
+      <select style="width:118px;margin-left:-100px" onchange="this.parentNode.nextSibling.value=this.value"> 
+        <option value="A类">A类</option>
+        <option value="B类">B类</option>
+        <option value="C类">C类</option>
+        <option value="D类">D类</option>
+      </select>
+      </span>
+   <input name="leibie" style="width:100px;position:absolute;left:0px;">
+   　其它类别请在框内自行输入</div> 
+
+
+<p>
+====================================================
+<p>
+方法二：
+ <input type=text name=re_name style="width:100px;height:22px;font-size:10pt;border-top:1px solid #7F9DB9;border-right:0px;border-bottom:1px solid #7F9DB9;border-left:1px solid #7F9DB9;"><span style="width:18px;border:0px solid red;"><select name="r00" style="margin-left:-100px;width:118px; background-color:#FFEEEE;" onChange="re_name.value=this.value;" onclick="this.selectedIndex=-1;"><option value="111">111</option><option value="222">222</option><option value="333">333</option></select></span>  
+   
+

@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>通过document对象相关属性动态改变背景色</TITLE>
+<SCRIPT language="JavaScript">
+function change(color)
+{
+  document.bgColor=color ;
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<H2> 移过来我变色给你看看！</H2>
+<FONT size=4><SPAN onMouseOver="change('red')">变红色</SPAN>|<SPAN onMouseOver="change('blue')">变蓝色</SPAN>|<SPAN onMouseOver="change('yellow')">变黄色</SPAN></FONT>
+</BODY>
+</HTML>

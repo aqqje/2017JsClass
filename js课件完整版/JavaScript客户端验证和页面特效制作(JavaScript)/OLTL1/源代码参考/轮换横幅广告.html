@@ -1,0 +1,37 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>轮换横幅广告</TITLE>
+
+<SCRIPT language="JavaScript">
+                var NowFrame = 1;
+				var MaxFrame = 3;
+				function show() {
+					for(var i=1;i<(MaxFrame+1);i++){
+					if(i==NowFrame)
+					document.getElementById('div'+NowFrame).style.display ='';    //当前图片显示
+					else
+					document.getElementById('div'+i).style.display ='none';   //其他的图片隐藏
+					}
+			       { if(NowFrame == MaxFrame)  //定义下一张显示的图片
+					NowFrame = 1;
+				   else
+					NowFrame++;}
+					 theTimer=setTimeout('show()', 3000);  //设置定时器，显示下一张显示的图片
+				}
+				
+</SCRIPT>
+</HEAD>
+
+<BODY onLoad="show();">
+<DIV style="position:absolute;left:200px;top:60px;">
+<IMG src="image/1.jpg" style="display:none;" id="div1" border="0">
+<IMG src="image/2.gif" style="display:none;" id="div2" border="0">
+<IMG src="image/ad-02.jpg" style="display:none;" id="div3" border="0">
+</DIV>
+
+
+
+</BODY>
+</HTML>

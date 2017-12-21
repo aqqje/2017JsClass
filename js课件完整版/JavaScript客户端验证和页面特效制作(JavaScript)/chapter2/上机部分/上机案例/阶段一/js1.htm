@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<SCRIPT language="JavaScript">
+  function open1( ){
+     window.open("adv.htm")  ;
+  }
+  
+  function open2( ){
+      open("adv.htm", "mywindow", "toolbars=0, scrollbars=0, location=0, statusbars=0, menubars=0, resizable=0, width=320, height=380");
+  }
+  
+  function open3 ( ){
+    var address=window.showModalDialog("modalDialog.html","","dialogWidth=400px;dialogHeight=200px");
+	document.myform.txtInfo.value=address;
+  }
+  
+  function open4 ( ){
+   open(document.location,"", "fullscreen=yes")  ;
+  }
+  
+  function open5( ){
+	  if(confirm("你相信自己是最棒的吗？")){
+		alert("有信心未必会赢,没信心一定会输！！！");
+	  }
+  }
+</SCRIPT>
+
+<TITLE>打开窗口</TITLE>
+</HEAD>
+
+<BODY>
+<FORM name="myform" action="" method="post">
+ <P>
+   <INPUT name="openButton1" type="button" id="openButton1" value="打开窗口" onClick=" open1( ) ">
+</P>
+ <P>
+   <INPUT name="openButton2" type="button" id="openButton2" value="打开固定大小的窗口,无菜单栏等" onClick=" open2( ) ">
+ </P>
+ <P>
+   <INPUT name="openButton3" type="button" id="openButton3" value="打开模式窗口" onClick=" open3( ) "><BR>模式窗口的返回值:<INPUT type="text" name="txtInfo" value="" size="40">
+ </P>
+ <P>   <INPUT name="openButton4" type="button" id="openButton4" value="全屏" onClick=" open4( ) ">
+ </P>
+ <P>
+   <INPUT name="openButton5" type="button" id="openButton5" value="打开确认窗口" onClick=" open5( ) "> 
+ </P>
+ <P>&nbsp; </P>
+ </FORM>
+</BODY>
+</HTML>

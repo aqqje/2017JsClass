@@ -1,0 +1,25 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE> 右侧图片关闭</TITLE>
+<STYLE type="text/css">
+A:link{color:#ffffff;font-size:13px;text-decoration:none;}
+A:visited{color:#ffffff;font-size:13px;text-decoration:none;}
+A:hover{color:#ffffff;font-size:13px;text-decoration:none;}
+</STYLE>
+<SCRIPT language="JavaScript">
+function show(){
+document.getElementById("right").style.display='none';
+document.getElementById("close").style.display='none';
+}
+　window.open ("flash.htm", "newwindow", "height=600, width=600, top=100, left=100, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no status=yes")
+
+</SCRIPT>
+</HEAD>
+<BODY>
+<DIV style='position:absolute;right:5px;top:10px;z-index:2' id="right"><IMG src="right.jpg"></DIV>
+<DIV style='position:absolute;right:8px;top:12px;z-index:3' id="close"><A href="javascript:show();"><B>关闭</B></A></DIV>
+<DIV align="center"><IMG src="sohu.jpg"></DIV>
+</BODY>
+</HTML>

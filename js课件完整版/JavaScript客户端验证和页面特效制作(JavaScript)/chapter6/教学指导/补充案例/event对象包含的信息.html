@@ -1,0 +1,11 @@
+<HTML><HEAD><TITLE>Cancels Links</TITLE>
+<SCRIPT language="javascript">
+function cancelLink() 
+{
+if (window.event.srcElement.tagName == "A" && window.event.shiftKey) 
+ window.event.returnValue = false;
+ }
+</SCRIPT>
+<BODY onclick="cancelLink()" onmousemove="window.status = 'X=' + window.event.x + ' Y=' + window.event.y" >
+<A href="www.sohu.com">sohu¡¥Ω”</A>
+ 

@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>随机显示的图片</TITLE>
+</HEAD>
+<BODY>
+<div align="center">
+<!--六张图片，初始隐藏状态-->
+<IMG src="image/scroll1.jpg" id="1" style="display:none;">
+<IMG src="image/scroll2.jpg" id="2" style="display:none;">
+<IMG src="image/scroll3.jpg" id="3" style="display:none;">
+<IMG src="image/scroll4.jpg" id="4" style="display:none;">
+<IMG src="image/scroll5.jpg" id="5" style="display:none;">
+<IMG src="image/scroll6.jpg" id="6" style="display:none;">
+<SCRIPT language="javascript">
+function show(){
+var NowFrame;
+NowFrame=Math.random()*6+1   //随机生成一个1-6之间的小数
+NowFrame=parseInt(NowFrame) //把1-6之间的小数转化为整数  
+document.getElementById(NowFrame).style.display='block'; //显示图片ID为NowFrame的图片
+}
+window.onload=show; //页面加载时，调用图片显示函数show;
+</SCRIPT>
+</div>
+</BODY>
+</HTML>

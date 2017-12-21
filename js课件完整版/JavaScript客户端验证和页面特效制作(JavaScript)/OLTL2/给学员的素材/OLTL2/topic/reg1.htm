@@ -1,0 +1,176 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>新用户注册</TITLE>
+<!--调用reg-check.js文件，实现表单动态验证-->
+<SCRIPT language="javascript" src="reg-check.js"></SCRIPT>
+<STYLE  type="text/css">
+.p1{font-size:12px;text-align:right; height:28px;}
+div{font-size:12px;line-height:20px;}
+.font_error{font-size:12px;color:#ff0000;}
+.font_true{font-size:12px;color:#61b16a;}
+.red{color: #FF0000}
+</STYLE>
+</HEAD>
+
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" ONCONTEXTMENU="return false;"><Div>
+<TABLE width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <FORM action="reg1.htm" method="post" name="myform"><TR>
+    <TD><IMG src="image/reg1-top.jpg"></TD>
+  </TR>
+  <TR>
+    <TD style="border-left:1 #7Bcc87 solid;border-right:1 #7Bcc87 solid;" bgcolor="#F9F8FF"><TABLE width="80%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <TR><TD class="p1" width="100"> 用户名：</TD>
+    <TD width="180"> <INPUT name="username" type="text" size="25" onBlur="checkUser(username);"></TD>
+	<TD> <DIV id="userinfor">用户名以字母开头，4-16位字母、数字组成</DIV></TD>
+  </TR>
+  <TR><TD class="p1" > 密&nbsp;&nbsp;码：</TD>
+    <TD><INPUT name="pwd" type="password" size="28" onBlur="checkpwd(pwd);"></TD>
+	<TD> <DIV id="pwdinfor">设置登陆密码，由6-16位字母、数字、符号组成！</DIV></TD>
+  </TR>
+  <TR><TD class="p1" >确认密码：</TD>
+    <TD><INPUT name="repwd" type="password" size="28" onBlur="checkrepwd(pwd,repwd);"></TD>
+	<TD> <DIV id="repwdinfor">请再输入一次您的密码！</DIV></TD>
+  </TR>
+  <TR><TD class="p1" > Email邮箱：</TD>
+    <TD><INPUT name="email" type="text" size="25" onBlur="checkemail(email);"></TD>
+	<TD> <DIV id="emailinfor">请填写您常用邮箱，因用此邮箱来取回密码！</DIV></TD>
+  </TR><TR><TD class="p1" > 提&nbsp;&nbsp;问：</TD>
+    <TD><SELECT name="question" onBlur="checkquest(question);">
+									<OPTION value="">-=请您选择=-</OPTION>
+									<OPTION value="place">我的出生地点是那里？</OPTION>
+									<OPTION value="birthday">我的生日是什么？</OPTION>
+									<OPTION value="girlfriend">我的女朋友叫什么？</OPTION>
+									<OPTION value="girlbirthday">我女朋友的生日是什么？</OPTION>
+									<OPTION value="father">我的父亲叫什么？</OPTION>
+									<OPTION value="fatherbirthday">我父亲的生日是什么？</OPTION>
+									<OPTION value="mather">我的母亲叫什么？</OPTION>
+									<OPTION value="matherbirthday">我母亲的生日是什么？</OPTION>
+									<OPTION value="address">我的家庭住址是那里？</OPTION>
+									<OPTION value="love">我的初恋叫什么？</OPTION>
+									<OPTION value="pet">我最喜欢的宠物是什么？</OPTION>
+									<OPTION value="prettyplace">我最想去的地方是那里？</OPTION>
+									</SELECT></TD>
+									<TD> <DIV id="questinfor">请选择密码找回问题！</DIV></TD>
+  </TR><TR><TD class="p1"> 回&nbsp;&nbsp;答：</TD>
+    <TD><INPUT name="answer" type="text" size="25" onBlur="checkans(answer)"></TD>
+	<TD> <DIV id="ansinfor">填写问题答案！</DIV></TD>
+  </TR>
+</TABLE>
+</TD>
+  </TR>
+  <TR>
+    <TD background="image/reg1-end.jpg" height="63" align="center"><A href="javascript:myform.submit()"><IMG src="image/reg1-button.gif" border="0"></A></TD>
+  </TR></FORM>
+</TABLE></Div>
+<DIV style="padding-left:10px;"><BR>
+一、DIV＋DOM实现表单输入提示效果(效果如上)<BR>
+二、实现的思路
+<DIV style="padding-left:20px;">
+1、利用onBlur失去焦点时，对文本框动态提示<BR>
+< INPUT name="username" type="text" size="25" <SPAN class="red">onBlur="checkUser(username);"</SPAN>><BR>
+2、通过innerHTML改变层内容来实现动态提示效果<BR>
+3、验证用户名、邮箱、密码用正则表达式<BR>
+4、用户名以字母开头，4-16位字母、数字组成的正则表达式：reg = /^[A-Za-z0-9]+$/;	<BR>
+5、密码由6-16位字母、数字、符号组成的正则表达式：pattern = /^[A-Za-z0-9_!@#$%^&*()]+$/;<BR>
+6、邮箱验证的正则表达式：match=/^\w+((-{1,2}\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-{1,2})[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/<BR>
+7、以用户名验证为例详细讲解：<BR>
+1)用户名前台代码：<BR>
+< INPUT name="username" type="text" size="25" <SPAN class="red">onBlur="checkUser(username);"</SPAN>> <BR>
+< DIV<SPAN class="red"> id="userinfor"</SPAN>>用户名以字母开头，4-16位字母、数字组成< /DIV><BR>
+2)checkuser()函数<BR>
+function checkUser ( pUserName ) {<BR>
+		<SPAN class="red">var oContainer = $("userInfor")</SPAN>;//动态提示的层ID名称<BR>
+		<SPAN class="red">oContainer.className = "font_error";</SPAN>//提示文字的CSS样式<BR>
+		<SPAN class="red">var reg = /^[A-Za-z0-9]+$/;</SPAN>	//用户名检测的正则表达式<BR>
+	  
+		<SPAN class="red">if ( pUserName.value == "" )</SPAN> {<BR>
+			<SPAN class="red">oContainer.innerHTML = "请输入用户名！"</SPAN>//提示显示内容<BR>
+			<SPAN class="red">return false;<BR>
+		 }<BR>
+		 if (pUserName.value.length> 16 || pUserName.value.length< 4 ) {<BR>
+		 oContainer.innerHTML = "用户名最长只能占16位字符，最短4个字符，请重新填写！"<BR>
+			return false;<BR>
+		}
+		if ( !reg.test(pUserName.value) ) {<BR>
+		oContainer.innerHTML = "名字中只能用数字、字母，请重新填写！";<BR>
+			return false;<BR>
+			}
+	     	oContainer.className = "font_true";<BR>
+	     	oContainer.innerHTML = "你填写的用户名是有效的！";<BR>
+			return true;</SPAN><BR>
+	}
+</DIV>
+三、源代码
+<DIV style="padding-left:20px;background-color:#efefef;">
+  <P>&lt;HTML&gt;<BR>
+    &lt;HEAD&gt;<BR>
+    &lt;META http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot;&gt;<BR>
+    &lt;TITLE&gt;新用户注册&lt;/TITLE&gt;<BR>
+	< !--调用reg-check.js文件，实现表单动态验证--><BR>
+    <SPAN class="red">&lt;SCRIPT language=&quot;javascript&quot; src=&quot;reg-check.js&quot;&gt;&lt;/SCRIPT&gt;</SPAN><BR>
+    &lt;STYLE  type=&quot;text/css&quot;&gt;//CSS样式表<BR>
+    .p1{font-size:12px;text-align:right; height:28px;}<BR>
+    div{font-size:12px;line-height:20px;}<BR>
+    .font_error{font-size:12px;color:#ff0000;}<BR>
+    .font_true{font-size:12px;color:#61b16a;}<BR>
+    .red{color: #FF0000}<BR>
+    &lt;/STYLE&gt;<BR>
+    &lt;/HEAD&gt;</P>
+  <P>&lt;BODY leftmargin=&quot;0&quot; topmargin=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot;&gt;&lt;Div&gt;<BR>
+    &lt;TABLE width=&quot;760&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; align=&quot;center&quot;&gt;<BR>
+  &lt;FORM action=&quot;reg1.htm&quot; method=&quot;post&quot; name=&quot;myform&quot;&gt;&lt;TR&gt;<BR>
+  &lt;TD&gt;&lt;IMG src=&quot;image/reg1-top.jpg&quot;&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;<BR>
+  &lt;TR&gt;<BR>
+  &lt;TD style=&quot;border-left:1 #7Bcc87 solid;border-right:1 #7Bcc87 solid;&quot; bgcolor=&quot;#F9F8FF&quot;&gt;&lt;TABLE width=&quot;80%&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; align=&quot;center&quot;&gt;<BR>
+  &lt;TR&gt;&lt;TD class=&quot;p1&quot; width=&quot;100&quot;&gt; 用户名：&lt;/TD&gt;<BR>
+  &lt;TD width=&quot;180&quot;&gt; &lt;INPUT<SPAN class="red"> name=&quot;username&quot;</SPAN> type=&quot;text&quot; size=&quot;25&quot;<SPAN class="red"> onBlur=&quot;checkUser(username);&quot;</SPAN>&gt;&lt;/TD&gt;<BR>
+  &lt;TD&gt; <SPAN class="red">&lt;DIV id=&quot;userinfor&quot;&gt;</SPAN>用户名以字母开头，4-16位字母、数字组成&lt;/DIV&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;<BR>
+  &lt;TR&gt;&lt;TD class=&quot;p1&quot; &gt; 密&amp;nbsp;&amp;nbsp;码：&lt;/TD&gt;<BR>
+  &lt;TD&gt;&lt;INPUT name=&quot;pwd&quot; type=&quot;password&quot; size=&quot;28&quot;<SPAN class="red"> onBlur=&quot;checkpwd(pwd);&quot;</SPAN>&gt;&lt;/TD&gt;<BR>
+  &lt;TD&gt; &lt;DIV<SPAN class="red"> id=&quot;pwdinfor&quot;</SPAN>&gt;设置登陆密码，由6-16位字母、数字、符号组成！&lt;/DIV&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;<BR>
+  &lt;TR&gt;&lt;TD class=&quot;p1&quot; &gt;确认密码：&lt;/TD&gt;<BR>
+  &lt;TD&gt;&lt;INPUT name=&quot;repwd&quot; type=&quot;password&quot; size=&quot;28&quot;<SPAN class="red"> onBlur=&quot;checkrepwd(pwd,repwd);&quot;</SPAN>&gt;&lt;/TD&gt;<BR>
+  &lt;TD&gt; &lt;DIV<SPAN class="red"> id=&quot;repwdinfor&quot;</SPAN>&gt;请再输入一次您的密码！&lt;/DIV&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;<BR>
+  &lt;TR&gt;&lt;TD class=&quot;p1&quot; &gt; Email邮箱：&lt;/TD&gt;<BR>
+  &lt;TD&gt;&lt;INPUT name=&quot;email&quot; type=&quot;text&quot; size=&quot;25&quot;<SPAN class="red"> onBlur=&quot;checkemail(email);&quot;</SPAN>&gt;&lt;/TD&gt;<BR>
+  &lt;TD&gt; &lt;DIV<SPAN class="red"> id=&quot;emailinfor&quot;</SPAN>&gt;请填写您常用邮箱，因用此邮箱来取回密码！&lt;/DIV&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;&lt;TR&gt;&lt;TD class=&quot;p1&quot; &gt; 提&amp;nbsp;&amp;nbsp;问：&lt;/TD&gt;<BR>
+  &lt;TD&gt;&lt;SELECT<SPAN class="red"> name=&quot;question&quot; onBlur=&quot;checkquest(question);&quot;</SPAN>&gt;<BR>
+  &lt;OPTION value=&quot;&quot;&gt;-=请您选择=-&lt;/OPTION&gt;<BR>
+  &lt;OPTION value=&quot;place&quot;&gt;我的出生地点是那里？&lt;/OPTION&gt;<BR>
+  &lt;OPTION value=&quot;birthday&quot;&gt;我的生日是什么？&lt;/OPTION&gt;<BR>
+  &lt;OPTION value=&quot;girlfriend&quot;&gt;我的女朋友叫什么？&lt;/OPTION&gt;<BR>
+  &lt;OPTION value=&quot;girlbirthday&quot;&gt;我女朋友的生日是什么？&lt;/OPTION&gt;<BR>
+  &lt;OPTION value=&quot;father&quot;&gt;我的父亲叫什么？&lt;/OPTION&gt;<BR>
+  &lt;OPTION value=&quot;fatherbirthday&quot;&gt;我父亲的生日是什么？&lt;/OPTION&gt;<BR>
+  &lt;OPTION value=&quot;mather&quot;&gt;我的母亲叫什么？&lt;/OPTION&gt;<BR>
+  &lt;OPTION value=&quot;matherbirthday&quot;&gt;我母亲的生日是什么？&lt;/OPTION&gt;<BR>
+  &lt;OPTION value=&quot;address&quot;&gt;我的家庭住址是那里？&lt;/OPTION&gt;<BR>
+  &lt;OPTION value=&quot;love&quot;&gt;我的初恋叫什么？&lt;/OPTION&gt;<BR>
+  &lt;OPTION value=&quot;pet&quot;&gt;我最喜欢的宠物是什么？&lt;/OPTION&gt;<BR>
+  &lt;OPTION value=&quot;prettyplace&quot;&gt;我最想去的地方是那里？&lt;/OPTION&gt;<BR>
+  &lt;/SELECT&gt;&lt;/TD&gt;<BR>
+  &lt;TD&gt; &lt;DIV <SPAN class="red">id=&quot;questinfor&quot;</SPAN>&gt;请选择密码找回问题！&lt;/DIV&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;&lt;TR&gt;&lt;TD class=&quot;p1&quot;&gt; 回&amp;nbsp;&amp;nbsp;答：&lt;/TD&gt;<BR>
+  &lt;TD&gt;&lt;INPUT name=&quot;answer&quot; type=&quot;text&quot; size=&quot;25&quot;<SPAN class="red"> onBlur=&quot;checkans(answer)&quot;</SPAN>&gt;&lt;/TD&gt;<BR>
+  &lt;TD&gt; &lt;DIV <SPAN class="red">id=&quot;ansinfor&quot;</SPAN>&gt;填写问题答案！&lt;/DIV&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;<BR>
+  &lt;/TABLE&gt;<BR>
+  &lt;/TD&gt;<BR>
+  &lt;/TR&gt;<BR>
+  &lt;TR&gt;<BR>
+  &lt;TD background=&quot;image/reg1-end.jpg&quot; height=&quot;63&quot; align=&quot;center&quot;&gt;&lt;A href=&quot;javascript:myform.submit()&quot;&gt;&lt;IMG src=&quot;image/reg1-button.gif&quot; border=&quot;0&quot;&gt;&lt;/A&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;&lt;/FORM&gt;<BR>
+  &lt;/TABLE&gt;&lt;/BODY&gt;<BR>
+  &lt;/HTML&gt;</P>
+</DIV>
+四、制作表单；用DIV＋DOM实现表单输入动态提示效果，<A href="reg.htm" target="_blank">点击查看效果</A>
+</DIV>
+
+</BODY>
+</HTML>

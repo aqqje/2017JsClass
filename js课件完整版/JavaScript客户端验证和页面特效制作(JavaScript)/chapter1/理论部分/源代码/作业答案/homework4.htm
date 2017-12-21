@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>作业4</TITLE>
+ <script language=javascript>
+        <!--
+		function showResult(){  // 创建函数
+			var userinput=document.myForm.txtCount.value ;
+			var total=Fibonacci(userinput);  //调用递归函数
+			document.write(userinput+"的Fibonacci数为"+total);
+		}
+        function Fibonacci( n ){  // 创建函数
+            if ((n==1) || (n==2)) {
+               return 1;
+            }
+            else {
+               return (Fibonacci(n-1)+Fibonacci(n-2));
+            }
+        }
+        //-->        
+</script>
+</HEAD>
+<BODY>
+
+<FORM name="myForm" method="post" action="">
+  <P>请输入一个整数：
+    <INPUT name="txtCount" type="text" id="txtCount">
+  </P>
+  <P>
+    <INPUT type="submit" name="Submit" value="显示计算结果" onClick="showResult()">
+  </P>
+</FORM>
+
+</BODY>
+</HTML>

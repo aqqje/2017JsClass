@@ -1,0 +1,134 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>综合功能</TITLE>
+<STYLE type="text/css">
+td{font-size:13px;color:#000000;line-height:28px;}
+div{font-size:12px;color:#000000;line-height:20px;}
+A{text-decoration:none;font-size:13px;color:#00aa00;line-height:28px;}
+.red{color:#ff0000;}
+</STYLE>
+<SCRIPT language="JavaScript">
+function click(){
+alert('您这是干什么呢？')  //点击右键时，弹出警告框，屏蔽右键
+return false;
+}
+
+function sc(){
+window.external.addFavorite('http://www.taobao.com','淘宝网')    //收藏本站
+}
+
+
+	function detectBrowser()
+	{	
+		var sAgent = navigator.userAgent.toLowerCase();//浏览器名称转化为小写
+		this.isIE = (sAgent.indexOf("msie")!=-1);   //IE6.0-7浏览器
+		this.isFF = (sAgent.indexOf("firefox")!=-1);  //firefox浏览器
+		this.isSa = (sAgent.indexOf("safari")!=-1);  //safari浏览器
+		this.isOp = (sAgent.indexOf("opera")!=-1);  //opera浏览器
+		this.isNN = (sAgent.indexOf("netscape")!=-1);   //netscape浏览器
+		this.isMa =(sAgent.indexOf("maxthon")!=-1);  //maxthon浏览器
+		this.isOther = (!this.isIE && !this.isFF && !this.isSa && !this.isOp && !this.isNN && !this.isSa);   //未知的浏览器
+	if(this.isIE)
+	document.write("\nIE浏览器");
+	if(this.isFF)
+	document.write("\nfirefox浏览器");
+	if(this.isSa)
+	document.write("\nsafari浏览器");
+	if(this.isOp)
+	document.write("\nopera浏览器");
+	if(this.isNN)
+	document.write("\nnetscape浏览器");
+	if(this.isMa)
+	document.write("\nMaxthon浏览器");
+	if(this.isOther)
+	document.write("\n您的浏览器未知");
+	}
+
+
+document.oncontextmenu=click;
+</SCRIPT>
+</HEAD>
+
+<BODY topmargin="0"><DIV>
+<TABLE width="765" border="0" cellspacing="0" cellpadding="0" align="center" background="image/taobao-top.jpg" height="155" >
+  <TR><TD width="50%"></TD>
+    <TD valign="top"><A  style="cursor:hand"  onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.taobao.com');return false;" > 
+      【设为首页】</A>&nbsp;&nbsp;<A href="javascript:sc()">【收藏本站】</A><BR>您的浏览器类型：<FONT color="#FF0000"><SCRIPT language="JavaScript">detectBrowser()
+</SCRIPT></FONT></TD>
+ </TR>
+</TABLE></DIV>
+<DIV style="padding-left:10px;">
+一、页面实现的功能：设为首页、收藏本站、屏蔽右键、判断浏览器功能<BR>
+二、实现思路
+<DIV style="padding-left:20px;">
+1、设为首页：< A onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.taobao.com');return false;" > 
+      【设为首页】< /A><BR>上面的代码中的url(#default#homepage)的意思就是指向当前页；this.setHomePage('http://www.taobao.com')的意思则是设置主页为http://www.taobao.com<BR>
+2、收藏本站：window.external.addFavorite('http://www.taobao.com','淘宝网')；调用AddFavorite（）函数，把网站http://www.taobao.com加入到收藏夹里<BR>
+3、屏蔽右键：document.oncontextmenu=click;点击右键时，调用函数click，弹出对话框，屏蔽右键<BR>
+4、浏览器判断功能：根据浏览器名称获取浏览器类型  
+</DIV>
+三、源代码
+<DIV style="padding-left:20px;background-color:#efefef;">
+  <P>&lt;HTML&gt;<BR>
+    &lt;HEAD&gt;<BR>
+    &lt;META http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot;&gt;<BR>
+    &lt;TITLE&gt;综合功能&lt;/TITLE&gt;<BR>
+    &lt;STYLE type=&quot;text/css&quot;&gt;<BR>
+    td{font-size:13px;color:#000000;line-height:28px;}<BR>
+    div{font-size:12px;color:#000000;line-height:20px;}<BR>
+    A{text-decoration:none;font-size:13px;color:#00aa00;line-height:28px;}<BR>
+    &lt;/STYLE&gt;<BR>
+    &lt;SCRIPT language=&quot;JavaScript&quot;&gt;<BR>
+    <SPAN class="red">function click()</SPAN>{<BR>
+    alert('您这是干什么呢？')  //点击右键时，弹出警告框，屏蔽右键<BR>
+    return false;<BR>
+    }</P>
+  <P>function sc(){<BR>
+    <SPAN class="red">window.external.addFavorite('http://www.taobao.com','淘宝网')</SPAN>    //收藏本站<BR>
+    }<BR>
+  </P>
+  <P> function detectBrowser()<BR>
+    { <BR>
+    <SPAN class="red">var sAgent = navigator.userAgent.toLowerCase();</SPAN>//浏览器名称转化为小写<BR>
+    this.isIE = (sAgent.indexOf(&quot;msie&quot;)!=-1);   //IE6.0-7浏览器<BR>
+    this.isFF = (sAgent.indexOf(&quot;firefox&quot;)!=-1);  //firefox浏览器<BR>
+    this.isSa = (sAgent.indexOf(&quot;safari&quot;)!=-1);  //safari浏览器<BR>
+    this.isOp = (sAgent.indexOf(&quot;opera&quot;)!=-1);  //opera浏览器<BR>
+    this.isNN = (sAgent.indexOf(&quot;netscape&quot;)!=-1);   //netscape浏览器<BR>
+    this.isMa =(sAgent.indexOf(&quot;maxthon&quot;)!=-1);  //maxthon浏览器<BR>
+    this.isOther = (!this.isIE &amp;&amp; !this.isFF &amp;&amp; !this.isSa &amp;&amp; !this.isOp &amp;&amp; !this.isNN &amp;&amp; !this.isSa);   //未知的浏览器<BR>
+    if(this.isIE)<BR>
+    document.write(&quot;\nIE浏览器&quot;);<BR>
+    if(this.isFF)<BR>
+    document.write(&quot;\nfirefox浏览器&quot;);<BR>
+    if(this.isSa)<BR>
+    document.write(&quot;\nsafari浏览器&quot;);<BR>
+    if(this.isOp)<BR>
+    document.write(&quot;\nopera浏览器&quot;);<BR>
+    if(this.isNN)<BR>
+    document.write(&quot;\nnetscape浏览器&quot;);<BR>
+    if(this.isMa)<BR>
+    document.write(&quot;\nMaxthon浏览器&quot;);<BR>
+    if(this.isOther)<BR>
+    document.write(&quot;\n您的浏览器未知&quot;);<BR>
+    }<BR>
+  </P>
+  <P><SPAN class="red">document.oncontextmenu=click;</SPAN><BR>
+    &lt;/SCRIPT&gt;<BR>
+    &lt;/HEAD&gt;</P>
+  <P>&lt;BODY topmargin=&quot;0&quot;&gt;&lt;div&gt;<BR>
+    &lt;TABLE width=&quot;765&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; align=&quot;center&quot; background=&quot;image/taobao-top.jpg&quot; height=&quot;155&quot; &gt;<BR>
+  &lt;TR&gt;&lt;TD width=&quot;50%&quot;&gt;&lt;/TD&gt;<BR>
+  &lt;TD valign=&quot;top&quot;&gt;&lt;A  style=&quot;cursor:hand&quot;  <SPAN class="red">onClick=&quot;this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.taobao.com');return false;&quot;</SPAN> &gt; <BR>
+    【设为首页】&lt;/A&gt;&amp;nbsp;&amp;nbsp;&lt;A <SPAN class="red">href=&quot;javascript:sc()&quot;</SPAN>&gt;【收藏本站】&lt;/A&gt;&lt;BR&gt;您的浏览器类型：&lt;FONT color=&quot;#FF0000&quot;&gt;&lt;SCRIPT language=&quot;JavaScript&quot;&gt;<SPAN class="red">detectBrowser()</SPAN><BR>
+  &lt;/SCRIPT&gt;&lt;/FONT&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;<BR>
+  &lt;/TABLE&gt;&lt;/div&gt;&lt;/BODY&gt;<BR>
+  &lt;/HTML&gt;</P>
+</DIV>
+四、制作一个可以实现设为首页、收藏本站、屏蔽右键、判断浏览器功能的网页，<A href="zy.html" target="_blank">网页样例查看</A>
+</DIV>
+</BODY>
+</HTML>

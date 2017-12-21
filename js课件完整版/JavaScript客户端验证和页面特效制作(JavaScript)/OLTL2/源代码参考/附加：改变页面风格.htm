@@ -1,0 +1,113 @@
+<HTML>
+<HEAD>
+<TITLE>css改变页面风格</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<SCRIPT language="JavaScript">
+function click(){
+alert('您这是干什么呢？')  //点击右键时，弹出警告框，屏蔽右键
+return false;
+// oncontextmenu="return false;"
+}
+
+function sc(){
+window.external.addFavorite('http://www.taobao.com','淘宝网')    //收藏本站
+}
+
+
+	function detectBrowser()
+	{	
+		var sAgent = navigator.userAgent.toLowerCase();
+		this.isIE = (sAgent.indexOf("msie")!=-1);   //IE6.0-7浏览器
+		this.isFF = (sAgent.indexOf("firefox")!=-1);  //firefox浏览器
+		this.isSa = (sAgent.indexOf("safari")!=-1);  //safari浏览器
+		this.isOp = (sAgent.indexOf("opera")!=-1);  //opera浏览器
+		this.isNN = (sAgent.indexOf("netscape")!=-1);   //netscape浏览器
+		this.isMa =(sAgent.indexOf("maxthon")!=-1);  //maxthon浏览器
+		this.isOther = (!this.isIE && !this.isFF && !this.isSa && !this.isOp && !this.isNN && !this.isSa);   //未知的浏览器
+	if(this.isIE)
+	document.write("\nIE浏览器");
+	if(this.isFF)
+	document.write("\nfirefox浏览器");
+	if(this.isSa)
+	document.write("\nsafari浏览器");
+	if(this.isOp)
+	document.write("\nopera浏览器");
+	if(this.isNN)
+	document.write("\nnetscape浏览器");
+	if(this.isMa)
+	document.write("\nMaxthon浏览器");
+	if(this.isOther)
+	document.write("\n您的浏览器未知");
+	}
+
+
+document.oncontextmenu=click;
+</SCRIPT>
+
+
+<SCRIPT>
+function c(css)
+{document.getElementById('up').className=css;}
+</SCRIPT>
+<STYLE>
+TABLE,td,div {FONT-SIZE: 9pt;line-height:13pt;  }
+/*设置各种背景及字体颜色样式表*/
+.yellow {
+ BORDER-RIGHT: #8a6100 2px solid; BORDER-TOP: #ffe3a4 2px solid; BORDER-LEFT: #ffe3a4 2px solid; COLOR: #ffff00; BORDER-BOTTOM: #8a6100 2px solid; BACKGROUND-COLOR: #e19d00
+}
+.blue {
+ BORDER-RIGHT: #002200 2px solid; BORDER-TOP: #a6c1df 2px solid; BORDER-LEFT: #a6c1df 2px solid; COLOR: #ffffff; BORDER-BOTTOM: #002200 2px solid; BACKGROUND-COLOR: #3a6ea5
+}
+.green {
+ BORDER-RIGHT: #002200 2px solid; BORDER-TOP: #b9ffb9 2px solid; BORDER-LEFT: #b9ffb9 2px solid; COLOR: #ffff00; BORDER-BOTTOM: #002200 2px solid; BACKGROUND-COLOR: #008000
+}
+.menu {
+ BORDER-RIGHT: #000000 2px solid; BORDER-TOP: #ffffff 2px solid; BORDER-LEFT: #ffffff 2px solid; COLOR: #000080; BORDER-BOTTOM: #000000 2px solid; BACKGROUND-COLOR: #d8d8d0
+}
+.menu1 {
+ BORDER-RIGHT: #000000 2px solid; BORDER-TOP: #adbac9 2px solid; BORDER-LEFT: #adbac9 2px solid; COLOR: #ffffff; BORDER-BOTTOM: #000000 2px solid; BACKGROUND-COLOR: #637994
+}
+.blue1 {
+ BORDER-RIGHT: #000000 2px solid; BORDER-TOP: #d0ecff 2px solid; BORDER-LEFT: #d0ecff 2px solid; COLOR: #ffff00; BORDER-BOTTOM: #000000 2px solid; BACKGROUND-COLOR: #0099ff
+}
+.black {
+ BORDER-RIGHT: #000000 2px solid; BORDER-TOP: #d0d0d0 2px solid; BORDER-LEFT: #d0d0d0 2px solid; COLOR: #ffffff; BORDER-BOTTOM: #000000 2px solid; BACKGROUND-COLOR: #000000
+}
+</STYLE>
+</HEAD>
+<BODY class="blue" id="up">
+<TABLE cellspacing=0 cellpadding=0 width=400 border=0 align="center">
+  <TR style="CURSOR: hand; ">
+    <TD class="menu" onClick='c("menu")' align=middle width=50 >灰</TD>
+    <TD class="green" onClick='c("green")' align=middle width=50>绿</TD>
+    <TD class="blue "onClick='c("blue")' align=middle width=50>蓝</TD>
+    <TD class="yellow" onClick='c("yellow")' align=middle width=50>黄</TD>
+    <TD class="menu1" onClick='c("menu1")' align=middle width=50>灰1</TD>
+    <TD class="blue1" onClick='c("blue1")' align=middle width=50>浅蓝</TD>
+    <TD class="black" onClick='c("black")' align=middle width=50>黑</TD>
+    </TR></TABLE>
+	<TABLE width="75%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <TR>
+    <TD><br>设为首页、收藏本站、屏蔽右键、浏览器判断功能如下：<br><br><b><A  style="cursor:hand"  onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.taobao.com');return false;" > 
+      【设为首页】</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A  style="cursor:hand" onClick="javascript:sc()">【收藏本站】</A><BR><BR>您的浏览器类型：<SCRIPT language="JavaScript">detectBrowser()
+</SCRIPT></b><BR><BR><BR><BR></TD>
+  </TR>
+  <TR>
+    <TD>　　HTML语言的另一个重要特点就是能够把文本、图像、动画、音乐等多种媒体相结合，设计出图文并茂、动静结合的页面。这一章我们将介绍如何制作一个完整的丰富多彩的网页。 
+      <BR>
+      4.1语言字符集
+      <P>　制作网页的时候，首先需要定义网页语言，以便访问者浏览器自动设置语言。一般情况下，我们都是取默认值。语言字符集的定义在网页首部〈head〉〈/head〉部分完成，基本格式是：</P>
+      <P>meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot;〉</P>
+      <P>　gb2312代表简体中文，也可以根据需要选取其它语言。<BR>
+        　　也可以在HTML标记中用LANG属性规定当前标记使用的语言，语法分析软件可以使用这个属性对引用、数字等来确定如何显示特定语言选项。</P>
+      <P>4.2文字颜色及风格</P>
+      <P>　　HTML语言用〈font〉标记定义文本的字体。〈font〉标记有多种属性用于定义字体字面、尺寸和颜色等，常用的〈font〉标记属性有：</P>
+      <P>　　Color 设置字体所使用的颜色。在html中，颜色通常采用6位16进制数值，格式为#xxxxxx，第一二位表示红色值，三四位为绿色值，五六位代表蓝色值，#000000代表黑色，#FFFFFF是白色。颜色也可以用逻辑值表示，如：black（黑色），olive（橄榄色），teal（呈绿色的蓝色），red（红色），blue（蓝色），maroon（栗色），navy（藏青色），gray（灰色），white（白色），green（绿色），purple（紫色），yellow（黄色），aqua（浅绿色）等。</P>
+      <P>size=±n〉。用第二种方法时“＋”号表示字体变大，“－”号表示字体变小。 </P></TD>
+  </TR>
+  <TR>
+    <TD>&nbsp;</TD>
+  </TR>
+</TABLE>
+
+	</BODY></HTML>

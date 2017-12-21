@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>无标题文档</TITLE>
+<SCRIPT type="text/javascript">
+function showDiv(){
+	var mType=document.myform.moneyType.value;
+	if(mType=="1"){
+		document.getElementById("mix").style.display="block";
+	}else{
+		document.getElementById("mix").style.display="none";
+	}
+}
+</SCRIPT>
+<STYLE type="text/css">
+td{font-size:12px}
+</STYLE>
+</HEAD>
+
+<BODY>
+<FORM action="" method="get" name="myform">
+<TABLE width="381" border="0" cellspacing="0" cellpadding="0">
+  <TR>
+    <TD ><IMG src="images/top.gif"></TD>
+  </TR>
+  <TR><TD><IMG src="images/u02.gif"></TD></TR>
+  <TR>
+    <TD background="images/bg011_r3_c3.gif" style="background-repeat:no-repeat; padding-left:30px">
+	<TABLE width="368" height="104" border="1" cellpadding="0" cellspacing="0" bgcolor="#B3D9FF">
+	  <TR>
+		<TD width="127" align="center">贷款类别:</TD>
+		<TD width="350" align="center">
+			<SELECT name="moneyType" onChange="showDiv()">
+			<OPTION selected>--选择贷款类型--</OPTION>
+			  <OPTION value="1">组合型贷款</OPTION>
+			  <OPTION value="2">商业贷款</OPTION>
+			  <OPTION value="3">公积金贷款</OPTION>
+			</SELECT>
+		<DIV id="mix" style="display:none">
+		<TABLE  border="0" cellspacing="0" cellpadding="0">
+		  <TR>
+			<TD colspan="2">组合类型:</TD>
+			</TR>
+		  <TR>
+			<TD>商业性：</TD>
+			<TD><INPUT name="txtCommical" type="text">元</TD>
+		  </TR>
+		  <TR>
+			<TD>公积金：</TD>
+			<TD><INPUT name="txtGJJ" type="text">元</TD>
+		  </TR>
+		</TABLE>
+		</DIV>	
+	</TD>
+  </TR>
+  <TR>
+    <TD align="center">计算方式:</TD>
+    <TD align="center">
+	<IMG src="images/pic1.gif">	</TD>
+  </TR>
+  </TABLE>
+  </TD>
+ </TR>
+ <TR>
+    <TD colspan="2"><IMG src="images/bg011_r4_c3.gif"></TD>
+ </TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

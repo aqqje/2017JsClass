@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<SCRIPT type="text/javascript">
+var c=0
+var t
+function timedCount()
+{
+document.getElementById('txt').value=c
+c=c+1
+t=setTimeout("timedCount()",1000)
+}
+
+function stopCount()
+{
+clearTimeout(t)
+}
+</SCRIPT>
+</HEAD>
+
+<BODY >
+<center>
+<FORM>
+  <P>
+    秒数显示
+      <INPUT type="text" id="txt">
+    </P>
+  <P>
+    <INPUT name="button" type="button" onClick="timedCount()" value="开始计数">
+    &nbsp; 
+      <INPUT type="button" value="停止计数" onClick="stopCount()">
+    </P>
+</FORM>
+<P>&nbsp;</P>
+</center>
+</BODY>
+
+</HTML>
+
+

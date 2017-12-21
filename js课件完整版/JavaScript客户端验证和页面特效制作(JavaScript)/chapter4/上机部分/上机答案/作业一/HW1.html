@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>JAVASCRIPT改变CSS样式</TITLE>
+<STYLE type="text/css">
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+.textboder { border:1 solid  #FF8080}
+.mouseOverStyle{
+   background-image: url(images/back2.jpg);
+   color:#CC0099;
+   border:0 px;
+	margin: 0px;
+	padding: 0px;
+	height: 23px;
+	width: 82px;
+	font-size: 14px;	  
+}
+.mouseOutStyle{
+   background-image:url(images/backbutton.gif);
+   color:#0000FF;
+   border:0 px;
+   margin: 0px;
+   padding: 0px;
+   height: 23px;
+   width: 82px;
+   font-size: 14px;	  
+}
+</STYLE>
+
+<SCRIPT type="text/javascript" language="javascript">
+function show(desc){
+	document.getElementById("result").value=desc;
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<TABLE width="361" height="182">
+ <tr>
+  <Td width="353" height="42"><H2>哪个是你最喜欢的游戏</H2></Td>
+ </tr>
+ <TR>
+  <TD>
+	<A href="javascript:show('大海战2')"  onMouseOver="this.style.fontSize='18px'" onMouseOut="this.style.fontSize='14px'">大海战2</A><BR><BR>
+	<A href="javascript:show('仙剑奇侠传')"  onMouseOver="this.style.fontSize='18px'" onMouseOut="this.style.fontSize='14px'"> 仙剑奇侠传</A><BR><BR>
+	<A href="javascript:show('联合进攻')"  onMouseOver="this.style.fontSize='18px'" onMouseOut="this.style.fontSize='14px'"> 联合进攻</A><BR>
+  </TD>
+ </TR>
+ <TR>
+   <TD>
+	你选择的是
+  	<INPUT type="text" name="res"  id="result"  onMouseOver="this.style.borderColor='green'" onMouseOut="this.style.borderColor=''">
+  	<INPUT type="button" value=" 确 认 " class="mouseOutStyle" onMouseOver="this.className='mouseOverStyle'"   onMouseOut="this.className='mouseOutStyle'">
+	</TD>
+ </TR>
+</TABLE>
+
+
+</BODY>
+</HTML>

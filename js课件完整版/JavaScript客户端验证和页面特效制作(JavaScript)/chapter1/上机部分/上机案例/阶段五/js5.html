@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>javascript基本语法</TITLE>
+<STYLE type="text/css">
+/*细边框的文本输入框*/
+.textBaroder
+{
+	border-width:1px;
+	border-style:solid
+}
+ 
+</STYLE>
+<SCRIPT  language="javascript">
+  function calculator(op)
+  {
+     var num1,num2;
+	 num1=parseFloat(document.form.txtNum1.value); //数据类型转换
+	 num2=parseFloat(document.form.txtNum2.value); //数据类型转换
+	 if (op=="+")		//判断操作类型
+	    document.form.txtResult.value=num1+num2  ;
+     if (op=="-")
+	    document.form.txtResult.value=num1-num2  ;
+     if (op=="*")
+	    document.form.txtResult.value=num1*num2  ;
+     if (op=="/"  &&  num2!=0)		//num2！=0  被除数不能为0
+	    document.form.txtResult.value=num1/num2   ;
+  }
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM name="form" method="get" action="">
+<TABLE width="298" height="132" bgcolor="#66B3FF" border="1"  align="center">
+  <TR>
+    <TD height="35" colspan="3"><H3>计算器</H3></TD>
+  </TR>
+  <TR  >
+    <TD width="89" height="24"  align="right" >第一个数</TD>
+    <TD width="130"><INPUT name="txtNum1" type="text" class="textBaroder" size="10"></TD>
+    <TD width="65" rowspan="3" align="center" >
+	<INPUT name="addButton2" type="button"  value="  +  " onClick="calculator('+')"><BR>   
+	<INPUT name="subButton2" type="button"  value="  -  " onClick="calculator('-')"><BR>      
+	<INPUT name="mulButton2" type="button"  value="  x  " onClick="calculator('*')"><BR>     
+	<INPUT name="divButton2" type="button"  value="  /  " onClick="calculator('/')"><BR>
+	</TD>
+  </TR>
+  <TR  >
+    <TD height="29" align="right" >第二个数</TD>
+    <TD><INPUT name="txtNum2" type="text" class="textBaroder"   size="10"></TD>
+  </TR>
+  <TR>
+    <TD height="32" align="right" >计算结果</TD>
+    <TD><INPUT name="txtResult" type="text" class="textBaroder"  size="10"></TD>
+  </TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

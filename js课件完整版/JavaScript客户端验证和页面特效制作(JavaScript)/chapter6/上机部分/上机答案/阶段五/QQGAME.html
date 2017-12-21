@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>动态显示内容</TITLE>
+<SCRIPT language=JavaScript>
+function showDiv(id)
+{
+	for(var i=1;i<=4;i++){
+		if(i==id){
+			document.getElementById("pic"+id).style.display="block";
+		}else{
+			document.getElementById("pic"+i).style.display='none';
+		}
+	} 
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM name="myform" id="myform">
+<TABLE width="850"   align="center" cellpadding="0" cellspacing="0" background="images/98.gif">
+  <TR>
+    <TD colspan="3" align="center"><IMG src="images/98_01.jpg"></TD>
+  </TR>
+
+  <TR  align="center" valign="middle">
+    <TD height="40" colspan="3" bgcolor="#95CAFF">角色职业介绍</TD>
+  </TR>
+  <TR   bgcolor="#B0D8FF">
+    <TD width="173" height="239"  style="padding-left:100"><INPUT name="art" type="radio" value="1" onClick="showDiv('1')" checked="checked">剑侍<BR>
+	<INPUT name="art" type="radio" value="2" onClick="showDiv('2')">豪杰<BR>
+	<INPUT name="art" type="radio" value="3" onClick="showDiv('3')">阴阳士<BR>
+	<INPUT name="art" type="radio" value="4" onClick="showDiv('4')">仙术士<BR>
+	</TD>
+    <TD width="675">
+			<DIV id="pic1" style="position:absolute; left: 280px; top: 340px;"><IMG src="images/jszy_01.jpg"></DIV>
+			<DIV id="pic2" style="display:none; position:absolute; left: 280px; top: 340px;"><IMG src="images/jszy_03.jpg"></DIV>
+			<DIV id="pic3" style="display:none; position:absolute; left: 280px; top: 340px;"><IMG src="images/jszy_05.jpg"></DIV>
+			<DIV id="pic4" style="display:none; position:absolute; left: 280px; top: 340px;"><IMG src="images/jszy_07.jpg"></DIV>
+	</TD>
+    </TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

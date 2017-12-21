@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>javascript基本语法三</TITLE>
+<SCRIPT type="text/javascript" language="javascript">
+function cal(){
+	var value=document.form.txtYear.value
+	var year=parseInt(value);	//类型转换
+    if ( year% 4==0  &&  !(year % 100==0)  ||  year % 400==0 ) {  //判断是否为闰年
+        document.write(year+"年是闰年");  //闰年的输出
+		document.write(" <A href='js4.html'>重新输入</A>");
+     } else {
+        document.write(year+"年是平年");  //平年的输出
+		document.write(" <A href='js4.html'>重新输入</A>");
+     }
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM action="" method="get" name="form">
+ 请输入需要判断闰年的年份:<BR>
+ <INPUT name="txtYear" type="text"  maxlength="4">
+ <INPUT name="sub" type="button" value="计算"  onClick="cal()"><BR>
+
+ 
+</FORM>
+</BODY>
+</HTML>

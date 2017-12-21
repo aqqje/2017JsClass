@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>getElementByName</TITLE>
+<SCRIPT language="javascript">
+function checkAll(checked)
+{
+   var allCheckBoxs=document.getElementsByName("isBuy") ;
+   for (var i=0;i<allCheckBoxs.length ;i++)
+   {
+       if(allCheckBoxs[i].type=="checkbox"){  //可能有重名的其他类型元素，如图片、控件等，所以要判断类型
+	   		allCheckBoxs[i].checked=checked;
+
+		}
+   }  
+}
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+<FORM action="" name="buyForm" method="post">
+<TABLE width="984"  border="0">
+  <TR>
+    <TD colspan="2"><IMG src="images/top.jpg" ></TD>
+  </TR>
+  <TR>
+    <TD width="176" align="center"><FONT size="-1">全选/取消</FONT><BR>
+      <INPUT name="selectall" type="checkbox" id="selectall" onClick="checkAll(this.checked)"></TD>
+    <TD width="824" align="center"><IMG src="images/menu2.jpg" ></TD>
+  </TR>
+  <TR>
+    <TD height="113" align="center"><INPUT name="isBuy" type="checkbox" id="isBuy" value="sanguo"></TD>
+    <TD><IMG src="images/1.JPG"></TD>
+  </TR>
+  <TR>
+    <TD colspan="2" align="center"><HR noshade="noshade" style="border:1px  #CCCCCC dashed " /></TD>
+    </TR>
+  <TR>
+    <TD align="center"><INPUT name="isBuy" type="checkbox" id="isBuy" value="paozhu"></TD>
+    <TD><IMG src="images/2.JPG"></TD>
+  </TR>
+  <TR>
+    <TD colspan="2" align="center"><HR noshade="noshade" style="border:1px  #CCCCCC dashed " /></TD>
+    </TR>
+  <TR>
+    <TD align="center"><INPUT name="isBuy" type="checkbox" id="isBuy" value="paozhu"></TD>
+    <TD><IMG src="images/3.JPG" ></TD>
+  </TR>
+  <TR>
+    <TD colspan="2" align="center"><HR noshade="noshade" style="border:1px  #CCCCCC dashed " /></TD>
+    </TR>
+  <TR>
+    <TD align="center"><INPUT name="isBuy" type="checkbox" id="isBuy" value="jingwu"></TD>
+    <TD><IMG src="images/4.JPG" ></TD>
+  </TR>
+  <TR>
+    <TD colspan="2" align="center"><HR noshade="noshade" style="border:1px  #CCCCCC dashed " /></TD>
+    </TR>
+	  <TR>
+    <TD colspan="2" align="center"><IMG src="images/foot.jpg" width="963" height="88" ></TD>
+    </TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

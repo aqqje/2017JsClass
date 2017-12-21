@@ -1,0 +1,19 @@
+1、
+function checkAll(boolValue )
+{
+   alert("asdf");
+  
+   var allCheckBoxs=document.getElementsByName("isBuy") ;
+   
+   alert(allCheckBoxs[0].type);  
+   for (var i=0;i<allCheckBoxs.length ;i++)
+   {
+       if(allCheckBoxs[i].type="checkbox")  //写为等号了
+	      allCheckBoxs[i].checked=boolValue ;
+   }  
+}
+
+2、
+调用时，不要加'false'，false和'false'的含义不一样
+<TD width="6%"><A href="javascript: checkAll('true')">全选 <A href="#"></A></TD>
+<TD width="6%"><A href="javascript: checkAll('false')">全不选</A></TD>

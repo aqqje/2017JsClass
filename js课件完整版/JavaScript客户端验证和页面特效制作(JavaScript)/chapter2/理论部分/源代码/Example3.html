@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+<TITLE>window对象</TITLE>
+<SCRIPT language="javascript">
+function openwindow( ) 
+{
+  window.status="系统当前状态：您正在注册用户......";
+  if (window.screen.width == 1024 && window.screen.height == 768)
+    open("register.html", "注册窗口", "toolbars=0, location=0, statusbars=0, menubars=0,width=700,height=550,scrollbars=1");
+  else
+    window.alert("请设置分辨率为1024x768，然后再打开");
+
+}
+function closewindow( )
+{
+  if(window.confirm("您确认要退出系统吗？"))
+    window.close( );
+}
+</SCRIPT>
+<STYLE type="text/css">
+<!--
+body {
+	background-color: #CCCCCC;
+}
+-->
+</STYLE>
+
+</HEAD>
+
+<BODY>
+<TABLE border="0" align="center" bgcolor="#FFFFFF">
+  <TR>
+    <TD><IMG src="images/head.jpg" width="761" height="389"></TD>
+  </TR>
+  <TR>
+    <TD ><IMG src="images/foot.jpg" width="502" height="90" align="top">
+      <INPUT type="button" name="regButton" value=" 用户注册 "  onclick="openwindow( )">
+      <INPUT type="button" name="exitButton" value=" 退 出 "  onclick="closewindow( )"></TD>
+    </TR>
+</TABLE>
+</BODY>
+</HTML>

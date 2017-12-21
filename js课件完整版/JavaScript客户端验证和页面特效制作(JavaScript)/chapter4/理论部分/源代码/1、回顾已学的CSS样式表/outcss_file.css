@@ -1,0 +1,28 @@
+/* CSS Document */
+/*设置无下划线的超连接样式*/
+A {
+	color: blue;
+	text-decoration: none;
+   }       
+  A:hover{ /*鼠标在超链接上悬停时变为颜色*/
+   color: red;
+   }
+
+/*设置细边框样式*/  
+.boxBorder{
+	border-width:1px;
+	border-style:solid;
+	
+}
+
+/*设置图片按钮样式*/  
+.picButton{
+   background-image: url(images/back1.jpg);
+   color:#0000FF;
+   border:0 px;
+   margin: 0px;
+   padding: 0px;
+   height: 23px;
+   width: 82px;
+   font-size: 14px;	  
+}

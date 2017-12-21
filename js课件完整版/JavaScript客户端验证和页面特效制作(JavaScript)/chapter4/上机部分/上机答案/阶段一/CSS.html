@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>改变样式</TITLE>
+ 
+<STYLE type="text/css" >
+.tablelogin { border:1 solid #C9F98E; width:813; background-image:url(images/list-bg.gif)}
+.td1 {color:#FF8951; font-weight:bold; text-align:center}
+/*设置细边框样式*/  
+.textboder { border:1 solid #C9F98E}
+/*设置无下划线的超连接样式*/
+A {
+	color: blue;
+	text-decoration: none;
+	font-size:12px
+   }       
+ /*鼠标移入时调用的样式*/
+.mouseOverStyle{
+   background-image: url(images/bgbtn2.jpg);
+   color:#CC0099;
+   border:0 px;
+	margin: 0px;
+	padding: 0px;
+	height: 23px;
+	width: 82px;
+	font-size: 14px;	  
+}
+ /*鼠标移出时调用的样式*/
+.mouseOutStyle{
+   background-image:url(images/bgbtn1.jpg);
+   color:#0000FF;
+   border:0 px;
+   margin: 0px;
+   padding: 0px;
+   height: 23px;
+   width: 82px;
+   font-size: 14px;	  
+}
+</STYLE>
+</HEAD>
+
+<BODY>
+<FORM action="" method="post">
+<TABLE height="261" align="center" cellpadding="0" cellspacing="0"  class="tablelogin">
+<TR><TD height="102" colspan="2"><IMG src="images/top.jpg"></TD>
+</TR>
+<TR><TD colspan="2">&nbsp;</TD></TR>
+<TR>
+  <TD height="48" colspan="2" class="td1">欢 迎 来 到  腾 讯 客 服 中 心</TD>
+</TR>
+<TR>
+  <TD width="444" height="23" align="right">会员名：&nbsp;&nbsp;</TD>
+  <TD width="454"><INPUT type="text" class="textboder" onMouseOver="this.style.borderColor='red'" onMouseOut="this.style.borderColor=''"></TD>
+</TR>
+<TR>
+<TD height="32" align="right">密码：&nbsp;&nbsp;</TD>
+<TD><INPUT type="text" class="textboder" onMouseOver="this.style.borderColor='red'" onMouseOut="this.style.borderColor=''"></TD>
+</TR>
+<TR>
+<TD  colspan="2" align="center"><INPUT type="button" value="  登 录  " class="mouseOutStyle" onMouseOver="this.className='mouseOverStyle'"   onMouseOut="this.className='mouseOutStyle'">
+<DIV style="position:absolute; left: 564px; top: 251px;"><A href="#">忘记密码</A></DIV></TD>
+</TR>
+</TABLE>
+</FORM >
+</BODY>
+<P>&nbsp;</P>
+<P></P>
+</BODY>
+</HTML>

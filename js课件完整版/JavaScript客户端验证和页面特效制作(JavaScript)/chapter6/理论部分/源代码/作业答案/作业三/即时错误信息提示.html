@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>错误信息提示</TITLE>
+<STYLE type="text/css">
+.center{border:1 solid #999999}
+td{margin-right:10px; font-size:12px; vertical-align:top}
+</STYLE>
+<SCRIPT type="text/javascript">
+function emailFocus(){
+	var email = document.myform.email.value;
+	if(email==""){
+		document.getElementById("err1").innerHTML="<IMG src='images/error_arrow_bg.jpg'><IMG src='images/err1.jpg'>";
+	    }
+		document.getElementById("note1").style.display="none";
+    }
+function showNote(){
+	document.getElementById("note1").style.display="block";
+	document.getElementById("err1").innerHTML="";
+}
+function showNote2(){
+	document.getElementById("note2").style.display="block";
+	document.getElementById("err2").innerHTML="";
+}
+function passFocus(){
+	var pass = document.myform.pass.value;
+	if(pass==""){
+		document.getElementById("err2").innerHTML="<IMG src='images/error_arrow_bg.jpg'><IMG src='images/err1.jpg'>";
+	}
+		document.getElementById("note2").style.display="none";
+}
+/*function transValue(value){
+	 document.myform.rpass.value=document.myform.rpass.value+String.fromCharCode(value);
+}*/
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<DIV align="center"><IMG src="images/top.jpg"></DIV>
+<FORM name="myform" action="" method="post">
+<TABLE align="center" class="center">
+<TR>
+<TD height="343" align="center">
+<TABLE width="760" height="385">
+<TR>
+<TD height="154" colspan="3"><IMG src="images/content1.jpg" width="760"></TD>
+</TR>
+<TR>
+<TD width="300" height="49" align="right">选择你的雅虎邮箱:</TD>
+<TD width="150" align="left"><INPUT name="email" type="text" size="20" onBlur="emailFocus()" onFocus="showNote()"></TD>
+<TD width="302" >
+<DIV style="display:none" id="note1"><IMG src="images/note1.jpg"></DIV>
+<DIV  style="display:inline" id="err1"></DIV>
+</TD>
+</TR>
+<TR>
+<TD width="300" height="48" align="right">密码:</TD>
+<TD width="150" align="left"><INPUT name="pass" type="password" size="20" onBlur="passFocus()" onFocus="showNote2()"></TD>
+<TD width="302"  rowspan="2" valign="top">
+<DIV  style="display:none" id="note2"><IMG src="images/note2.jpg"></DIV>
+<DIV  style="display:inline" id="err2"></DIV>
+</TD>
+</TR>
+<TR>
+<TD width="300" height="58" align="right">再次输入密码:</TD>
+<TD width="150" align="left"><INPUT name="rpass" type="password" size="20" ></TD>
+<TD width="1">
+<DIV  style="display:inline" id="err3"></DIV></TD>
+</TR>
+<TR>
+<TD colspan="3" align="center"><IMG src="images/sign_up.gif"></TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

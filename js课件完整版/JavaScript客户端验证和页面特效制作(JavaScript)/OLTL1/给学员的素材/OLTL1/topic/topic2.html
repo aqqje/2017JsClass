@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>树形菜单</TITLE>
+<STYLE type="text/css">
+DIV {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 22px;
+}
+A{FONT-SIZE: 13px; COLOR: #000000; TEXT-DECORATION: none}
+A:hover {FONT-SIZE: 13px; COLOR: #999999}
+.red {color: #FF0000}
+</STYLE>
+<SCRIPT language="JavaScript">
+function show(d1){
+if(document.getElementById(d1).style.display=='none'){
+document.getElementById(d1).style.display='block';  //触动的层如果处于隐藏状态，即显示
+}
+else{document.getElementById(d1).style.display='none';  //触动的层如果处于显示状态，即隐藏
+}
+}
+</SCRIPT>
+</HEAD>
+
+<BODY ONCONTEXTMENU="return false;">
+
+<!--树形菜单解释说明开始-->			
+<DIV>
+一、树形菜单效果（<FONT class="red">鼠标点击下面的菜单查看效果</FONT>）<BR>
+<!--树形菜单开始-->  
+<DIV style="padding-left:100px;">
+  <DIV><FONT color="#CC0000" ><B><IMG src="image/fold.gif" width="16" height="16" align="absmiddle">树形菜单：</B></FONT></DIV>       
+<A href="javascript:onClick=show('1') "><IMG src="image/fclose.gif"  border="0" align="absmiddle" >文学艺术</A>
+<DIV id="1" style="display:none"><IMG src="image/doc.gif" align="absmiddle">先锋写作<BR>
+            <IMG src="image/doc.gif" align="absmiddle">小说散文<BR>
+            <IMG src="image/doc.gif" align="absmiddle">诗风词韵<BR>
+            <IMG src="image/doc.gif" align="absmiddle">幻影奇侠<BR>
+            <IMG src="image/doc.gif" align="absmiddle">童话故事</DIV>
+          <DIV><A href="javascript: onClick=show('2') "><IMG src="image/fclose.gif" border="0" align="absmiddle">贴图专区</A></DIV>
+          <DIV id="2" style="display:none"><IMG src="image/doc.gif" align="absmiddle">真我风采<BR>
+            <IMG src="image/doc.gif" align="absmiddle">视频贴图<BR>
+            <IMG src="image/doc.gif" align="absmiddle">行行摄摄<BR>
+            <IMG src="image/doc.gif" align="absmiddle">Flash贴图<BR>
+            <IMG src="image/doc.gif" align="absmiddle">动物世界<BR>
+            <IMG src="image/doc.gif" align="absmiddle">艺术倩影</DIV>
+</DIV>
+<!--树形菜单结束-->  
+  
+  二、实现的思路
+  <DIV style="padding-left:20px;padding-right:10px;">1、制作一级主菜单，例如：文学艺术<BR>
+  <SPAN class="red">< A href="javascript:onClick=show('对应二级菜单的ID名') "></SPAN>< IMG src="image/fclose.gif"  border="0" align="absmiddle" >文学艺术< /A><BR>调用show()函数来实现二级菜单的显示及隐藏<BR>
+  2、用层制作二级菜单<BR>
+   < DIV id="层ID名称"<FONT class="red">style="display:none"</FONT><BR>
+    < IMG src="image/doc.gif" align="absmiddle">先锋写作<BR>
+            < IMG src="image/doc.gif" align="absmiddle">小说散文<BR>
+            < IMG src="image/doc.gif" align="absmiddle">诗风词韵<BR>
+            < IMG src="image/doc.gif" align="absmiddle">幻影奇侠<BR>
+  < IMG src="image/doc.gif" align="absmiddle">童话故事< /DIV><BR>
+  说明：style="display:none"二级层菜单处于隐状态
+  <BR>
+  3、制作效果：当点击“文学艺术”一级菜单时，“先锋写作、小说散文、诗风词韵、幻影奇侠”二级菜单显示，当再次点击“文学艺术”一级菜单时，下面的二级菜单处于隐藏状态，直接点击查看上面的菜单效果<BR>
+ 4、依次制作各级一级、二级菜单
+ </DIV>
+ 三、实现树形菜单的源代码：
+ <DIV style="padding-left:20px;padding-right:10px;background-color:#efefef;">&lt;HTML&gt;<BR>
+   &lt;HEAD&gt;<BR>
+   &lt;META http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot;&gt;<BR>
+   &lt;TITLE&gt;树形菜单&lt;/TITLE&gt;<BR>
+   &lt;STYLE type=&quot;text/css&quot;&gt;<BR>
+   DIV {<BR>
+FONT-SIZE: 13px; COLOR: #000000; LINE-HEIGHT: 22px;<BR>
+}<BR>
+A{FONT-SIZE: 13px; COLOR: #000000; TEXT-DECORATION: none}<BR>
+A:hover {FONT-SIZE: 13px; COLOR: #999999}<BR>
+&lt;/STYLE&gt;<BR>
+&lt;SCRIPT language=&quot;JavaScript&quot;&gt;<BR>
+<SPAN class="red">function show(d1){<BR>
+if(document.getElementById(d1).style.display=='none'){<BR>
+document.getElementById(d1).style.display='block';</SPAN>  //触动的层如果处于隐藏状态，即显示<BR>
+}<BR>
+<SPAN class="red">else{document.getElementById(d1).style.display='none';</SPAN>  //触动的层如果处于显示状态，即隐藏<BR>
+}<BR>
+}<BR>
+&lt;/SCRIPT&gt;<BR>
+&lt;/HEAD&gt;<BR>
+&lt;BODY&gt;<BR>
+&lt;DIV HEIGHT=&quot;30&quot;&gt;&lt;FONT color=&quot;#CC0000&quot; &gt;&lt;B&gt;&lt;IMG src=&quot;image/fold.gif&quot; width=&quot;16&quot; height=&quot;16&quot; align=&quot;absmiddle&quot;&gt;树形菜单：&lt;/B&gt;&lt;/FONT&gt;&lt;/DIV&gt; <BR>
+&lt;A <SPAN class="red">href=&quot;javascript:onClick=show('1')</SPAN> &quot;&gt;&lt;IMG src=&quot;image/fclose.gif&quot;  border=&quot;0&quot; align=&quot;absmiddle&quot; &gt;文学艺术&lt;/A&gt;<BR>
+<SPAN class="red">&lt;DIV id=&quot;1&quot; style=&quot;display:none&quot;&gt;</SPAN>&lt;IMG src=&quot;image/doc.gif&quot; align=&quot;absmiddle&quot;&gt;先锋写作&lt;BR&gt;<BR>
+&lt;IMG src=&quot;image/doc.gif&quot; align=&quot;absmiddle&quot;&gt;小说散文&lt;BR&gt;<BR>
+&lt;IMG src=&quot;image/doc.gif&quot; align=&quot;absmiddle&quot;&gt;诗风词韵&lt;/DIV&gt;<BR>
+&lt;DIV&gt;<SPAN class="red">&lt;A href=&quot;javascript: onClick=show('2') &quot;&gt;</SPAN>&lt;IMG src=&quot;image/fclose.gif&quot; border=&quot;0&quot; align=&quot;absmiddle&quot;&gt;贴图专区&lt;/A&gt;&lt;/DIV&gt;<BR>
+&lt;DIV<SPAN class="red"> id=&quot;2&quot; style=&quot;display:none&quot;</SPAN>&gt;&lt;IMG src=&quot;image/doc.gif&quot; align=&quot;absmiddle&quot;&gt;真我风采&lt;BR&gt;<BR>
+&lt;IMG src=&quot;image/doc.gif&quot; align=&quot;absmiddle&quot;&gt;视频贴图&lt;BR&gt;<BR>
+&lt;IMG src=&quot;image/doc.gif&quot; align=&quot;absmiddle&quot;&gt;行行摄摄&lt;BR&gt;<BR>
+&lt;IMG src=&quot;image/doc.gif&quot; align=&quot;absmiddle&quot;&gt;Flash贴图&lt;/DIV&gt;<BR>
+&lt;/BODY&gt;<BR>
+&lt;/HTML&gt;</DIV>
+ 四、制作水木清华论坛左侧样例树形菜单:<A href="z-0.html" target="_blank">点击查看效果</A><BR>
+
+</DIV>
+</BODY>
+</HTML>

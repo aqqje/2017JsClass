@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>广告</TITLE>
+<SCRIPT language="javascript">
+ 
+var initTop=0;
+function init( )
+{
+   initTop=document.getElementById("advLayer").style.pixelTop;
+}
+function move( )
+{
+    
+    document.getElementById("advLayer").style.pixelTop=initTop+document.body.scrollTop   ;
+	 
+}
+
+	 
+window.onscroll=move ;  //窗口的滚动事件，当页面滚动时调用move( )函数
+
+</SCRIPT>
+</HEAD>
+
+<BODY onLoad="init()">
+<IMG src="images/top.jpg"><IMG src="images/content1.jpg"><IMG src="images/content2.jpg"><IMG src="images/foot.jpg">
+ <DIV id="advLayer" style="position:absolute;	left:16px;	top:80px;	width:295px;	height:176px;	z-index:1;"><A href="#"><IMG src="images/lady_0007.jpg" width="295" height="176" border="0"></A></DIV>
+</BODY>
+</HTML>

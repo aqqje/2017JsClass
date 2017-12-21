@@ -1,0 +1,103 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>TAB和回车事件</TITLE>
+<STYLE type="text/css">
+div{font-size:12px}
+.normal{	/*文本框失去焦点的样式*/
+	padding:5px 5px 5px 25px;
+	border:0px none #FFFFFF;
+}
+.WarningMsg{	/*文本框获得焦点的样式*/
+	padding:5px 5px 5px 25px;
+	border:1px solid #00A8FF;
+	background:#E2F5FF url(images/warning.gif) 5px 5px no-repeat;	
+	color:#000;
+}
+</STYLE>
+<SCRIPT type="text/javascript">
+//将回车事件修改为tab事件
+function changeFocus(){
+//键盘回车键对应的ascii码是13，tab键对应的ascii码是9  
+/*判断按下回车键的控件类型：不能是提交、重置按钮等类型*/    
+if (event.keyCode==13 && event.srcElement.type!='button' && event.srcElement.type!='submit' && event.srcElement.type!='reset' && event.srcElement.type!='textarea' && event.srcElement.type!=''){
+	     event.keyCode=9;
+		 }
+ }
+ //dcument对象的onkeydown事件 
+document.onkeydown= changeFocus  ;  
+//用户名文本框失去焦点
+function userFocus(){
+	var name = document.myform.txtUser.value;
+	document.getElementById("userWord").className="normal";
+	if(name==""){
+		document.getElementById("userError").innerHTML="<FONT color='red' size='-1'>用户名不能为空</FONT>";
+		document.getElementById("userWord").innerHTML="";
+	}else{
+		document.getElementById("userError").innerHTML="";
+	}
+}
+//密码框失去焦点
+function passFocus(){
+	var pass = document.myform.txtPass.value;
+	document.getElementById("passWord").className="normal";
+	if(pass==""){
+		document.getElementById("passError").innerHTML="<FONT color='red' size='-1'>密码不能为空</FONT>";
+		document.getElementById("passWord").innerHTML="";
+	}else{
+		document.getElementById("passError").innerHTML="";
+	}
+}
+////用户名文本框获得焦点
+function showUser(){
+	document.getElementById("userWord").className="WarningMsg";
+	document.getElementById("userWord").innerHTML="包括字母,数字和下划线,长度6-20个字符";
+	document.getElementById("userError").innerHTML="";
+}
+//密码框获得焦点
+function showPass(){
+	document.getElementById("passWord").className="WarningMsg";
+	document.getElementById("passWord").innerHTML="密码长度6-12个字符";
+	document.getElementById("passError").innerHTML="";
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM action="" method="get" name="myform" onSubmit="return checkValue()">
+<TABLE width="381" border="0" cellspacing="0" cellpadding="0" align="center" style="border:1px solid">
+  <TR>
+    <TD><IMG src="images/top.jpg"></TD>
+    </TR>
+	<TR><TD height="10">&nbsp;</TD></TR>
+	 <TR>
+    <TD height="175" align="center" valign="middle">
+	<TABLE width="529" style="border:1px solid">
+	 <TR>
+    	<TD width="105" height="44">用户名：</TD>
+		<TD width="412"><INPUT name="txtUser" type="text" onBlur="userFocus()" onFocus="showUser()"><DIV id="userError" style="display:inline"></DIV>
+		  <DIV id="userWord" class="normal" style="position:absolute; left: 500px; top: 311px; width: 248px;">包括字母,数字和下划线,长度6-20个字符</DIV>  
+		</TD>
+    </TR>
+	<TR>
+		<TD height="48">密码：</TD>
+    	<TD><INPUT name="txtPass" type="password" onBlur="passFocus()" onFocus="showPass()">
+    	  <DIV id="passError" style="display:inline"></DIV>
+    	 <DIV id="passWord" class="normal" style="position:absolute; left: 500px; top: 358px; width: 247px;">密码长度6-12个字符</DIV>  </TD>
+    </TR>
+
+	<TR>
+		<TD height="34" colspan="2" align="center"><INPUT name="submit" type="button" value="同意以下条款并提交"></TD>
+    	</TR>
+	</TABLE> 
+	</TD>
+    </TR>
+  <TR>
+    <TD height="129"><IMG src="images/bottom.jpg"></TD>
+    </TR>
+</TABLE>
+
+
+</FORM>
+</BODY>
+</HTML>

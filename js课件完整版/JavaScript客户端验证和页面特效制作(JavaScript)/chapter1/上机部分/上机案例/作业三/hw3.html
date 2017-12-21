@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>javascript基本语法</TITLE>
+<SCRIPT  language="javascript">
+  function calculator(op)
+  {
+     var num1,num2，num3;
+	 //类型转换
+	 num1=parseFloat(document.form.txtYW.value);
+	 num2=parseFloat(document.form.txtSX.value);
+	 num3=parseFloat(document.form.txtEN.value);
+	 
+	 if (op=="+")		//计算总成绩
+	    document.form.total.value=num1+num2+num3  ;
+     if (op=="/")		//计算平均分
+	    document.form.avg.value=(num1+num2+num3)/3   ;
+  }
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM name="form" method="get" action="">
+<TABLE width="240" height="132" bgcolor="#66B3FF" border="1"  align="center">
+  <TR>
+    <TH width="95">科目</TH>
+	<TH>成绩</TH>
+  </TR>
+ 
+  <TR  align="center">
+    <TD  height="24"   >语文</TD>
+    <TD width="129"><INPUT name="txtYW" type="text" size="10"></TD>
+    
+  </TR>
+  <TR  align="center">
+    <TD height="29">数学</TD>
+    <TD><INPUT name="txtSX" type="text"   size="10"></TD>
+  </TR>
+  <TR align="center">
+    <TD height="32">英语</TD>
+    <TD><INPUT name="txtEN" type="text"  size="10"></TD>
+  </TR>
+   <TR align="center">
+    <TD>
+	<INPUT name="btn1" type="button" value="总成绩" onClick="calculator('+')">
+	</TD>  
+	<TD >
+		<INPUT name="total" type="text"  size="10">
+	</TD>
+	</TR>
+	<TR align="center">
+	<TD >	<INPUT name="btn2" type="button" value="平均分" onClick="calculator('/')">
+	</TD>
+	<TD>
+	<INPUT name="avg" type="text"  size="10">
+	</TD>
+  </TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE = "JavaScript">
+function calcu()
+{
+  var numb1= document.calc.num1.value;
+  var numb2= document.calc.num2.value;
+  var f=document.calc.pay.value;
+  var grade;
+  if ((numb1!="") && (numb2!=""))
+  {
+  if (parseFloat(numb1)<0)
+  {
+    alert("竞拍价格不能小于零！\n请重填");
+    return;
+  }
+   if (parseFloat(numb2)<0)
+  {
+    alert("购买数量不能小于零！\n请重填");
+    return;
+  }
+  var total= parseFloat(numb1)*parseFloat(numb2);
+  switch(parseInt(f))
+  {
+     case 1:
+	    grade=0.6 ;  //打6折优惠
+		break;
+	 case 2:
+	    grade=0.7 ;  //打7折优惠
+		break;
+	 case 3:
+	    grade=0.8 ;  //打8折优惠
+		break;
+	 case 4:
+	    grade=0.9 ;  //打9折优惠
+		break;
+	default:
+	   alert("请重新选择支付方式！");
+	   return;
+	   
+  }
+  var money=total*grade;
+  document.calc.result.value=money; 
+  alert("您享受了"+grade*10+"折优惠！");
+  if ((money>500) &&(money<=1000))
+    alert("购买总价超过500\n支付时将赠送超级Q币2枚！");
+  if ((money>1000) &&(money<=2000))
+   alert("购买总价超过1000\n支付时将赠送IBM光电智能鼠标1只！"); 
+  if ((money>2000))
+   alert("购买总价超过2000\n请直接与贵宾台联系！");
+ }
+ else
+    alert("购买数量或竞拍价格没有填写\n请重新输入！");
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<P>
+<FORM name="calc">
+  <p><font size="5"><IMG src="logo.gif" width="250" height="40"><BR>
+    会说话的QQ竞拍喽！
+    
+  </font><br>
+    <img src="qie.jpg" width="199" height="91">    <br>
+    竞拍价格：
+    <INPUT name="num1" TYPE="text"   value="120" size="15"> 
+    <br>
+    购买数量： 
+    <INPUT TYPE="text" name="num2" size="15"> 
+    <BR>
+    支付方式：    <FONT size="5">
+    <SELECT name="pay" >
+      <OPTION value="">--请选择支付方式--</OPTION>
+      <OPTION value="1">银行转帐</OPTION>
+      <OPTION value="2">电话支付</OPTION>
+      <OPTION value="3">邮政汇款</OPTION>
+      <OPTION value="4">Q币支付</OPTION>
+                                            </SELECT>
+    </FONT><br>
+    预计总价：
+    <INPUT name="result" TYPE="text"  size="20">
+  </p>
+  <P>
+<INPUT name="getAnswer" TYPE="button" id="getAnswer" onClick="calcu()" value="计算看看">
+</FORM>
+</BODY>
+</HTML>

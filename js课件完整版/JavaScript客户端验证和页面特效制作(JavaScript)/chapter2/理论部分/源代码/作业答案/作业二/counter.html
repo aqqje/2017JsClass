@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>窗口练习</TITLE>
+<SCRIPT type="text/javascript" language="javascript">
+function closeWindow(){
+	window.returnValue=document.myform.cardPass.value;
+	window.close();
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM name="myform" action="" method="post">
+账户信息:<BR>
+请妥善保存你的账户信息，以免发生损失<BR>
+帐号：<INPUT name="cardNum" type="text" size="40"><BR>
+密码：<INPUT name="cardPass" type="password" size="45"><BR>
+<INPUT type="button" name="btn" value="确认" onClick="closeWindow()">
+</FORM>
+</BODY>
+</HTML>

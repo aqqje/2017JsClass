@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>日期格式验证</TITLE>
+<STYLE TY="text/css">
+td{font-size:12px}
+</STYLE>
+<SCRIPT type="text/javascript">
+function showDate(){
+	var date1 = document.myform.date1.value;
+	if(date1.length<10){
+		alert("日期格式长度必须是10位");
+		document.myform.date1.focus();
+	}else if((date1.charAt(4)!="/")&&(date1.charAt(7)!="/")){
+		alert("请按照年/月/日的格式输入");
+		document.myform.date1.select();
+	}else{
+		var time = date1.split("/");
+		if(isNaN(time[0])||isNaN(time[1])||isNaN(time[2])){
+			alert("年月日输入必须是数字");
+			document.myform.date1.select();
+		}else{
+		alert("你输入的日期是"+time[0]+"年"+time[1]+"月"+time[2]+"日");
+		}
+	}
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM action="" method="post" name="myform">
+  <TABLE width="338" height="145" border="0" align="center" cellpadding="0" cellspacing="0">
+    <TR>
+      <TD colspan="2" align="center"><H3>格式输入验证</H3></TD>
+    </TR>
+    <TR>
+      <TD width="126">日期格式yyyy/mm/dd</TD>
+      <TD width="212"><INPUT name="date1" type="text" size="20" maxlength="10"></TD>
+    </TR>
+    <TR>
+      <TD colspan="2" align="center"><INPUT name="showdate" type="button" value="显示输入" onClick="showDate()"></TD>
+    </TR>
+  </TABLE>
+</FORM>
+</BODY>
+</HTML>

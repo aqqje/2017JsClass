@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE = "JavaScript">
+
+function calcu(){  //定义calcu( )函数，实现两个数相乘的功能。
+var numb1= document.calc.num1.value; /*定义变量numb1，并获取标单中
+输入的数据：document.表单名.表单元素名.value，然后把获取的表单值赋给变量numb1*/
+var numb2= document.calc.num2.value;
+var total= parseFloat(numb1)*parseFloat(numb2);
+document.calc.result.value=total; 
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM name="calc">
+  <P><IMG src="logo.gif" width="247" height="40"><BR>
+    <font size="5">会说话的QQ竞拍喽！</font><BR>
+    <img src="qie.jpg" width="199" height="91"> <BR>
+    竟拍价格：
+    <INPUT name="num2" TYPE="text" id="num2" value="120" size="15"> <BR>
+    购买数量： 
+    <INPUT TYPE="text" name="num1" size="15"> 
+    <BR>
+    预计总价：
+    <INPUT name="result" TYPE="text"  size="15">
+    </P>
+    <P>
+    <INPUT name="getAnswer" TYPE="button" id="getAnswer" onClick="calcu()"   value="计算看看">
+  </P>
+</FORM>
+</BODY>
+</HTML>
+

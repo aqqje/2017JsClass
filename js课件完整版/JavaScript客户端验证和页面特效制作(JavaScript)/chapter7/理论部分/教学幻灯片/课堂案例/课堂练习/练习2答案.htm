@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>注册</TITLE>
+<SCRIPT language="JavaScript" >
+   function changeTerm( )
+  {
+	 var courseList = new Array( );
+     courseList[0] = ['Java', 'SqlServer基础', 'C#', 'HTML'];
+	 courseList[1] =['JavaScript', 'SqlServer高级', '.NET', 'JSP'];
+     courseList[2] = ['Struts', 'ASP.NET', 'Ajax','Spring','Hibernate'];
+     
+	 //获得学期选项的索引号，如第一学期为1，比对应数组索引号多1
+	 var pIndex=document.myform.selTerm.selectedIndex-1; 
+	 var newOption1;
+	 document.myform.selCourse.options.length=0;
+	 for (var j in courseList[pIndex]) 
+	 {
+         newOption1=new Option(courseList[pIndex][j], courseList[pIndex][j]); 
+		 document.myform.selCourse.options.add(newOption1);
+     }
+  }
+  
+  
+</SCRIPT>
+ </HEAD>
+
+<BODY>
+
+<FORM name="myform" id="myform" action="register_success.htm" onSubmit="return checkForm( )"  >
+
+  <TABLE border="0"  align="center" >
+    <TR>
+      <TD colspan="2" align="center">考 试 申 请</TD>
+    </TR>
+    <TR>
+      <TD>学期</TD>
+      <TD><SELECT name="selTerm"   onChange="changeTerm( )">
+        <OPTION>--请选择学期--</OPTION>
+        <OPTION value="第一学期">第一学期</OPTION>
+        <OPTION value="第二学期">第二学期</OPTION>
+        <OPTION value="第二学年">第二学年</OPTION>
+      </SELECT></TD>
+    </TR>
+    <TR>
+      <TD>课程</TD>
+      <TD><SELECT name="selCourse"   >
+        <OPTION>--请选择对应学期的课程--</OPTION>
+      </SELECT></TD>
+    </TR>
+  </TABLE>
+</FORM>
+
+</BODY>
+</HTML>

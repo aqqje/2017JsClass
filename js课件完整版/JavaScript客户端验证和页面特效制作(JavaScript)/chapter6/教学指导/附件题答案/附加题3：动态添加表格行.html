@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<SCRIPT type="text/javascript">
+function insRow( )
+  {
+  var maxrow=document.getElementById('myTable').rows.length;
+  var x=document.getElementById('myTable').insertRow(maxrow)
+  var y=x.insertCell(0)
+  var z=x.insertCell(1)
+  var d=x.insertCell(2)
+  y.innerHTML="<input class=myInput type=text  size=20   value=''   >" 
+  z.innerHTML="<input class=myInput type=text  size=20   value=''>"
+  d.innerHTML="<input class=myInput type=text  size=20   value=''>"
+  }
+</SCRIPT>
+<STYLE type="text/css">
+.myInput{BORDER: 1px solid;}
+</STYLE>
+</HEAD>
+
+<BODY>
+购买清单
+<TABLE width="276" border="1" id="myTable">
+<TR>
+<TD width="136">购买物品</TD>
+<TD width="124"> 数 量</TD>
+<TD width="124"> 价 格</TD>
+</TR>
+<TR>
+<TD>U盘</TD>
+<TD>2</TD>
+<TD>20</TD>
+</TR>
+<TR>
+<TD>Q笔</TD>
+<TD>3</TD>
+<TD>30</TD>
+</TR>
+</TABLE>
+<BR />
+<INPUT name="button" type="button" onClick="insRow()" value="添加记录">
+</BODY>
+</HTML>
+

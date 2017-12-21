@@ -1,0 +1,72 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>收缩左边栏效果</TITLE>
+<STYLE  type="text/css">
+td{font-size:12px;line-height:22px;}
+.red{color: #FF0000}
+</STYLE>
+<SCRIPT language="JavaScript">
+function show(){
+if(document.getElementById("left").style.display=='none'){ //判断目前左边栏的状态（显示、隐藏）
+document.getElementById("left").style.display='block';  //显示左边栏
+}
+else{document.getElementById("left").style.display='none';  //隐藏左边栏
+}
+}
+</SCRIPT>
+</HEAD>
+
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" ONCONTEXTMENU="return false;">
+<TABLE width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <TR>
+    <TD id="left" width="200">点点右边的收缩按钮，看看我是不是进去了！</TD>
+    <TD width="8"  style="border-right:1 #cccccc  solid;"><A href="javascript:show();"><IMG src="image/fclose.jpg" align="absmiddle" border="0"></A></TD>
+    <TD valign="top"><DIV style="padding-left:10px;padding-right:10px;"><BR>
+    一、点击左边的缩进图片，左边栏收缩
+	<BR><BR>
+	二、实现的思路
+	<DIV style="padding-left:20px;">1、图片作为按扭，点击图片触发层的显示和收缩，图片代码如下：<BR>
+	  <SPAN class="red">< A href="javascript:show();"> < IMG src="image/fclose.gif" align="absmiddle" border="0"> < /A></SPAN></DIV>
+	  
+	  <BR>三、主要源代码
+	  <DIV style="padding-left:20px;background-color:#efefef;">
+	    <P>&lt;HTML&gt;<BR>
+	      &lt;HEAD&gt;<BR>
+	      &lt;META http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot;&gt;<BR>
+	      &lt;TITLE&gt;收缩左边栏效果&lt;/TITLE&gt;<BR>
+	      &lt;STYLE  type=&quot;text/css&quot;&gt;<BR>
+	      td{font-size:12px;line-height:22px;}<BR>
+	      .red{color: #FF0000}<BR>
+	      &lt;/STYLE&gt;<BR>
+	      &lt;SCRIPT language=&quot;JavaScript&quot;&gt;<BR>
+	      function show(){<BR>
+	      <SPAN class="red">if(document.getElementById(&quot;left&quot;).style.display=='none')</SPAN>{ //判断目前左边栏的状态（显示、隐藏）<BR>
+	      <SPAN class="red">document.getElementById(&quot;left&quot;).style.display='block';  </SPAN>//显示左边栏<BR>
+	      }<BR>
+	      <SPAN class="red">else{document.getElementById(&quot;left&quot;).style.display='none';</SPAN>  //隐藏左边栏<BR>
+	      }<BR>
+	      }<BR>
+	      &lt;/SCRIPT&gt;<BR>
+	      &lt;/HEAD&gt;</P>
+	    <P>&lt;BODY leftmargin=&quot;0&quot; topmargin=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; ONCONTEXTMENU=&quot;return false;&quot;&gt;<BR>
+	      &lt;TABLE width=&quot;98%&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; align=&quot;center&quot;&gt;<BR>
+  &lt;TR&gt;<BR>
+  &lt;TD id=&quot;left&quot; width=&quot;200&quot;&gt;点点右边的收缩按钮，看看我是不是进去了！&lt;/TD&gt;<BR>
+  &lt;TD width=&quot;8&quot;  style=&quot;border-right:1 #cccccc  solid;&quot;&gt;<SPAN class="red">&lt;A href=&quot;javascript:show();&quot;&gt;&lt;IMG src=&quot;image/fclose.jpg&quot; align=&quot;absmiddle&quot; border=&quot;0&quot;&gt;&lt;/A&gt;</SPAN>&lt;/TD&gt;<BR>
+  &lt;TD valign=&quot;top&quot;&gt;右侧&lt;/TD&gt;<BR>
+  &lt;/TR&gt;<BR>
+  &lt;/TABLE&gt;</P>
+	    <P>&lt;/BODY&gt;<BR>
+	      &lt;/HTML&gt;</P>
+	  </DIV>
+<BR>四、制作一个页面，实现收缩左边栏的效果(和本例效果一样)<BR>
+<BR> 	
+</DIV>	
+	</TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>影视资料查询</TITLE>
+<SCRIPT type="text/javascript">
+	 
+function showFilm( )
+  {
+	 var starName=document.myform.starName.value; 
+	 var artName = new Array( );
+	 artName['成龙']=['一个好人', '警察故事', '醉拳', '红番区', '我是谁'];
+	 artName['李连杰']=['中南海保镖', '黄飞鸿系列', '虎胆龙威', '少林寺'];
+	 artName['施瓦辛格'] = ['独闯龙潭', '第六日', '真实的谎言', '魔鬼终结者', '蒸发密令'];
+	 document.myform.filmName.options.length=0;
+			for (var j=0;j<artName[starName].length;j++) 
+		 	{
+			 	document.myform.filmName.options.add(new Option(artName[starName][j], artName[starName][j]));
+		 	}
+	  document.myform.filmName.selectedIndex=0;
+  }
+</SCRIPT>
+</HEAD>
+
+<BODY >
+<FORM action="" method="get" name="myform">
+<TABLE width="380" height="167" border="0" cellpadding="0" cellspacing="0" background="images/bg2.gif" align="center">
+  <TR>
+    <TD colspan="2" height="60" align="center"><FONT color="#F9F900"  size="+2">影视资料查询</FONT></TD>
+  </TR>
+  <TR>
+    <TD width="233" align="right"><FONT color="#F9F900">演员姓名：</FONT></TD>
+    <TD width="232" style="padding-left:10px">
+	<SELECT name="starName" onChange="showFilm()">
+	  <OPTION>--请选择查询的演员姓名--</OPTION>
+	  <OPTION value="成龙">成龙</OPTION>
+	  <OPTION value="李连杰">李连杰</OPTION>
+	  <OPTION value="施瓦辛格">施瓦辛格</OPTION>
+	</SELECT>
+	</TD>
+  </TR>
+  <TR>
+    <TD align="right"><FONT color="#F9F900">影片资料：</FONT></TD>
+    <TD style="padding-left:10px">
+	<SELECT name="filmName">
+	<OPTION>--出演影片--</OPTION>
+	</SELECT>
+	</TD>
+  </TR>
+</TABLE>
+
+
+</FORM>
+</BODY>
+</HTML>

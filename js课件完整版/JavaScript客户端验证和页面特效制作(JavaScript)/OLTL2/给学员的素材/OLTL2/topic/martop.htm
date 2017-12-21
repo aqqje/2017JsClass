@@ -1,0 +1,166 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE> 垂直滚动文字</TITLE>
+<STYLE type="text/css">
+A{font-size:13px;
+color:#000000;
+/*无下划线的链接文字样式*/
+text-decoration:none;
+line-height:22px;}
+A:hover{font-size:13px;
+color:#FF0000;
+/*有下划线的链接文字样式*/
+text-decoration:underline;
+line-height:22px;}
+div{font-size:12px;line-height:20px;}
+.red {color: #FF0000}
+</STYLE>
+
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<DIV>
+<TABLE width="252" border="0" cellspacing="0" cellpadding="0" align="center">
+  <TR>
+    <TD><IMG src="image/bgtop.gif"></TD>
+  </TR>
+  <TR>
+    <TD background="image/bg.gif" ><DIV id="dome" style="overflow:hidden;height:150px; width=245px;">
+<DIV id="dome1" >
+<A  href="http://forum.taobao.com/forum-150/show_info----10893713-0-.htm" 
+              target=_blank>·恭喜"ech***"双色球喜中3000元</A> <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893726-0-.htm" 
+              target=_blank>·恭喜"dhx***"双色球喜中2675元</A>
+              <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893765-0-.htm" 
+              target=_blank>·恭喜"风之***"双色球喜中1680元 </A>
+              <BR><A  href="http://forum.taobao.com/forum-150/show_info----10893783-0-.htm" 
+              target=_blank>·恭喜"沫沫***"双色球喜中1470元</A>
+              <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893797-0-.htm" 
+              target=_blank>·恭喜"ralf***"双色球喜中1390元</A>
+              <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893812-0-.htm" 
+              target=_blank>·恭喜"f_h_***"3D喜中2000元</A>
+              <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893830-0-.htm" 
+              target=_blank>·恭喜"lsmx***"3D喜中9108.1元</A>
+              <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893845-0-.htm" 
+              target=_blank>·恭喜"梅子花***"排列3喜中8000元</A>
+              <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893854-0-.htm" 
+              target=_blank>·恭喜"洞头***"排列3喜中1000元</A>
+              <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893867-0-.htm" 
+              target=_blank>·恭喜"gxh***"排列3喜中1000元</A>
+</DIV>
+<DIV id=dome2></DIV>
+</DIV></TD>
+  </TR>
+  <TR>
+    <TD><IMG src="image/bgend.gif"></TD>
+  </TR>
+</TABLE>
+<SCRIPT language="JavaScript">
+   var speed=50;  //设置文字滚动速度
+   dome2.innerHTML=dome1.innerHTML //复制dome1为dome2
+   function Marquee(){
+   if(dome2.offsetTop-dome.scrollTop<=0) //当滚动至dome1与dome2交界时
+   dome.scrollTop-=dome1.offsetHeight  //dome跳到最顶端
+   else{
+   dome.scrollTop++
+   }
+   }
+   var MyMar=setInterval(Marquee,speed) //设置定时器
+   dome.onmouseover=function() {clearInterval(MyMar)}//鼠标移上时清除定时器达到滚动停止的目的
+   dome.onmouseout=function() {MyMar=setInterval(Marquee,speed)}//鼠标移开时重设定时器，继续滚动
+</SCRIPT></DIV>
+<DIV style="padding-left:10px;">
+一、垂直向上滚动的文字，如上图效果<BR>
+二、实现的思路
+<DIV style="padding-left:20px;">
+1、建立三个层dome、dome1、dome2
+2、垂直滚动的文字在dome1上
+3、通过层的滚动来实现文字滚动
+</DIV>
+三、源代码
+<DIV style="padding-left:20px;background-color:#efefef;">
+  <P><BR>
+    &lt;HTML&gt;<BR>
+    &lt;HEAD&gt;<BR>
+    &lt;META http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot;&gt;<BR>
+    &lt;TITLE&gt; 垂直滚动文字&lt;/TITLE&gt;<BR>
+    &lt;STYLE type=&quot;text/css&quot;&gt;<BR>
+    A{font-size:13px;<BR>
+    color:#000000;<BR>
+    /*无下划线的链接文字样式*/<BR>
+    <SPAN class="red">text-decoration:none;</SPAN><BR>
+    line-height:22px;}<BR>
+    A:hover{font-size:13px;<BR>
+    color:#FF0000;<BR>
+    /*有下划线的链接文字样式*/<BR>
+    <SPAN class="red">text-decoration:underline;</SPAN><BR>
+    line-height:22px;}<BR>
+    &lt;/STYLE&gt;</P>
+  <P>&lt;/HEAD&gt;<BR>
+    &lt;BODY leftmargin=&quot;0&quot; topmargin=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot;&gt;<BR>
+    &lt;div&gt;<BR>
+    &lt;TABLE width=&quot;252&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; align=&quot;center&quot;&gt;<BR>
+  &lt;TR&gt;<BR>
+  &lt;TD&gt;&lt;IMG src=&quot;image/bgtop.gif&quot;&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;<BR>
+  &lt;TR&gt;<BR>
+  &lt;TD background=&quot;image/bg.gif&quot; &gt;<SPAN class="red">&lt;DIV id=&quot;dome&quot; style=&quot;overflow:hidden;height:150px; width=245px;&quot;&gt;<BR>
+&lt;DIV id=&quot;dome1&quot; &gt;</SPAN><BR>
+&lt;A  href=&quot;http://forum.taobao.com/forum-150/show_info----10893713-0-.htm&quot; <BR>
+target=_blank&gt;·恭喜&quot;ech***&quot;双色球喜中3000元&lt;/A&gt; &lt;BR&gt;&lt;A <BR>
+href=&quot;http://forum.taobao.com/forum-150/show_info----10893726-0-.htm&quot; <BR>
+target=_blank&gt;·恭喜&quot;dhx***&quot;双色球喜中2675元&lt;/A&gt;<BR>
+&lt;BR&gt;&lt;A href=&quot;http://forum.taobao.com/forum-150/show_info----10893765-0-.htm&quot; <BR>
+target=_blank&gt;·恭喜&quot;风之***&quot;双色球喜中1680元 &lt;/A&gt;<BR>
+&lt;BR&gt;&lt;A  href=&quot;http://forum.taobao.com/forum-150/show_info----10893783-0-.htm&quot; <BR>
+target=_blank&gt;·恭喜&quot;沫沫***&quot;双色球喜中1470元&lt;/A&gt;<BR>
+&lt;BR&gt;&lt;A  href=&quot;http://forum.taobao.com/forum-150/show_info----10893797-0-.htm&quot; <BR>
+target=_blank&gt;·恭喜&quot;ralf***&quot;双色球喜中1390元&lt;/A&gt;<BR>
+&lt;BR&gt;&lt;A  href=&quot;http://forum.taobao.com/forum-150/show_info----10893812-0-.htm&quot; <BR>
+target=_blank&gt;·恭喜&quot;f_h_***&quot;3D喜中2000元&lt;/A&gt;<BR>
+&lt;BR&gt;&lt;A  href=&quot;http://forum.taobao.com/forum-150/show_info----10893830-0-.htm&quot; <BR>
+target=_blank&gt;·恭喜&quot;lsmx***&quot;3D喜中9108.1元&lt;/A&gt;<BR>
+&lt;BR&gt;&lt;A  href=&quot;http://forum.taobao.com/forum-150/show_info----10893845-0-.htm&quot; <BR>
+target=_blank&gt;·恭喜&quot;梅子花***&quot;排列3喜中8000元&lt;/A&gt;<BR>
+&lt;BR&gt;&lt;A  href=&quot;http://forum.taobao.com/forum-150/show_info----10893854-0-.htm&quot; <BR>
+target=_blank&gt;·恭喜&quot;洞头***&quot;排列3喜中1000元&lt;/A&gt;<BR>
+&lt;BR&gt;&lt;A  href=&quot;http://forum.taobao.com/forum-150/show_info----10893867-0-.htm&quot; <BR>
+target=_blank&gt;·恭喜&quot;gxh***&quot;排列3喜中1000元&lt;/A&gt;<BR>
+  <SPAN class="red">&lt;/DIV&gt;<BR>
+&lt;DIV id=dome2&gt;&lt;/DIV&gt;</SPAN><BR>
+  &lt;/DIV&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;<BR>
+  &lt;TR&gt;<BR>
+  &lt;TD&gt;&lt;IMG src=&quot;image/bgend.gif&quot;&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;<BR>
+  &lt;/TABLE&gt;<BR>
+  &lt;SCRIPT language=&quot;JavaScript&quot;&gt;<BR>
+    <SPAN class="red">var speed=50</SPAN>;  //设置文字滚动速度<BR>
+    <SPAN class="red">dome2.innerHTML=dome1.innerHTML</SPAN> //复制dome1为dome2<BR>
+    function Marquee(){<BR>
+    <SPAN class="red">if(dome2.offsetTop-dome.scrollTop&lt;=0)</SPAN> //当滚动至dome1与dome2交界时<BR>
+    <SPAN class="red">dome.scrollTop-=dome1.offsetHeight</SPAN>  //dome跳到最顶端<BR>
+    <SPAN class="red">else{<BR>
+    dome.scrollTop++</SPAN><BR>
+    }<BR>
+    }<BR>
+    <SPAN class="red">var MyMar=setInterval(Marquee,speed) </SPAN>//设置定时器<BR>
+    <SPAN class="red">dome.onmouseover=function() {clearInterval(MyMar)}</SPAN>//鼠标移上时清除定时器达到滚动停止的目的<BR>
+    <SPAN class="red">dome.onmouseout=function() {MyMar=setInterval(Marquee,speed)}</SPAN>//鼠标移开时重设定时器，继续滚动<BR>
+  &lt;/SCRIPT&gt;&lt;/div&gt;<BR>
+  &lt;/BODY&gt;<BR>
+  &lt;/HTML&gt;<BR>
+  </P>
+</DIV>
+四、制作向左循环不间断滚动的图片，向左滚动的文字（跑马灯效果），<A href="zy.html" target="_blank">查看样例页面效果</A>
+</DIV>
+</BODY>
+</HTML>

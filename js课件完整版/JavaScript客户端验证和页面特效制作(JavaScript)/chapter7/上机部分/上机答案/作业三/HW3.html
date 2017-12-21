@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>下拉列表框属性和事件</TITLE>
+<SCRIPT type="text/javascript">
+function callShow(){
+	var length = document.myform.gameList.options.length-1;
+	var value = document.myform.gameList.value;
+	var index = document.myform.gameList.options.selectedIndex;
+
+	alert("列表框总共包括"+length+"个游戏\n您选择的游戏名称是："+value+"\n"+value+"在列表中的索引是"+index);
+		
+		for(var i=0;i<=4;i++){
+			if(i==index){
+				document.getElementById("pic"+i).style.display="block";
+			}else{
+				document.getElementById("pic"+i).style.display="none";
+			}
+		}
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM action="" method="get" name="myform">
+<TABLE width="380" height="380" border="0" cellpadding="0" cellspacing="0" align="center">
+  <TR bgcolor="#C1EAF9">
+    <TD colspan="2" height="60" align="center"><FONT color="red" size="+2">精美游戏壁纸</FONT></TD>
+  </TR>
+  <TR bgcolor="#FFD5BF">
+    <TD width="115" height="34" align="right"><FONT color="red">游戏选择：</FONT></TD>
+    <TD width="265" style="padding-left:10px">	
+	<SELECT id="gameList" name="gameList"  onChange="callShow()">
+		<OPTION>--请选择一个游戏--</OPTION>
+	  <OPTION value="大海战2">大海战2</OPTION>
+	  <OPTION value="大话西游">大话西游</OPTION>
+	  <OPTION value="热血江湖">热血江湖</OPTION>
+	  <OPTION value="大航海时代">大航海时代</OPTION>
+	</SELECT>	</TD>
+  </TR>
+  <TR>
+    <TD  colspan="2">
+	<DIV id="pic0"><IMG src="images/pic0.jpg" width="400" height="300" ></DIV>	
+	<DIV id="pic1" style="display:none"><IMG src="images/pic1.jpg" width="400" height="300" ></DIV>	
+	<DIV id="pic2" style="display:none"><IMG src="images/pic2.jpg" width="400" height="300" ></DIV>
+	<DIV id="pic3" style="display:none"><IMG src="images/pic3.jpg" width="400" height="300" ></DIV>
+	<DIV id="pic4" style="display:none"><IMG src="images/pic4.jpg" width="400" height="300" ></DIV>
+	</TD>
+    </TR>
+</TABLE>
+
+
+</FORM>
+</BODY>
+</HTML>

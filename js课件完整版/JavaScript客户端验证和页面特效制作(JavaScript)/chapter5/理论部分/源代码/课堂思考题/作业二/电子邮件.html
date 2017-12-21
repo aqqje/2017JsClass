@@ -1,0 +1,121 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>注册信息验证</TITLE>
+<STYLE type="text/css">
+td{font-size:12px}
+.top{
+border-right:#d8d8ed 2px solid;
+border-top:#d8d8ed 2px solid;
+border-left:#d8d8ed 2px solid;
+}
+.btnPic{
+background-image:url(images/submit.gif);
+width:99px;
+height:25px;
+margin:0px;
+padding:0px;
+border:0px;
+}
+</STYLE>
+<SCRIPT type="text/javascript">
+function checkForm(){
+	var email = document.myform.email.value;
+	var pass = document.myform.pass.value;
+	var rpass = document.myform.rpass.value;
+	var checked = document.myform.accept.checked;
+	 if (email=="")
+	 {
+	    alert("电子邮件不能为空!");
+		document.myform.email.focus();
+		return false;
+	 }else if ((email.indexOf("@",0)==-1)||(email.indexOf(".",0)==-1))
+	 {
+	    alert("电子邮件格式不正确\n必须包含@符号和.符号！");
+		document.myform.email.select();
+		return false;
+	 }
+	 
+	if(pass==""){
+		alert("密码不能为空");
+		document.myform.pass.focus();
+		return false;
+	}else if(pass.length<6){
+		alert("密码长度不能小于6位");
+		document.myform.pass.select();
+		return false;
+	}
+	//确认密码一致性验证
+	if(rpass==""){
+		alert("请输入重输密码进行确认");
+		document.myform.rpass.focus();
+		return false;
+	}else if(rpass!=pass){
+		alert("确认密码与密码输入不一致");
+		document.myform.rpass.select();
+		return false;
+	}
+	if(!checked){
+		alert("您必须接受智联协议才能进行下一步");
+		document.myform.accept.focus();
+		return false;
+	}
+	 return true;
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<DIV align="center"> <IMG src="images/Snap2.jpg"></DIV>
+<FORM name="myform"  action="success.html" method="post" onSubmit="return checkForm()">
+<TABLE cellSpacing="0" cellPadding="0" width="670" align="center" border="0">
+  <TBODY>
+
+ 
+    <TR>
+      <TD height="30"><IMG src="images/Snap4.jpg"></TD>
+    </TR>
+    <TR>
+
+        <TD bgColor="#d8d8ed"><TABLE cellSpacing="5" cellPadding="0" width="100%" border="0">
+          <TBODY>
+            <TR>
+              <TD  align="right" width="190"><STRONG>E-mail：</STRONG></TD>
+              <TD><INPUT maxLength="100" size="20" name="email"> 请填写有效的E-mail地址作为下次登录的用户名<BR></TD>
+            </TR>
+            <TR>
+              <TD  align="right" width="190"><STRONG>密码：</STRONG></TD>
+              <TD><INPUT type="password" size="20" value="" name="pass"> 不少于6个字符，不区分大小写<BR></TD>
+            </TR>
+            <TR>
+              <TD colSpan="2" height="2"></TD>
+            </TR>
+            <TR>
+              <TD align="right" width="190"><STRONG>重输密码：</STRONG></TD>
+              <TD><INPUT type="password" size="20" value="" name="rpass">
+                    <BR></TD>
+            </TR>
+            <TR>
+              <TD colSpan="2" height="7"></TD>
+            </TR>
+            <TR>
+              <TD></TD>
+              <TD>请查看并同意智联招聘用户协议：<BR>
+                    <INPUT type="checkbox"  name="accept">
+                我接受智联招聘的 <A href="#" >用户协议</A> 和 <A href="#">隐私政策</A></TD>
+            </TR>
+            <TR>
+              <TD></TD>
+              <TD style="padding-left:100px">
+			  <INPUT id="btn" type="submit"  class="btnPic"  name="btn" value=""></TD>
+            </TR>
+          </TBODY>
+        </TABLE></TD>
+    
+    </TR>
+  </TBODY>
+</TABLE>
+  </FORM>
+<DIV align="center"><IMG src="images/Snap3.jpg"></DIV>
+</BODY>
+</HTML>

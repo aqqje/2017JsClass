@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>作业：五张图片轮换广告</TITLE>
+<STYLE type="text/css">
+.font-scroll{width:20px; text-align:center; padding-top:1px;cursor:hand;border:1 #414141 solid; font-size:9px;line-height:10px;}
+div{line-height:3px;}
+</STYLE>
+ <SCRIPT language="JavaScript">
+                var NowFrame = 1;
+				var MaxFrame = 5;
+				function scroll1(d1) {
+				if(Number(d1)){
+				clearTimeout(theTimer);  //当触动按扭时，清除计时器
+				NowFrame=d1;                //设当前显示图片
+				}
+					for(var i=1;i<(MaxFrame+1);i++){
+					if(NowFrame==i){
+					document.getElementById(NowFrame).style.display='block';   //当前显示图片
+					document.getElementById('bg'+NowFrame).color="#ff0000";
+					}
+					else
+					{
+					document.getElementById(i).style.display='none';
+					document.getElementById('bg'+i).color="#414141";
+					}
+					}
+			       { if(NowFrame == MaxFrame)   //设置下一个显示的图片
+					NowFrame = 1;
+				   else
+					NowFrame++;}
+					
+					 theTimer=setTimeout('scroll1()', 3000);   //设置定时器，显示下一张图片
+				}			
+</SCRIPT> 
+</HEAD>
+
+<BODY onLoad="scroll1()">
+<DIV><IMG src="image/class1-1.jpg" id="1" style="display:none;">
+<IMG src="image/class1-2.jpg" id="2" style="display:none;">
+<IMG src="image/class1-3.jpg" id="3" style="display:none;">
+<IMG src="image/class1-4.jpg" id="4" style="display:none;">
+<IMG src="image/class1-5.jpg" id="5" style="display:none;">
+
+
+<DIV style="position:relative;left:430px;top:-100px;z-index:2;"><FONT class="font-scroll"  id="bg1"><SPAN onMouseMove="scroll1(1)">1</SPAN></FONT><BR><BR><FONT class="font-scroll"id="bg2"><SPAN onMouseMove="scroll1(2)">2</SPAN></FONT><BR><BR><FONT class="font-scroll"id="bg3"><SPAN onMouseMove="scroll1(3)">3</SPAN></FONT><BR><BR><FONT class="font-scroll"id="bg4"><SPAN onMouseMove="scroll1(4)">4</SPAN></FONT><BR><BR><FONT class="font-scroll"id="bg5"><SPAN onMouseMove="scroll1(5)">5</SPAN></FONT></DIV>
+</DIV>
+</BODY>
+</HTML>

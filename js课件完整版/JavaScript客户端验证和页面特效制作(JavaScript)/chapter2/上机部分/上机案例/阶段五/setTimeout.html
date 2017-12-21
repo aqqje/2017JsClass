@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>无标题文档</TITLE>
+<STYLE type="text/css">
+<!--
+/*设置样式：无边框的文本框*/
+INPUT {
+	font-size: 20px;
+	border-style:none ;
+	background-color:#FF8B3B;
+	}
+-->
+</STYLE>
+<SCRIPT language="javascript" type="text/javascript" >
+function reloop(){
+ var time = new Date( ); //获得当前时间
+ //获得小时、分钟、秒
+ var hour = time.getHours();  
+ var minute = time.getMinutes();
+ var second = time.getSeconds();
+ if (minute < 10) //如果分钟只有1位，补0显示
+   minute="0"+minute;
+ if (second < 10) //如果秒数只有1位，补0显示
+   second="0"+second;
+   
+	document.getElementById("t").value=hour+":"+minute+":"+second;
+	setTimeout("reloop()",1000);
+}
+</SCRIPT>
+
+</HEAD>
+
+<BODY onLoad="reloop()">
+现在时间：<INPUT id="t" name="time" type="text" size="10">
+
+</BODY>
+</HTML>

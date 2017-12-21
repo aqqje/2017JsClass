@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>Date对象练习</TITLE>
+<SCRIPT type="text/javascript">
+ var time = new Date();
+ time.setFullYear(2008,7,8);
+ var weekday = time.getDay();
+ var tempday;
+ switch(weekday){
+ 	case 0:
+			tempday="星期日";
+			break;
+	case 1:
+			tempday="星期一";
+			break;
+	case 2:
+			tempday="星期二";
+			break;
+	case 3:
+			tempday="星期三";
+			break;
+	case 4:
+	                tempday="星期四";
+	case 5:
+			tempday="星期五";
+			break;
+	case 6:
+			tempday="星期六";
+			break;		   
+ }
+
+document.write("第29届北京奥运会开幕时间是2008年8月8日 "+tempday);
+
+
+</SCRIPT>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

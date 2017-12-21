@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>改变页面风格</TITLE>
+<LINK id="1"  type="text/css" rel="stylesheet"   href="style/mr.css" >
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<TABLE width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <TR>
+    <TD>选择界面风格：<SELECT   onChange="document.styleSheets[0].href=this.options[this.selectedIndex].value+'.css'" >   
+  <OPTION   value="Style/mr" selected>默认风格</OPTION>   
+  <OPTION   value="Style/red">粉红风情</OPTION>   
+  <OPTION   value="Style/blue1">蓝色天空</OPTION>   
+  <OPTION   value="Style/block1">灰暗忧郁</OPTION>  
+   <OPTION   value="Style/green"> 绿色地带</OPTION>
+    <OPTION   value="Style/blue"> 蓝色港湾</OPTION>
+	<OPTION   value="Style/block"> 黑白相间</OPTION>
+   </SELECT></TD>
+  </TR><TR>
+    <TD>&nbsp;</TD>
+  </TR>
+  <TR>
+    <TD>　　HTML语言的另一个重要特点就是能够把文本、图像、动画、音乐等多种媒体相结合，设计出图文并茂、动静结合的页面。这一章我们将介绍如何制作一个完整的丰富多彩的网页。 
+      <P>4.1语言字符集</P>
+      <P>　制作网页的时候，首先需要定义网页语言，以便访问者浏览器自动设置语言。一般情况下，我们都是取默认值。语言字符集的定义在网页首部〈head〉〈/head〉部分完成，基本格式是：</P>
+      <P>meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot;〉</P>
+      <P>　gb2312代表简体中文，也可以根据需要选取其它语言。<BR>
+        　　也可以在HTML标记中用LANG属性规定当前标记使用的语言，语法分析软件可以使用这个属性对引用、数字等来确定如何显示特定语言选项。</P>
+      <P>4.2文字颜色及风格</P>
+      <P>　　HTML语言用〈font〉标记定义文本的字体。〈font〉标记有多种属性用于定义字体字面、尺寸和颜色等，常用的〈font〉标记属性有：</P>
+      <P>　　Color 设置字体所使用的颜色。在html中，颜色通常采用6位16进制数值，格式为#xxxxxx，第一二位表示红色值，三四位为绿色值，五六位代表蓝色值，#000000代表黑色，#FFFFFF是白色。颜色也可以用逻辑值表示，如：black（黑色），olive（橄榄色），teal（呈绿色的蓝色），red（红色），blue（蓝色），maroon（栗色），navy（藏青色），gray（灰色），white（白色），green（绿色），purple（紫色），yellow（黄色），aqua（浅绿色）等。</P>
+      <P>size=±n〉。用第二种方法时“＋”号表示字体变大，“－”号表示字体变小。 </P>
+      <P></P></TD>
+  </TR>
+</TABLE>
+</BODY>
+</HTML>

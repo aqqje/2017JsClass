@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>无标题文档</TITLE>
+<SCRIPT type="text/javascript">
+function toUp(){
+	var low = document.myform.textLow.value;
+	var up = low.toUpperCase();
+	document.myform.txtUp.value=up;
+}
+function toLow(){
+	var upCase = document.myform.txtUpper.value;
+	var lowCase = upCase.toLowerCase();
+	document.myform.txtLower.value=lowCase;
+}
+function subWord(){
+	var length=parseInt(document.myform.txtLength.value,10);
+	var txtTar = document.myform.txtWord.value;
+	if(length>0){
+		document.myform.txtSub.value = txtTar.substring(0,length);
+	}else{
+		document.myform.txtSub.value = txtTar;
+	}
+}
+
+function findChar(){
+	var word = document.myform.txtTarget.value;
+	var count=0;
+	if(word.indexOf("@",0)==-1){
+		document.myform.txtResult.value="字符串中不包含@字符";
+	}else{
+		for(var i=0;i<word.length;i++){
+			if(word.charAt(i)=="@"){
+				count++;
+			}
+		}
+		document.myform.txtResult.value="字符串中包含了"+count+"个@字符";
+	}
+}
+</SCRIPT>
+<STYLE type="text/css">
+<!--
+.STYLE1 {font-size: 12px}
+-->
+</STYLE>
+</HEAD>
+
+<BODY>
+<FORM action="" method="get" name="myform">
+<TABLE width="717" height="184" border="0" cellpadding="0" cellspacing="0">
+<TR>
+    <TD colspan="4" align="center"><H3>String对象的常用属性和方法</H3></TD>
+    </TR>
+  <TR>
+    <TD width="214"><INPUT name="textLow" type="text" value="one neight in beijing"></TD>
+    <TD><INPUT name="btnToUp" type="button" value="转换成大写&gt;&gt;" onClick="toUp()"></TD>
+    <TD colspan="2"><INPUT type="text" name="txtUp"></TD>
+   </TR>
+  <TR>
+    <TD><INPUT type="text" name="txtUpper" value="GOOD GOOD STUDY "></TD>
+    <TD><INPUT name="btnToUp" type="button" value="转换成小写&gt;&gt;" onClick="toLow()"></TD>
+    <TD colspan="2"><INPUT type="text" name="txtLower"></TD>
+    </TR>
+    <TR>
+    <TD><INPUT type="text" name="txtWord" value="Hello World"></TD>
+    <TD width="160"><SPAN class="STYLE1">确认截取字串的长度</SPAN><BR>
+      <INPUT type="text" name="txtLength" size="4" maxlength="4"></TD>
+    <TD width="122"><INPUT name="btnToUp2" type="button" value="截取字符串" onClick="subWord()"></TD>
+    <TD width="221"><INPUT type="text" name="txtSub"></TD>
+  </TR>
+  <TR>
+    <TD><INPUT type="text" name="txtTarget"></TD>
+    <TD><INPUT name="btnToUp" type="button" value="查找@字符" onClick="findChar()"></TD>
+    <TD colspan="2"><INPUT type="text" name="txtResult"></TD>
+    </TR>
+</TABLE>
+
+</FORM>
+</BODY>
+</HTML>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>switch语句</TITLE>
+<SCRIPT language="JavaScript" type="text/JavaScript">
+document.write("看看我今天的计划是什么?<BR>");
+var a=prompt("请输入今天星期几（1－7）","1");
+if (a>7 || a<1)
+  alert ("输入错误，只能是1－7");
+else
+{
+  switch (parseInt(a))
+  {
+     case 1:
+	    document.write("今天背单词");break;
+     case 2:
+	    document.write("今天去海图借书");break;
+     case 3:
+	    document.write("今天去学校上HTML");break;
+     case 4:
+	    document.write("今天上西单买生活用品");break;
+     case 5:
+	    document.write("今天去陪朋友逛街");break;
+     case 6:
+	    document.write("今天去健身");break;
+     case 7:
+	    document.write("今天终于可以休息了！");break;
+  }
+ } 
+
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>游泳的鱼</TITLE>
+<SCRIPT language="javascript" type="text/javascript">
+ function move( )
+ {
+ if (event.keyCode==87)
+    document.getElementById("fish").style.pixelTop=document.getElementById("fish").style.pixelTop-10;
+  if (event.keyCode==83)
+    document.getElementById("fish").style.pixelTop=document.getElementById("fish").style.pixelTop+10;
+  if (event.keyCode==65)
+    document.getElementById("fish").style.pixelLeft=document.getElementById("fish").style.pixelLeft-10;
+  if (event.keyCode==68)
+    document.getElementById("fish").style.pixelLeft=document.getElementById("fish").style.pixelLeft+10;
+ }
+document.onkeydown= move ;
+ </SCRIPT>
+</HEAD>
+
+<BODY background="images/sea.jpg">
+<DIV id="fish" style="position:absolute; left: 268px; width: 124px; height: 117px; top: 76px;"><IMG src="images/fish.gif" width="123" height="116"></DIV>
+</BODY>
+</HTML>

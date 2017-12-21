@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>贷款计算器</TITLE>
+<SCRIPT language=JavaScript>
+function InitDIV( )
+{
+   document.getElementById("DIV1").style.display="none";
+}
+
+function displayDIV( )
+{
+   if (document.myform.methodRadio[0].checked==true)
+   {
+         document.getElementById("DIV1").style.display="block";
+		 document.getElementById("DIV2").style.display="none";
+   }
+   else
+   {
+          document.getElementById("DIV2").style.display="block";
+		 document.getElementById("DIV1").style.display="none";      
+   }
+   
+}
+ 
+</SCRIPT>
+
+<STYLE type="text/css">
+<!--
+.borderBox {
+	
+	font-size: 15px;
+	border: 1px solid ;
+}
+ 
+ 
+ 
+-->
+</STYLE>
+</HEAD>
+
+<BODY onLoad="InitDIV( )">
+<FORM name="myform" id="myform">
+<TABLE height="283"   align="center" cellpadding="0" cellspacing="0"     >
+  <TR>
+    <TD colspan="3"><IMG src="images/house.jpg" width="621" height="87"></TD>
+    </TR>
+  <TR   bgcolor="#8AD3FF"  align="center" valign="middle">
+    <TD colspan="3" bgcolor="#e9f8d7" ><SPAN class="STYLE6">等额本息还款法</SPAN></TD>
+  </TR>
+  
+  
+  <TR    >
+    <TD bgcolor="#f6f6f6"><SPAN class="style4">贷款类别：</SPAN></TD>
+    <TD bgcolor="#f6f6f6"><SELECT name=paymethod size=1 class="style5"  id="paymethod" >
+      <OPTION value="g" selected>公积金</OPTION>
+      <OPTION value="s">商业贷款</OPTION>
+    </SELECT></TD>
+    <TD rowspan="6" bgcolor="#E1E1E1">每月还款：
+      <INPUT name=monthmoney class="borderBox"   id="monthmoney" size=10 readonly>
+      元</TD>
+  </TR>
+  <TR  bgcolor="#f6f6f6"  >
+    <TD><SPAN class="style4">计算方式：</SPAN></TD>
+    <TD>&nbsp;</TD>
+  </TR>
+  <TR  bgcolor="#f6f6f6"  >
+    <TD>&nbsp;</TD>
+    <TD> 
+      <INPUT type="radio" name="methodRadio" value="area" onClick="displayDIV( )">
+根据面积、单价计算 
+        <DIV id="DIV1">单价：
+        <INPUT maxlength="8" size="8" name="price">
+        元/平米<BR>
+        面积：
+        <INPUT maxlength="7" size="8" name="sqm">
+        平方米 
+      </DIV>
+	  </TD>
+    </TR>
+  <TR  bgcolor="#f6f6f6"  >
+    <TD>&nbsp;</TD>
+    <TD> 
+      <INPUT name="methodRadio" type="radio" value="totalMoney" checked onClick="displayDIV( )">
+      根据贷款总额计算 
+       <DIV id="DIV2">贷款总额：
+      <INPUT name="tot" type="text" class="borderBox" id="tot"   value=" " size="15">
+      元</DIV>
+      <P></TD>
+    </TR>
+  <TR  bgcolor="#f6f6f6"  >
+    <TD><SPAN class="style4">还款期限：</SPAN></TD>
+    <TD><SELECT name=payyear size=1 class="style5"  id="payyear">
+      <OPTION value=30 selected>30年</OPTION>
+      <OPTION value=25>25年</OPTION>
+      <OPTION value=20>20年</OPTION>
+      <OPTION value=15>15年</OPTION>
+      <OPTION value=10>10年</OPTION>
+      <OPTION value=5>5年</OPTION>
+    </SELECT></TD>
+  </TR>
+  <TR  bgcolor="#f6f6f6"  >
+    <TD><DIV align="center" class="style4">
+      <INPUT name="computeButton" type="button" id="computeButton" value=" 计 算 " onClick="compute( )">
+</DIV></TD>
+    <TD ><DIV align="center" class="style4">       <INPUT name="clear" type="reset" id="clear" value=" 清 空 ">
+    </DIV></TD>
+    </TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

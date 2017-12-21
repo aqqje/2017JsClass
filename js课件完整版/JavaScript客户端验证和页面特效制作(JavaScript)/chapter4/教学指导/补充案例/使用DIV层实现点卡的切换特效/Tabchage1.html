@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>层的切换效果</TITLE>
+<SCRIPT language="javascript">
+function InitLayer( )
+{
+   document.getElementById("gameTabLayer2").style.display="none";
+   document.getElementById("gameLayer").style.display="none";
+   document.getElementById("mobileTablayer1").style.display="none";
+}
+function showGame( )
+{ 
+	document.getElementById("gameTabLayer1").style.display="none";
+	document.getElementById("gameTabLayer2").style.display="block";
+	
+	document.getElementById("gameLayer").style.display="block";
+	document.getElementById("mobileLayer").style.display="none";
+	
+	document.getElementById("mobileTabLayer2").style.display="none";
+	document.getElementById("mobileTabLayer1").style.display="block";
+
+
+}
+function showMobile( )
+{ 
+	document.getElementById("gameTabLayer1").style.display="block";
+	document.getElementById("gameTabLayer2").style.display="none";
+	
+	document.getElementById("gameLayer").style.display="none";
+	document.getElementById("mobileLayer").style.display="block";
+	
+	document.getElementById("mobileTabLayer2").style.display="block";
+	document.getElementById("mobileTabLayer1").style.display="none";
+
+}
+</SCRIPT>
+</HEAD>
+
+<BODY onLoad="InitLayer( )">
+<TABLE height="186" border="0" align="center" cellpadding="0" cellspacing="0" background="images/table_back.gif">
+  <TR>
+    <TD><DIV id="gameTabLayer1" onMouseOver="showGame( )"><IMG src="images/gameTab1.jpg" width="83" height="47" ></DIV><DIV id="gameTabLayer2"><IMG src="images/gameTab2.jpg" width="83" height="49"></DIV></TD>
+    <TD><DIV id="mobileTablayer1" onMouseOver="showMobile( )"><IMG src="images/mobileTab1.jpg" width="81" height="49"></DIV>
+    <DIV id="mobileTablayer2"><IMG src="images/mobileTab2.jpg" width="82" height="47"></DIV></TD>
+  </TR>
+  <TR>
+    <TD colspan="2"><DIV id="mobileLayer"><IMG src="images/mobile.jpg" width="165" height="171"></DIV><DIV id="gameLayer"><IMG src="images/game.jpg" width="165" height="171"></DIV></TD>
+  </TR>
+  <TR>
+    <TD colspan="2"><IMG src="images/fly.jpg" width="165" height="43"></TD>
+  </TR>
+</TABLE>
+</BODY>
+</HTML>

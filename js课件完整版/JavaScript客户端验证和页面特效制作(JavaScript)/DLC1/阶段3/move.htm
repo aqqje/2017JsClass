@@ -1,0 +1,19 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title> 左侧滚动图片</title>
+
+<script language="JavaScript">
+function move(){
+ document.getElementById("leftdiv").style.pixelTop=document.body.scrollTop+50; //获取leftdiv层的上方位置。 
+  document.getElementById("leftdiv").style.pixelLeft=document.body.scrollLeft+5; //获取leftdiv层的左方位置。
+}
+window.onscroll=move ; //窗口的滚动事件，当页面滚动时调用move( )函数
+</script>
+</head>
+<body>
+<div style='position:absolute;left:5px;top:10px;z-index:2' id="leftdiv"><img src="left.jpg"></div>
+<div align="center"><img src="sohu.jpg"></div>
+</body>
+</html>

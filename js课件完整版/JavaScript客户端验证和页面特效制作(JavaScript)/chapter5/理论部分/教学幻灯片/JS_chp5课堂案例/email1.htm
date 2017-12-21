@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>使用字符串</TITLE>
+<SCRIPT LANGUAGE = "JavaScript">
+   function checkEmail( )
+   {
+     var strEmail=document.myform.txtEmail.value;
+	 if (strEmail.length==0)
+	 {
+	    alert("电子邮件不能为空!");
+		return false;
+	 }
+     if (strEmail.indexOf("@",0)==-1)
+	 {
+	    alert("电子邮件格式不正确\n必须包含@符号！");
+		return false;
+	 }
+     if (strEmail.indexOf(".",0)==-1)
+	 {
+	    alert("电子邮件格式不正确\n必须包含.符号！");
+		return false;
+	 }
+	
+	 return true;
+   }
+</SCRIPT>
+</HEAD>
+<FORM name="myform" method="post" action="reg_success.htm" onSubmit="return checkEmail( )">
+  <P><IMG src="images/reg_back1.jpg" width="979" height="195"></P>
+  <P>&nbsp;</P>
+  <TABLE border="0" align="center">
+    <TR>
+      <TD>您的电子邮件      </TD>
+      <TD colspan="2"><INPUT name="txtEmail" type="text" id="txtEmail">
+*必填</TD>
+    </TR>
+    <TR>
+      <TD colspan="3" align="center"><P>&nbsp;
+        </P>
+        <P>
+          <INPUT name="clearButton" type="reset" id="clearButton" value="  清 空  ">        
+          <INPUT name="registerButton" type="submit" id="registerButton" value="  注  册  "  >
+          </P></TD>
+    </TR>
+  </TABLE>
+  <P>&nbsp;</P>
+  <P>&nbsp;</P>
+  <P>&nbsp;</P>
+  <P><IMG src="images/bottom.jpg" width="969" height="107"></P>
+  <P>&nbsp;</P>
+</FORM>
+</HTML>

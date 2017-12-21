@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>注册</TITLE>
+<SCRIPT language="JavaScript" >
+   function changeCity( ){
+	 var cityList = new Array( );
+	 cityList[0]=['成都', '绵阳', '德阳', '自贡', '内江', '乐山', '南充', '雅安', '眉山', '甘孜', '凉山', '泸州'];
+	 cityList[1]=['济南', '青岛', '淄博', '枣庄', '东营', '烟台', '潍坊', '济宁', '泰安', '威海', '日照'];
+	 cityList[2] = ['武汉', '宜昌', '荆州', '襄樊', '黄石', '荆门', '黄冈', '十堰', '恩施', '潜江'];
+     //获得省份选项的索引号，如四川省为1，比对应数组索引号多1
+	 var pIndex=document.myform.selProvince.selectedIndex-1; 
+	 var newOption1;
+	 document.myform.selCity.options.length=0;
+	 for (var j in cityList[pIndex]) 
+	 {
+         newOption1=new Option(cityList[pIndex][j], cityList[pIndex][j]); 
+		 document.myform.selCity.options.add(newOption1);
+     }
+  }
+</SCRIPT>
+
+ </HEAD>
+
+<BODY>
+<FORM name="myform" id="myform" action="register_success.htm" onSubmit="return checkForm( )">
+<TABLE width="472" border="0" align="center" cellpadding="0" cellspacing="0">
+  <TR>
+    <TD colspan="2"><IMG src="images/1.gif" width="273" height="59"><IMG src="../example6/2.gif" width="1" height="75"><IMG src="images/2.gif" width="393" height="59"></TD>
+  </TR>
+  <TR>
+    <TD width="185" align="center">&nbsp;&nbsp;&nbsp;&nbsp;姓名 </TD>
+    <TD width="287"><INPUT name="txtUserName" type="text" id="txtUserName" size="25"></TD>
+  </TR>
+  <TR>
+    <TD align="center">省份 </TD>
+    <TD><SELECT name="selProvince" id="selProvince" onChange="changeCity( )">
+      <OPTION>--请选择开户帐号的省份--</OPTION>
+      <OPTION value="四川省">四川省</OPTION>
+      <OPTION value="山东省">山东省</OPTION>
+      <OPTION value="湖北省">湖北省</OPTION>
+    </SELECT></TD>
+  </TR>
+  <TR>
+    <TD><DIV align="center">城市</DIV></TD>
+    <TD><SELECT name="selCity">
+      <OPTION>--请选择开户帐号的城市--</OPTION>
+       
+            </SELECT></TD>
+  </TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+  </TR>
+  <TR>
+    <TD colspan="2"><DIV align="center"><IMG src="images/regquick.jpg" width="114" height="27" onClick="checkForm( )"></DIV></TD>
+  </TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+  </TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

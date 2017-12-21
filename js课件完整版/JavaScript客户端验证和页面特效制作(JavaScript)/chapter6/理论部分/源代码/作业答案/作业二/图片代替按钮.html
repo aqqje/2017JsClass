@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>图片代替按钮</TITLE>
+<STYLE type="text/css">
+.table{background-image:url(images/bg.jpg);
+height:410px;
+width:238px;
+}
+td{font-size:12px; font-weight:bold}
+.txtBorder{border:1 solid #666666}
+</STYLE>
+<SCRIPT type="text/javascript">
+function login(){
+	document.myform.action="yahoo.html";
+	document.myform.submit();
+}
+function regist(){
+	document.myform.action="regist.html";
+	document.myform.submit();
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM name="myform" method="post">
+<TABLE align="center">
+<TR><TD colspan="2"><IMG src="images/top.jpg"></TD></TR>
+<TR><TD><IMG src="images/center.jpg"></TD><TD>
+<TABLE width="239" height="" border="0" cellpadding="0" cellspacing="0" class="table" >
+  <TR>
+    <TD>
+	<DIV style="position:absolute; left: 642px; top: 153px; width: 238px; height: 64px;">
+	<TABLE width="238" height="65">
+	<TR>
+	<TD align="center">邮箱地址</TD>
+	<TD><INPUT name="email" type="text" size="20" class="txtBorder" onMouseOver="this.style.borderColor='green'" onMouseOut="this.style.borderColor=''"></TD>
+	</TR>
+	<TR>
+	<TD align="center">密&nbsp;&nbsp;&nbsp;&nbsp;码</TD>
+	<TD><INPUT name="pass" type="text" size="20" class="txtBorder" onMouseOver="this.style.borderColor='green'" onMouseOut="this.style.borderColor=''"></TD>
+	</TR>
+	</TABLE>
+	</DIV></TD>
+  </TR>
+  <TR>
+  <TD><DIV align="center"><IMG src="images/signup.jpg" onClick="login()" style="cursor:hand">&nbsp;&nbsp;&nbsp;&nbsp;<IMG src="images/regist.jpg" onClick="regist()" style="cursor:hand"></DIV></TD>
+  </TR>
+</TABLE>
+</TD>
+</TR>
+<TR><TD colspan="2"><IMG src="images/foot.jpg"></TD></TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

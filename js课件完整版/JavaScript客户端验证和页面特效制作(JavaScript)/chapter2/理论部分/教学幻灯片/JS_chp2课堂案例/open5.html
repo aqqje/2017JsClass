@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>window对象</TITLE>
+<SCRIPT language="javascript">
+function openwindow( ) 
+{
+  window.status="系统当前状态：您正在注册用户......";
+  if (window.screen.width == 1024 && window.screen.height == 768)
+    window.showModalDialog("register.html", "注册窗口", "toolbars=0, location=0, statusbars=0, menubars=0,width=700,height=550,scrollbars=1");
+  else
+    window.alert("请设置分辨率为1024x768，然后再打开");
+
+}
+function closewindow( )
+{
+  if(window.confirm("您确认要退出系统吗？"))
+    window.close( );
+}
+</SCRIPT>
+<STYLE type="text/css">
+<!--
+/*设置无下划线的超连接样式*/
+A {
+	color: blue;
+	text-decoration: none;
+   }       
+  A:hover{ /*鼠标在超链接上悬停时变为颜色*/
+   color: red;
+   }
+-->
+</STYLE>
+</HEAD>
+<BODY bgcolor="#CCCCCC">
+
+<TABLE border="0" align="center" bgcolor="#FFFFFF" >
+  <TR>
+    <TD colspan="3"><IMG src="images/head.jpg" width="761" height="389"></TD>
+  </TR>
+  <TR>
+    <TD width="502" >
+      <IMG src="images/foot.jpg" width="502" height="90" align="top"></TD>
+    <TD width="86" valign="top" ><H3><A href="javascript: openwindow( ) ">用户注册 </A></H3></TD>
+    <TD width="263" valign="top" > <H3><A href="javascript: closewindow( ) ">退 出</A></H3></TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>

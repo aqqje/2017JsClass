@@ -1,0 +1,59 @@
+
+ 
+
+<SCRIPT language="javascript" >
+/*检验邮政编码：6位数字*/
+function checkPostcode( )
+{
+var str=document.form1.txtPostCode.value;
+
+var reg = /^\d{6}$/  ; 
+if (reg.test(str))
+{
+  alert ("恭喜邮政编码通过验证！")
+  return true;
+  }
+else
+  {
+    alert ("请输入合法的邮政编码！")
+	return false;
+  } 
+} 
+
+/*检验是否是合法的帐户*/
+function checkAccount( )
+{
+var str=document.form2.txtAccount.value;
+
+var reg = /^[a-zA-Z][a-zA-Z0-9_]{4,15}$/ ; 
+if (reg.test(str))
+{
+   alert ("恭喜帐户通过验证！")
+  return true;
+  }
+else
+  {
+    alert ("请输入合法的帐户！")
+	return false;
+  } 
+} 
+</SCRIPT>
+ 
+<FORM name="form1" method="post" action="" onSubmit="return  checkPostcode( )">
+  <P>邮政编码：
+    <INPUT name="txtPostCode" type="text" id="txtPostCode"> 
+    （6位数字）
+</P>
+  <P>
+    <INPUT type="submit" name="Submit" value="提交">
+  </P>
+</FORM>
+<FORM name="form2" method="post" action="" onSubmit="return  checkAccount( )">
+  <P> 输入帐号：
+    <INPUT name="txtAccount" type="text" id="txtAccount"> 
+    （字母开头，允许5-16字节，允许字母数字下划线）</P>
+  <P>
+    <INPUT type="submit" name="Submit" value="提交">
+  </P>
+</FORM>
+ 

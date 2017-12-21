@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+<script>
+var Num=4; //这里是增加选项卡的数目
+var carNum=2+Num
+function document.onselectstart()
+{
+var obj=event.srcElement 
+if(obj.tagName=="SPAN")
+{
+return false;
+}
+}
+function document.onmousedown()
+{
+var obj=event.srcElement
+var pobj=obj.parentElement.id;
+if(obj.className=="span")
+{
+ for(i=1;i<carNum;i++)
+ {
+ if(pobj==("btn"+i))
+ {
+ document.all("td"+i).style.backgroundColor="menu"
+ document.all("btn"+i).style.height=20
+ content(i)
+ }
+ else
+ {
+ document.all("td"+i).style.backgroundColor="white"
+ document.all("btn"+i).style.height=18
+ }
+ }
+} 
+}
+function content(i)
+{
+//这里是菜单名
+mnuItem(1,"第一项")
+mnuItem(2,"图片世界")
+mnuItem(3,"第三个内容")
+mnuItem(4,"表格")
+mnuItem(5,"滚动字幕")
+//End
+if(i==1)
+{
+span1.innerHTML="<input type=radio checked name=a>男<input name=a type=radio>女<br>"
++"<input><br><input><br><input type=submit>"
+}
+if(i==2)
+{
+span1.innerHTML="<img src=http://www.webjx.com/images/logo.gif width=250>"
+}
+if(i==3)
+{
+span1.innerHTML="<h1>第三个内容</h1>"}
+if(i==4)
+{
+span1.innerHTML="<table border=1 width=100%><td>第四个内容，表格</td></tr>"
++"<tr><td>aaaaaaaa</td></tr>"
++"<tr><td>bbbbbbbb</td></tr>"
++"<tr><td>ccccccccc</td></tr></table>"
+}
+if(i==5)
+{
+span1.innerHTML="<marquee>"
++"这是第五个内容"
++"啦啦..？</marquee>"
+}
+}
+function mnuItem(i,con)
+{
+document.all("MenuName"+i).innerText=con
+}
+</script>
+<style>td{font-size:9pt}
+.span{
+cursor:default;
+padding-left:5;
+padding-top:2;
+padding-right:5;
+padding-bottom:0;
+width:100%;
+height:100%;
+}
+</style>
+<TITLE></TITLE>
+<META http-equiv="content-type" content="text/html;charset=gb2312">
+</HEAD>
+<BODY bgcolor=FFFFFF onload=content(1) onselectstart="return false">
+<p>
+<table width=0 onselectstart="return false" bgcolor=menu align=center><tr><td>
+<table cellpadding=0 cellspacing=0 onselectstart="return false">
+ <tr height=20>
+<td valign=bottom>
+ <table cellspacing=0 cellpadding=0 bgcolor=menu>
+ <tr>
+ <td width=1 height=1></td><td width=1 height=1></td>
+ <td bgcolor=white></td><td></td><td></td>
+ </tr>
+ <tr><td width=1 height=1></td><td width=1 height=1 bgcolor=white></td>
+ <td></td><td bgcolor=black></td><td></td>
+ </tr>
+ <tr><td width=1 bgcolor=white></td><td width=1 height=1></td>
+ <td id=btn1 height=20><span class=span id=MenuName1> </span></td><td width=1 bgcolor=gray></td><td bgcolor=black width=1></td>
+ </tr>
+ <tr><td bgcolor=white></td><td colspan=4 height=1 bgcolor=menu id=td1></td>
+ </tr>
+ </table>
+</td>
+<script>
+for(i=2;i<carNum;i++)
+{
+tdBody="<td valign=bottom>"
+tdBody+="<table cellspacing=0 cellpadding=0 bgcolor=menu>"
+tdBody+="<tr>"
+tdBody+="<td width=1 height=1><\/td><td width=1 height=1><\/td>"
+tdBody+="<td bgcolor=white><\/td><td></td><td></td>"
+tdBody+="<\/tr>"
+tdBody+="<tr><td width=1 height=1><\/td><td width=1 height=1 bgcolor=white><\/td>"
+tdBody+="<td></td><td bgcolor=black><\/td><td></td>"
+tdBody+="<\/tr>"
+tdBody+="<tr><td width=1 bgcolor=white><\/td><td width=1 height=1><\/td>"
+tdBody+="<td id=btn"+i+" height=18><span class=span id=MenuName"+i+"> <\/span></td><td width=1 bgcolor=gray><\/td><td bgcolor=black width=1><\/td>"
+tdBody+="<\/tr>"
+tdBody+="<tr><td bgcolor=white><\/td><td colspan=4 height=1 bgcolor=white id=td"+i+"><\/td>"
+tdBody+="<\/tr>"
+tdBody+="<\/table>"
+tdBody+="<\/td>";
+document.write(tdBody)
+}
+</script>
+</td>
+<td style="border-bottom:1 white solid" width=50> </td> </tr>
+</table>
+<div style="padding:10;width:100%;height:200;border-left:1 white solid;border-right:2 outset;border-bottom:2 outset">
+<span id=span1></span><!--这里是内容-->
+</div>
+</td></tr></table>
+</BODY>
+</HTML>

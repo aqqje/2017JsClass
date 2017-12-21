@@ -1,0 +1,96 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>轮换横幅广告</TITLE>
+<STYLE type="text/css">
+div{font-size:12px;line-height:22px;}
+.red {color: #FF0000}
+</STYLE>
+
+<SCRIPT language="JavaScript">
+                var NowFrame = 1;//图片最先显示第一张
+				var MaxFrame = 3;//图片一共3张
+				function show() {
+					for(var i=1;i<(MaxFrame+1);i++){
+					if(i==NowFrame)
+					document.getElementById('div'+NowFrame).style.display ='';    //当前图片显示
+					else
+					document.getElementById('div'+i).style.display ='none';   //其他的图片隐藏
+					}
+			       { if(NowFrame == MaxFrame)  //定义下一张显示的图片
+					NowFrame = 1;
+				   else
+					NowFrame++;}
+					 theTimer=setTimeout('show()', 3000);  //设置定时器，显示下一张显示的图片
+				}
+				
+</SCRIPT>
+</HEAD>
+
+<BODY onLoad="show();" ONCONTEXTMENU="return false;">
+<DIV align="center">
+<IMG src="image/1.jpg" style="display:none;" id="div1" border="0">
+<IMG src="image/2.gif" style="display:none;" id="div2" border="0">
+<IMG src="image/ad-02.jpg" style="display:none;" id="div3" border="0">
+</DIV>
+<DIV style="padding-left:10px;">一、三张图片轮换显示<BR>
+二、实现思路<BR>
+<DIV style="padding-left:20px;">1、在网页适当位置插入三张带ID名称的图片，例如：<BR>
+< IMG src="image/1.jpg" style="display:none;" id="div1" border="0"><BR>
+< IMG src="image/2.gif" style="display:none;" id="div2" border="0"><BR>
+< IMG src="image/ad-02.jpg" style="display:none;" id="div3" border="0"><BR>
+每张图片ID号最后加上数字，方便函数调用<BR>
+2、在页面载入时，调用三张图片轮换显示的函数:onLoad="show();"<BR>
+3、函数实现的思路：首页定义两个全局变量，NowFrame和MaxFrame；分别表示页面载入时显示的第一张图片及轮换显示的图片张数；其次通过for循环显示每一张图片，并且使其他不显示的图片处于隐藏状态；最后用setTimeout( )函数的定时器功能，间隔一段一间显示下一张图片；最终实现三张图片不间断的轮换显示效果</DIV>
+三、主要的源代码
+<DIV style="padding-left:20px;background-color:#efefef;">
+  <P>&lt;HTML&gt;<BR>
+    &lt;HEAD&gt;<BR>
+    &lt;META http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot;&gt;<BR>
+    &lt;TITLE&gt;轮换横幅广告&lt;/TITLE&gt;<BR>
+    &lt;STYLE type=&quot;text/css&quot;&gt;<BR>
+    div{font-size:12px;line-height:22px;}<BR>
+    .red {color: #FF0000}<BR>
+    &lt;/STYLE&gt;</P>
+  <P>&lt;SCRIPT language=&quot;JavaScript&quot;&gt;<BR>
+    <SPAN class="red">var NowFrame = 1;</SPAN>//图片最先显示第一张<BR>
+    <SPAN class="red">var MaxFrame = 3;</SPAN>//图片一共3张<BR>
+    function show() {<BR>
+    <SPAN class="red">for(var i=1;i&lt;(MaxFrame+1);i++){<BR>
+    if(i==NowFrame)<BR>
+    document.getElementById('div'+NowFrame).style.display ='';</SPAN>    //当前图片显示<BR>
+    <SPAN class="red">else<BR>
+    document.getElementById('div'+i).style.display ='none';</SPAN>   //其他的图片隐藏<BR>
+    }<BR>
+    { <SPAN class="red">if(NowFrame == MaxFrame)</SPAN>  //定义下一张显示的图片<BR>
+    <SPAN class="red">NowFrame = 1;<BR>
+    else<BR>
+    NowFrame++;}<BR>
+    theTimer=setTimeout('show()', 3000);</SPAN>  //设置定时器，显示下一张显示的图片<BR>
+    }<BR>
+  &lt;/SCRIPT&gt;<BR>
+  &lt;/HEAD&gt;</P>
+  <P>&lt;BODY onLoad=&quot;show();&quot;&gt;<BR>
+    &lt;DIV align=&quot;center&quot;&gt;<BR>
+    &lt;IMG src=&quot;image/1.jpg&quot; <SPAN class="red">style=&quot;display:none;&quot; id=&quot;div1&quot;</SPAN> border=&quot;0&quot;&gt;<BR>
+    &lt;IMG src=&quot;image/2.gif&quot; <SPAN class="red">style=&quot;display:none;&quot; id=&quot;div2&quot;</SPAN> border=&quot;0&quot;&gt;<BR>
+    &lt;IMG src=&quot;image/ad-02.jpg&quot; <SPAN class="red">style=&quot;display:none;&quot; id=&quot;div3&quot;</SPAN> border=&quot;0&quot;&gt;<BR>
+    &lt;/DIV&gt;<BR>
+    &lt;/BODY&gt;<BR>
+    &lt;/HTML&gt;</P>
+</DIV>
+四、制作四张图片轮换显示的横幅广告，效果如下：
+<div align="center">
+  <OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="426" height="130">
+    <PARAM name="movie" value="image/OLTL1-1.swf">
+    <PARAM name="quality" value="high">
+    <EMBED src="image/OLTL1-1.swf" QUALITY="high" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer" TYPE="application/x-shockwave-flash" width="426" height="130"></EMBED>
+  </OBJECT>
+</div>
+
+</DIV>
+
+
+</BODY>
+</HTML>

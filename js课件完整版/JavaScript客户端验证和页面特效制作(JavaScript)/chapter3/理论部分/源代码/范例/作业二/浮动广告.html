@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>可关闭的广告层</TITLE>
+<SCRIPT language="javascript"> 
+var initTop=0;
+function init( )
+{
+   initTop=document.getElementById("advLayer").style.pixelTop;
+}
+function move( )
+{  
+   document.getElementById("advLayer").style.pixelTop=initTop+document.body.scrollTop; 
+}
+window.onscroll=move ;
+
+</SCRIPT>
+</HEAD>
+
+<BODY onLoad="init( )">
+<IMG src="images/bg1.jpg"><IMG src="images/bg2.jpg">
+<DIV id="advLayer" style="position:absolute;	left:879px;	top:18px;	width:114px;	height:162px;	z-index:1;">
+<A href="sinagame.htm"><IMG src="images/hero.jpg" width="113" height="161" border="0" alt="E3精品隆重推出"></A></DIV>
+
+</BODY>
+</HTML>

@@ -1,0 +1,19 @@
+提问：如何使页面内容居中？让学员想出一些办法？
+答案：插入一行一列的表格，然后居中，高度、宽度都为100％
+
+提问：如何设置下拉菜单中的第一项？学员可能认为HTML代码中第一个选项即是？
+<SELECT name="selTopic"  id="selPTopic">
+  <OPTION value="gard.html">网上谈兵</OPTION>
+  <OPTION value="IT.html">IT茶馆</OPTION>
+  <OPTION value="news.html" >新闻贴图</OPTION>
+  <OPTION value="education.html">教育大家谈</OPTION>
+</SELECT>
+如上述代码学员认为是“网上谈兵”，教员在DreamWeaver演示，其实不是。那怎么指定下拉菜单中的第一项？？
+
+答案：下拉菜单是否选中的办法：添加selected属性，人工添加代码，如下所示：
+<SELECT name="selTopic"  id="selPTopic">
+  <OPTION value="gard.html">网上谈兵</OPTION>
+  <OPTION value="IT.html">IT茶馆</OPTION>
+  <OPTION value="news.html" selected >新闻贴图</OPTION>
+  <OPTION value="education.html">教育大家谈</OPTION>
+</SELECT>

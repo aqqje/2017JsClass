@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>date对象</TITLE>
+
+<SCRIPT language="javaScript">
+function disptime( )
+{
+  var now= new Date( );
+  var hour = now.getHours();
+  if (hour>=0 && hour <=12)
+	document.write("<H2>上午好!</H2>")
+  if (hour>12 && hour<= 18)
+    document.write("<H2>下午好!</H2>");
+  if (hour>18 && hour <24)
+    document.write("<H2>晚上好!</H2>");
+  document.write("<H2>今天日期:"+now.getYear()+"年"+(now.getMonth( )+1)+"月"+now.getDate()+"日</H2>");
+  document.write("<H2>现在时间:"+now.getHours()+"点"+now.getMinutes( )+"分</H2>");
+}
+</SCRIPT>
+ 
+<BODY onload="disptime( )">
+</BODY>
+</HTML>

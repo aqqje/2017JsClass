@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>数组的使用</TITLE>
+<SCRIPT language="javascript" type="text/javascript" >
+function reloop(){
+ var time = new Date( ); //获得当前时间
+ //获得年、月、日，Date()函数中的月份是从0－11计算
+ var year = time.getFullYear();  
+ var month = time.getMonth()+1;
+ var date = time.getDate();
+ //获得小时、分钟、秒
+ var hour = time.getHours();  
+ var minute = time.getMinutes();
+ var second = time.getSeconds();
+ //获得一个星期中的第几天,西方的星期是从星期日开始，星期六结束
+ var day = time.getDay();
+ if (minute < 10) //如果分钟只有1位，补0显示
+   minute="0"+minute;
+ if (second < 10) //如果秒数只有1位，补0显示
+   second="0"+second; 
+	
+ var weekDesc = new Array("星期天","星期一","星期二","星期三","星期四","星期五","星期六");
+	for(var i=0;i<weekDesc.length;i++){
+		if(day==i){
+		document.getElementById("t").value="今天是:"+year+"年"+month+"月"+date+"日"+weekDesc[i]+"  "+hour+":"+minute+":"+second;
+		setTimeout("reloop()",1000);
+		}
+	}
+}
+
+</SCRIPT>
+<STYLE type="text/css">
+<!--
+/*设置样式：无边框的文本框*/
+INPUT {
+	font-size: 30px;
+	border-style:none ;
+	background-color:#FF8B3B;
+	}
+-->
+</STYLE>
+</HEAD>
+
+<BODY onLoad="reloop()">
+<INPUT id="t" name="time" type="text" size="40">
+
+</BODY>
+</BODY>
+</HTML>

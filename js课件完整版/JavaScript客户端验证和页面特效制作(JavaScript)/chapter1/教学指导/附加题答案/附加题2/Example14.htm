@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE = "JavaScript">
+function calcu()
+{
+  var numb1= document.calc.num1.value;
+  var numb2= document.calc.num2.value;
+  if ((numb1!="") && (numb2!=""))
+  {
+  
+  var total= parseFloat(numb1)*parseFloat(numb2);
+  document.calc.result.value=total; 
+  if ((total>500) &&(total<=1000))
+    alert("购买总价超过500\n支付时将赠送超级Q币2枚！");
+  if ((total>1000) &&(total<=2000))
+   alert("购买总价超过1000\n支付时将赠送IBM光电智能鼠标1只！"); 
+  if ((total>2000))
+   alert("购买总价超过2000\n请直接与贵宾台联系！");
+ }
+ else
+    alert("购买数量或竞拍价格没有填写\n请重新输入！");
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<P>
+<FORM name="calc">
+  <p><font size="5"><IMG src="logo.gif" width="250" height="40"><BR>
+    会说话的QQ竞拍喽！</font><br>
+    <img src="qie.jpg" width="199" height="91">    <br>
+    竞拍价格：
+    <INPUT name="num1" TYPE="text"   value="120" size="15"> 
+    <br>
+    购买数量： 
+    <INPUT TYPE="text" name="num2" size="15"> 
+    <br>
+    预计总价：
+    <INPUT name="result" TYPE="text"  size="15">
+  </p>
+  <P>
+<INPUT name="getAnswer" TYPE="button" id="getAnswer" onClick="calcu()" value="计算看看">
+</FORM>
+
+</BODY>
+</HTML>

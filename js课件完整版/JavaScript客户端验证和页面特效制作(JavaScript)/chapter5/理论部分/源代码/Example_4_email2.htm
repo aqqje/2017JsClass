@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<TITLE>使用文本框控件</TITLE>
+<SCRIPT language = "JavaScript">
+   function checkEmail( )
+   {
+     var strEmail=document.myform.txtEmail.value;
+	 if (strEmail.length==0)
+	 {
+	    alert("电子邮件不能为空!");
+		return false;
+	 }
+     if (strEmail.indexOf("@",0)==-1)
+	 {
+	    alert("电子邮件格式不正确\n必须包含@符号！");
+		document.myform.txtEmail.focus( );
+		document.myform.txtEmail.select( );
+		return false;
+	 }
+     if (strEmail.indexOf(".",0)==-1)
+	 {
+	    alert("电子邮件格式不正确\n必须包含.符号！");
+		document.myform.txtEmail.focus( );
+		document.myform.txtEmail.select( );
+		return false;
+	 }
+	 return true;
+   }
+   
+  function clearText( )
+  {
+   if (document.myform.txtEmail.value=="请输入真实的电子邮箱，我们将发送激活密码")
+   {
+      document.myform.txtEmail.value="" ;
+	  document.myform.txtEmail.style.color="red";
+	}
+  }
+</SCRIPT>
+
+<STYLE type="text/css">
+<!--
+.textBorder {
+	border: 1px solid;
+	font-size:15px;
+ }
+
+-->
+</STYLE>
+</HEAD>
+<FORM name="myform" method="post" action="reg_success.htm" onSubmit="return checkEmail( )">
+  <P><IMG src="images/reg_back1.jpg" width="979" height="195"></P>
+  <TABLE width="559" border="0" align="center">
+    <TR>
+      <TD>登录名：</TD>
+      <TD colspan="2"><INPUT name="txtUserName" type="text" class="textBorder" id="txtUserName" size="40"></TD>
+    </TR>
+    <TR>
+      <TD>您的电子邮件:      </TD>
+      <TD colspan="2"><INPUT name="txtEmail" type="text" class="textBorder" id="txtEmail" value="请输入真实的电子邮箱，我们将发送激活密码" size="40" onFocus="clearText( )" style="color: #666666;">
+*必填</TD>
+    </TR>
+    <TR>
+      <TD colspan="3" align="center"><P>&nbsp;
+        </P>
+        <P>
+          <INPUT name="clearButton" type="reset" id="clearButton" value="  清 空  ">        
+          <INPUT name="registerButton" type="submit" id="registerButton" value="  注  册  "  >
+        </P></TD>
+    </TR>
+  </TABLE>
+  <P><IMG src="images/bottom.jpg" width="969" height="107"  ></P>
+  <P>&nbsp;</P>
+</FORM>
+</HTML>

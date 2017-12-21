@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>注册</TITLE>
+<SCRIPT language="JavaScript" >
+  function changeCity( ){
+     var province=document.myform.selProvince.value; 
+	 var newOption1,newOption2;
+     switch(province){
+	   case  "四川省" :
+		    newOption1= new Option("成都市","chengdu");
+			newOption2= new Option("泸州市","luzhou");
+			break;
+	   case "湖北省" : 
+		    newOption1= new Option("武汉市","wuhan");
+			newOption2= new Option("襄樊市","xiangfan");
+			break;
+	   case "山东省" : 
+		   newOption1= new Option("青岛市","qingdao");
+		   newOption2= new Option("烟台市","yantai");
+			break;	 		 
+	  }
+	 document.myform.selCity.options.length=0;
+	 document.myform.selCity.options.add(newOption1);
+	 document.myform.selCity.options.add(newOption2);
+  }
+</SCRIPT>
+ </HEAD>
+
+<BODY>
+<FORM name="myform"  action="register_success.htm"  >
+<TABLE width="472" border="0" align="center" cellpadding="0" cellspacing="0">
+  <TR>
+    <TD colspan="2"><IMG src="images/1.gif" width="273" height="59"><IMG src="images/2.gif" width="393" height="59"></TD>
+  </TR>
+  <TR>
+    <TD width="185" align="center">&nbsp;&nbsp;&nbsp;&nbsp;姓名 </TD>
+    <TD width="287"><INPUT name="txtUserName" type="text" size="25"></TD>
+  </TR>
+  <TR>
+    <TD align="center">省份 </TD>
+    <TD><SELECT name="selProvince" onChange="changeCity( )">
+      <OPTION>--请选择开户帐号的省份--</OPTION>
+      <OPTION value="四川省">四川省</OPTION>
+      <OPTION value="山东省">山东省</OPTION>
+      <OPTION value="湖北省">湖北省</OPTION>
+                        </SELECT></TD>
+  </TR>
+  <TR>
+    <TD align="center" valign="bottom"> 城市 </TD>
+    <TD><P>
+      <SELECT name="selCity">
+        <OPTION>--请选择开户帐号的城市--</OPTION>
+      </SELECT>
+        </P>
+      </TD>
+  </TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+  </TR>
+  <TR>
+    <TD colspan="2"><DIV align="center"><IMG src="images/regquick.jpg" width="114" height="27" onClick="checkForm( )"></DIV></TD>
+  </TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+  </TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

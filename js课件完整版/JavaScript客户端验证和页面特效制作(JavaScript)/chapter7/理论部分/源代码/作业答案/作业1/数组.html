@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>输出数组中的元素</TITLE>
+
+<SCRIPT LANGUAGE = "JavaScript">
+var emp = new Array(3);
+emp[0] = "YaoMing  姚明";
+emp[1] = "AnthonyCarmelo  卡梅隆安东尼";
+emp[2] = "BillupsChauncey  昌西-比卢普斯 ";
+document.write("<H3>没有按姓名排列：</H3><BR>");
+for (var i in emp) //for(var i=0;i<emp.length;i++)
+{
+document.write(emp[i]+"<BR>");
+}
+document.write("<HR>");
+emp.sort( );
+
+document.write("<H3>按姓名排列：</H3><BR>");
+for (var i in emp) //for(var i=0;i<emp.length;i++)
+{
+document.write(emp[i]+"<BR>");
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

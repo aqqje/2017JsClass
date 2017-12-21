@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>javascript基本语法</TITLE>
+<SCRIPT type="text/javascript" language="javascript">
+/*
+javascript不带参数的自定义函数调用
+所得税计算的方式：(月收入-起征额)*所得税率
+*/
+function cal(){
+	var income=parseFloat(document.myform.income.value);
+	var base=parseFloat(document.myform.base.value);
+	var range;
+	//alert(income--base);
+	if(income>base){	//月收入必须大于起征额
+		range=income-base;
+		if(range<1001){		//判断征税的范围
+			document.myform.tex.value=range*0.05;
+		}else if(range>1000 && range<3001){
+			document.myform.tex.value=range*0.1;
+		}else{
+			document.myform.tex.value=range*0.5;
+		}
+	}
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM action="" method="post" name="myform">
+<TABLE width="376" height="146" border="1" cellpadding="0" cellspacing="0" align="center">
+  <TR>
+    <TH colspan="2">个人所得税计算器</TH>
+    </TR>
+  <TR>
+    <TD width="154">请输入你的月收入:</TD>
+    <TD width="216">&nbsp;<INPUT type="text" name="income" size="20">元</TD>
+  </TR>
+  <TR>
+    <TD>请输入所得税起征额:</TD>
+    <TD>&nbsp;<INPUT type="text" name="base" size="20">元</TD>
+  </TR>
+    <TR>
+    <TD>所得税:</TD>
+    <TD>&nbsp;<INPUT type="text" name="tex" size="20">元</TD>
+  </TR>
+  <TR>
+    <TD colspan="2" align="center">
+	<INPUT type="button" name="btn" value="  计算  " onClick="cal()">&nbsp;
+	<INPUT type="reset" name="reset" value="  重填  "></TD>
+    </TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

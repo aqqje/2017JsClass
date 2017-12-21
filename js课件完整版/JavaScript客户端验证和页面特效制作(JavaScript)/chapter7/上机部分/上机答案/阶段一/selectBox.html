@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>下拉列表框数据及联一</TITLE>
+<SCRIPT language="JavaScript" >
+  function changeGame( )
+  {
+     
+	 var gameType=document.myform.gameType.value; 
+	 var newOption1,newOption2,newOption3,newOption4;
+     switch(gameType)
+	  {
+		case  "纸牌类" :
+		    newOption1= new Option("斗地主","ddd");
+			newOption2= new Option("拖拉机","tlj");
+			newOption3= new Option("梭哈","sh");
+			newOption4= new Option("打百分","dbf");
+			break;
+	   case "棋类" : 
+		    newOption1= new Option("军棋","jq");
+			newOption2= new Option("跳棋","tq");
+			newOption3= new Option("五子棋","wzq");
+			newOption4= new Option("黑白棋","hbq");
+			break;
+	   case "其他类" : 
+		    newOption1= new Option("撞球","zq");
+			newOption2= new Option("连连看","llk");
+			newOption3= new Option("俄罗斯方块","fk");
+			newOption4= new Option("挑错","tc");
+			break;	 
+			 
+	  }
+	 document.myform.gameList.options.length=0;
+	 document.myform.gameList.options.add(newOption1);
+	 document.myform.gameList.options.add(newOption2);
+	 document.myform.gameList.options.add(newOption3);
+	 document.myform.gameList.options.add(newOption4);
+  }
+  
+</SCRIPT>
+
+ </HEAD>
+
+<BODY>
+<FORM name="myform" id="myform" action="" >
+<TABLE width="472" border="0" align="center" cellpadding="0" cellspacing="0" background="images/table1_bg3.gif">
+  <TR>
+    <TD colspan="2"><IMG src="images/top2.jpg" width="662" height="203"></TD>
+  </TR>
+
+  <TR>
+    <TD width="245" height="42" align="center">请选择游戏类别</TD>
+    <TD width="417"><SELECT name="gameType" id="selGame" onChange="changeGame( )">
+      <OPTION>--游戏分类--</OPTION>
+      <OPTION value="纸牌类">纸牌游戏</OPTION>
+      <OPTION value="棋类">棋类游戏</OPTION>
+      <OPTION value="其他类">其他游戏</OPTION>
+                        </SELECT></TD>
+  </TR>
+  <TR>
+    <TD height="22" align="center">游戏名称</TD>
+    <TD><SELECT name="gameList" id="gameId">
+      <OPTION>--请选择要加入的游戏--</OPTION>
+    </SELECT></TD>
+  </TR>
+
+  <TR>
+    <TD height="62" colspan="2"><DIV align="center"><IMG src="images/login.gif" width="89" height="30"></DIV></TD>
+  </TR>
+
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

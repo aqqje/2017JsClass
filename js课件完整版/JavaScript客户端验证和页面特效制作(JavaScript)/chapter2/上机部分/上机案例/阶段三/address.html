@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>模式窗口练习</TITLE>
+<STYLE type="text/css">
+<!--
+.STYLE1 {font-family: Verdana; font-size:14px}
+-->
+</STYLE>
+<SCRIPT type="text/javascript" language="javascript">
+function closeWindow(){
+	var province=document.myform.province.value;
+	var city=document.myform.city.value;
+	var district=document.myform.district.value;
+	var number=document.myform.number.value;
+	var street=document.myform.street.value;
+		if(province==city)
+		window.returnValue=city+district+street+number;
+		else
+		window.returnValue=province+city+district+street+number;
+		window.close();
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM action="" name="myform" method="post">
+<TABLE width="290" height="206" align="center" border="0" bgcolor="#FFC8C8" cellpadding="0" cellspacing="0">
+  <TR>
+    <TD colspan="2" align="center"><SPAN class="STYLE1">送货地址确认</SPAN></TD>
+  </TR>
+  <TR>
+    <TD width="124" align="right" valign="middle">省份：</TD>
+    <TD width="166">
+	<SELECT name="province">
+	  <OPTION value="北京市">北京市</OPTION>
+	  <OPTION value="广东省">广东省</OPTION>
+	  <OPTION value="河北省">河北省</OPTION>
+	  <OPTION value="四川省">四川省</OPTION>
+	  <OPTION value="江苏省">江苏省</OPTION>
+	</SELECT>
+	</TD>
+  </TR>
+  <TR>
+    <TD align="right" valign="middle">城市：</TD>
+    <TD>
+	<SELECT name="city">
+	  <OPTION value="北京市" selected>北京市</OPTION>
+	  <OPTION value="上海市">上海市</OPTION>
+	  <OPTION value="广州市">广州市</OPTION>
+	  <OPTION value="邯郸市">邯郸市</OPTION>
+	  <OPTION value="峨眉山市">峨眉山市</OPTION>
+	</SELECT>
+	</TD>
+  </TR>
+  <TR>
+    <TD align="right" valign="middle">区：</TD>
+    <TD>
+	<SELECT name="district">
+	  <OPTION value="西城区">西城区</OPTION>
+	  <OPTION value="海淀区">海淀区</OPTION>
+	  <OPTION value="白云区">白云区</OPTION>
+	  <OPTION value="解放区">解放区</OPTION>
+	  <OPTION value="进城区">进城区</OPTION>
+	</SELECT>
+	</TD>
+  </TR>
+  <TR>
+    <TD align="right" valign="middle">街道：</TD>
+    <TD><INPUT name="street" type="text" size="20"></TD>
+  </TR>
+  <TR>
+    <TD align="right" valign="middle">门牌号：</TD>
+    <TD><INPUT name="number" type="text" size="20"></TD>
+  </TR>
+    <TR>
+    <TD colspan="2" align="center"><INPUT name="btn" type="button" value="确认" onClick="closeWindow()"></TD>
+  </TR>
+</TABLE>
+</FORM>
+
+</BODY>
+</HTML>

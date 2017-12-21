@@ -1,0 +1,53 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>带按扭的轮换横幅广告</TITLE>
+<STYLE type="text/css">
+a{/*设置无下划线、文字背景超连接样式*/
+color:#ffffff;
+font-size:13px;
+text-decoration:none;
+background-color:#ff0000;
+width:20px;
+}
+
+</STYLE>
+<SCRIPT language="JavaScript">
+                var NowFrame = 1;
+				var MaxFrame = 4;
+				function show(d1) {
+				if(Number(d1)){
+				clearTimeout(theTimer);  //当触动按扭时，清除计时器
+				NowFrame=d1;                //设当前显示图片
+				}
+					for(var i=1;i<(MaxFrame+1);i++){
+					if(i==NowFrame)
+					document.getElementById('div'+NowFrame).style.display ='';   //当前图片示
+					else
+					document.getElementById('div'+i).style.display ='none';    //隐藏其他图片层
+					}
+			       { if(NowFrame == MaxFrame)   //设置下一个显示的图片
+					NowFrame = 1;
+				   else
+					NowFrame++;}
+					 theTimer=setTimeout('show()', 3000);   //设置定时器，显示下一张图片
+				}
+				
+</SCRIPT>
+</HEAD>
+
+<BODY onLoad="show();">
+<DIV style="position:absolute;left:200px;top:60px;">
+<IMG src="image/ad-01.jpg" style="display:none;" id="div1" border="0">
+<IMG src="image/ad-02.jpg" style="display:none;" id="div2" border="0">
+<IMG src="image/ad-03.jpg" style="display:none;" id="div3" border="0">
+<IMG src="image/ad-04.jpg" style="display:none;" id="div4" border="0">
+</DIV>
+<DIV  style="position:absolute;left:440px;top:230px;"  align="center"><A href="javascript:show(1)">1</A>&nbsp;<A href="javascript:show(2)">2</A>&nbsp;<A href="javascript:show(3)">3</A>&nbsp;<A href="javascript:show(4)">4</A>
+</DIV>
+
+
+
+</BODY>
+</HTML>

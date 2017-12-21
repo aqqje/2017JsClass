@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>键盘事件</TITLE>
+<SCRIPT type="text/javascript" language="javascript">
+function showCode(){
+	if(event.keyCode==32){
+		alert("你刚才按下的是空格键");
+	}else if(event.keyCode==13){
+		alert("你刚才按下的是回车键");
+	}
+	else{
+		alert("你刚才按下的是: "+String.fromCharCode(event.keyCode)+"键");
+	}
+}
+document.onkeypress=showCode;
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<P>按下除功能键以外的任意键，查看显示效果</P>
+
+</BODY>
+</HTML>

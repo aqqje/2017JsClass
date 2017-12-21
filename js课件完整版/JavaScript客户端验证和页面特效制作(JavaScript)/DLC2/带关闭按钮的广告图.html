@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>带关闭按钮的随滚动条移动的广告层</TITLE>
+<STYLE type="text/css">
+A{font-size:12px;line-height:20px;color:#000000;text-decoration:none;}
+</STYLE>
+<SCRIPT language="javascript">
+function close1(){
+document.getElementById("mscroll").style.display="none";
+}
+
+function move(){
+ document.getElementById("mscroll").style.pixelTop=document.body.scrollTop+50; //获取mscroll层的上方位置。 
+ document.getElementById("mscroll").style.pixelLeft=document.body.scrollLeft+10; //获取mscroll层的左方位置。
+
+}
+window.onscroll=move;   //窗口的滚动事件，当页面滚动时调用move( )函数
+
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<div align="right" style="position:absolute;left:10px;width:109px;background-color:#CCCCCC;z-index:2;" id="mscroll"><IMG src="image/close.jpg"><br><a href="javascript:close1();">关闭</a></div>
+
+<div align="center"><IMG src="image/DLC-1.JPG"><IMG src="image/DLC-2.JPG"><IMG src="image/DLC-3.JPG"></div>
+
+</BODY>
+</HTML>

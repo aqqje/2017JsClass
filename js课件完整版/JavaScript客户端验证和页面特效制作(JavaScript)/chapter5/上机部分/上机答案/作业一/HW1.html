@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>无标题文档</TITLE>
+<SCRIPT type="text/javascript">
+function checkValue(){
+	var username=document.myform.txtUser.value;
+	var pass=document.myform.txtPass.value;
+	var email=document.myform.txtEmail.value;
+	if(username==""){
+		alert("用户名不能为空");
+		document.myform.txtUser.focus();
+		return false;
+	}else{
+	  for(var i=0;i<username.length;i++)
+	  {
+	     var charType=username.toUpperCase().charAt(i);
+		 if( (!(charType>="0" && charType<="9")) &&  (!(charType>="A" && charType<="Z"))  && (charType!="_") )
+		 {
+		  alert("用户名包含非法字符，只能包括字母,数字和下划线");
+		  document.myform.txtUser.select();
+		  return false;
+		  }
+	  }
+	 }
+	if(pass==""){
+		alert("密码不能为空");
+		document.myform.txtPass.focus();
+		return false;
+	}else if(pass.length<6||pass.length>12){
+		alert("密码长度为6-16个字符");
+		document.myform.txtPass.select();
+		return false;
+	}
+
+	var usersex = document.myform.sex;
+	var count=0;
+	for(i=0;i<usersex.length;i++){
+		if(usersex[i].checked){
+		count=1;
+		break;
+		}
+	}
+	if(count==0){
+		alert("请选择性别");
+		return false;
+	}
+	return true;
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM action="" method="get" name="myform" onSubmit="return checkValue()">
+<TABLE width="381" border="0" cellspacing="0" cellpadding="0" align="center" style="border:1px solid">
+  <TR>
+    <TD><IMG src="images/top.jpg"></TD>
+    </TR>
+	<TR><TD height="10">&nbsp;</TD></TR>
+	 <TR>
+    <TD height="175" align="center" valign="middle">
+	<TABLE width="459" style="border:1px solid">
+	 <TR>
+    	<TD width="111">用户名：</TD>
+		<TD width="336"><INPUT name="txtUser" type="text"></TD>
+    </TR>
+	<TR>
+		<TD>密码：</TD>
+    	<TD><INPUT name="txtPass" type="password">
+    	密码长度为6-12个字符</TD>
+    </TR>
+	<TR>
+		<TD>性别：</TD>
+    	<TD><INPUT name="sex" type="radio" value="male">
+			  男<INPUT name="sex" type="radio" value="fmale">
+			  女</TD>
+    </TR>
+		<TR>
+    	<TD>出生日期:</TD>
+		<TD>
+		<INPUT name="txtBirth" type="text" size="10" maxlength="10">日期格式(yyyy-mm-dd)
+		</TD>
+    </TR>
+	 <TR>
+    	<TD>电子邮件地址:</TD>
+		<TD><INPUT name="txtEmail" type="text"></TD>
+    </TR>
+
+	<TR>
+		<TD height="34" colspan="2" align="center"><INPUT name="submit" type="submit" value="同意以下条款并提交"></TD>
+    	</TR>
+	</TABLE> 
+	</TD>
+    </TR>
+  <TR>
+    <TD height="129"><IMG src="images/bottom.jpg"></TD>
+    </TR>
+</TABLE>
+
+
+</FORM>
+</BODY>
+</HTML>

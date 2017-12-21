@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>弹出关闭层</TITLE>
+<STYLE type="text/css" >
+ 
+/*如果去掉定位的样式，将出现内容动态隐藏显示的效果*/
+#advLayer {	position:absolute;
+	left:62px;
+	top:44px;
+	width:367px;
+	height:194px;
+	z-index:2;
+}
+
+</STYLE>
+<SCRIPT language="javascript" >
+function closeMe( )
+{
+    
+	document.getElementById("advLayer").style.display="none";
+	 
+}
+function showMe( )
+{
+    
+	document.getElementById("advLayer").style.display="block";
+	 
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<P>
+  <INPUT name="placeButton" type="button"   value="   关闭层    " onClick=" closeMe( )">
+  <INPUT name="placeButton2" type="button"   value="    弹出层    " onClick=" showMe( )">
+</P>
+<DIV id="advLayer"><IMG src="images/advPic.jpg" width="360" height="190"   ></DIV>
+<H1>层下方的内容</H1>
+<H1>层下方的内容</H1>
+<H1>层下方的内容</H1>
+<H1>层下方的内容</H1>
+<H1>如果修改代码：去掉层DIV的样式（即取消层的位置），</H1>
+<H1>将出现内容动态隐藏显示的效果。</H1>
+</BODY>
+</HTML>

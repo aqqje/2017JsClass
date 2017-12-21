@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>CSS样式特效</TITLE>
+<STYLE type="text/css">
+td{font-size:12px}
+<!--
+.txtBorder{border:1 solid #00A8A8}
+-->
+.txtBordeChange{border:1 solid #FFA346}
+.free{
+width:283px;
+border:1px solid #C1C1C1;
+border-top:0;
+background:#F9F9F9 url(images/freeh1-n.jpg) no-repeat center top;
+}
+.overStyle{
+   background-image: url(images/freedl_1-2.jpg);
+	color:#489379;
+	width:102px;
+	height:24px;
+	text-align:center;
+	border:0;
+	font-weight:bold;
+	clear:both;
+	cursor:pointer;
+	margin:0 0 0 96px;	  
+}
+ /*鼠标移出时调用的样式*/
+.outStyle{
+   background-image:url(images/freedl_1-1.jpg);
+	color:#489379;
+	width:102px;
+	height:24px;
+	text-align:center;
+	border:0;
+	font-weight:bold;
+	clear:both;
+	cursor:pointer;
+	margin:0 0 0 96px;  
+}
+</STYLE>
+<SCRIPT language="javascript" >
+
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<TABLE height="155" class="free">
+	<TR>
+	  <TD colspan="2" height="80">&nbsp;</TD>
+	</TR>
+	<TR>
+	  <TD align="right"><SELECT name="type">
+	  <option >会员名</option>
+	  <option  selected="selected">邮箱名</option>
+	  </SELECT></TD>
+	  <TD><INPUT name="email" type="text" size="15" class="txtBorder" onmouseover="this.className='txtBordeChange'"  onmouseout="this.className='txtBorder'" >@sina.com</TD>
+	</TR>
+	<TR>
+	  <TD align="right">密码</TD>
+	  <TD><INPUT name="pass" type="text" size="15" class="txtBorder" onmouseover="this.className='txtBordeChange'"  onmouseout="this.className='txtBorder'"></TD>
+	</TR>
+	<TR>
+	  <TD align="right">&nbsp;</TD>
+	  <TD><INPUT name="remem" type="checkbox" >&nbsp;&nbsp;记住邮箱名</TD>
+	</TR>
+		<TR>
+	  <TD colspan="2"><input name="" type="submit" value="登 录" class="outStyle" onmouseover="this.className='overStyle'"  onmouseout="this.className='outStyle'" /></TD>
+	</TR>
+</TABLE>
+<!--免费邮箱登录结束-->
+
+
+</BODY>
+</HTML>

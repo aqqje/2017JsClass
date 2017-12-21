@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>图片的切换效果</TITLE>
+<SCRIPT language="javascript">
+function InitImage( )
+{
+   document.getElementById("mobile").style.display="none";
+   document.getElementById("mobile2").style.display="none";
+   document.getElementById("game1").style.display="none";
+}
+function showPhone( )
+{ 
+	document.getElementById("game1").style.display="block";
+	document.getElementById("mobile2").style.display="block";
+	document.getElementById("game2").style.display="none";
+	document.getElementById("mobile1").style.display="none";;
+	
+	document.getElementById("game").style.display="none";
+	document.getElementById("mobile").style.display="block";
+}
+
+function showGame( )
+{ 
+	document.getElementById("game2").style.display="block";
+	document.getElementById("mobile1").style.display="block";
+	document.getElementById("game1").style.display="none";
+	document.getElementById("mobile2").style.display="none";
+	
+	document.getElementById("game").style.display="block";
+	document.getElementById("mobile").style.display="none";
+	
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY onLoad="InitImage( )">
+<TABLE border="0" align="center" cellpadding="0" cellspacing="0">
+  <TR>
+    <TD><IMG src="images/game1.jpg" id="game1" onMouseOver="showGame()" ><IMG src="images/game2.jpg"  id="game2" ></TD>
+    <TD><IMG src="images/mobile1.jpg" name="mobile1" id="mobile1"  onMouseOver="showPhone()"><IMG src="images/mobile2.jpg" width="98"   id="mobile2" ></TD>
+  </TR>
+<TR>
+    <TD colspan="2"><IMG id="game" src="images/card1.jpg" ><IMG id="mobile" src="images/phone.jpg" ></TD>
+  </TR>
+</TABLE>
+</BODY>
+</HTML>

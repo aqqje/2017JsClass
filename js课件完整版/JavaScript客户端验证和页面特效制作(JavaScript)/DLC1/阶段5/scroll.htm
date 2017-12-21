@@ -1,0 +1,36 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>多张图片轮换广告</title>
+<script language="JavaScript">
+                var NowFrame = 1; //定义当前图片
+				var MaxFrame = 3; //定义图片张数
+				function show() {
+				var next = NowFrame + 1;
+				if(next == MaxFrame+1)
+				{
+				   NowFrame = MaxFrame;
+				   next = 1;
+				}
+				{
+				   document.getElementById('div'+next).style.display = "block";
+				   document.getElementById('div'+NowFrame).style.display = "none";  
+				   if(NowFrame == MaxFrame) 
+					NowFrame = 1;         //当前图序列号最大时，设当前图序号为1，重新开始轮换显示
+				   else
+					NowFrame++;
+				} 
+					setTimeout('show()', 2000);
+				}
+</script>
+</head>
+
+<body onLoad="show()">
+<div align="center">
+<img src="1.jpg" style="display:block;" id="div1">
+<img src="2.gif" style="display:none;" id="div2">
+<img src="3.jpg" style="display:none;" id="div3">
+</div>
+</body>
+</html>

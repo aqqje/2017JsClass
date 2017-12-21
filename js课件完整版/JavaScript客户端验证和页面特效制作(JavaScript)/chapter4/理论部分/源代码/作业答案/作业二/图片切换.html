@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>图片切换特效</TITLE>
+<SCRIPT language="javascript">
+function InitImage( )
+{
+   document.getElementById("job2").style.display="none";
+   document.getElementById("resum1").style.display="none";
+   document.getElementById("resumtab").style.display="none";
+}
+function TabChange(show,hidden) 
+{
+	document.getElementById(show+"tab" ).style.display="block";
+	document.getElementById(hidden+"tab" ).style.display="none";
+	
+	document.getElementById(show+"2").style.display="none";
+	document.getElementById(show+"1").style.display="block";
+
+	document.getElementById(hidden+"2").style.display="block";
+	document.getElementById(hidden+"1").style.display="none";
+
+	
+}
+</SCRIPT>
+</HEAD>
+
+<BODY onLoad="InitImage()">
+<P align="center"><IMG src="images/logo.jpg"></P>
+<TABLE width="238" border="0" align="center" cellpadding="0" cellspacing="0">
+
+  <TR>
+    <TD width="42"><IMG src="images/job1.jpg"id="job1" ></TD>
+	<TD width="210" rowspan="2" valign="top"><IMG src="images/jobtab.jpg" id="jobtab"></TD>
+  </TR>
+  <TR>
+    <TD><IMG src="images/resum2.jpg" id="resum2" onMouseOver="TabChange('resum','job')" ></TD>
+  </TR>
+  <TR>
+	<TD><IMG src="images/job2.jpg"  id="job2" onMouseOver="TabChange('job','resum')" ></TD>
+    <TD rowspan="2"><IMG src="images/resumtab.jpg" id="resumtab"></TD>
+  </TR>
+  <TR>
+    <TD height="63"><IMG src="images/resum1.jpg" id="resum1"></TD>
+  </TR>
+</TABLE>
+</BODY>
+</HTML>

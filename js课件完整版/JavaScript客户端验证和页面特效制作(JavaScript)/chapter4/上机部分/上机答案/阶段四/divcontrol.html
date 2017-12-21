@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>层的显示和隐藏</TITLE>
+<STYLE type="text/css">
+#bg{background-image:url(images/bg.jpg); background-repeat:no-repeat; height:432px; width:430; position:absolute; z-index:3}
+.btn{
+	BORDER-RIGHT: #ffffff 0px solid;
+	BORDER-TOP: #ffffff 0px solid;
+	BACKGROUND-IMAGE:url(images/work_place.gif);
+	BORDER-LEFT: #ffffff 0px solid;
+	COLOR: #333333;
+	BORDER-BOTTOM: #ffffff 0px solid;
+	BACKGROUND-COLOR: #e7e7e7;
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif, "宋体";
+	height: 27px;
+	width: 78px;
+	z-index:2;
+	left: 234px;
+	top: 167px;
+}
+#place {
+	position:absolute;
+	left:65px;
+	top:199px;
+	width:311px;
+	height:117px;
+	z-index:1;
+	background-color: #FFFFFF;
+	background-image: url(images/layerBack.jpg);
+	display:none
+}
+</STYLE>
+<SCRIPT type="text/javascript" language="javascript">
+function showMAP(){
+document.getElementById("place").style.display="block";//block将层显示
+
+}
+function closeMe( )
+{
+  document.getElementById("place").style.display="none";//none将层隐藏
+}
+function selectPlace(place)
+{
+  document.getElementById("workplace").value=place;
+  document.getElementById("place").style.display="none";
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<DIV id="bg">
+  <DIV style="position:absolute; left: 234px; top: 166px; width: 78px;">
+    <INPUT name="workplace" type="button" class="btn" value="   工作地点  " onClick=" showMAP( )">
+  </DIV>
+  <DIV id="place" style="background-repeat:no-repeat">
+  <TABLE width="311" height="109" border="0" cellspacing="0" style="font-size:12px">
+    
+    <TR>
+      <TD>&nbsp;</TD>
+      <TD>&nbsp;</TD>
+      <TD>&nbsp;</TD>
+      <TD align="right"><A href="javascript: closeMe( )">关闭</A></TD>
+    </TR>
+    <TR>
+      <TD width="70"><A href="javascript: selectPlace('北京')" >北京</A></TD>
+      <TD width="67"><A href="javascript: selectPlace('上海')" >上海</A></TD>
+      <TD width="78"><A href="javascript: selectPlace('广州')">广州</A></TD>
+      <TD width="88"><A href="javascript: selectPlace('武汉')">武汉</A></TD>
+    </TR>
+    <TR>
+      <TD><A href="javascript: selectPlace('成都')">成都</A></TD>
+      <TD><A href="javascript: selectPlace('徐州')">徐州</A></TD>
+      <TD><A href="javascript: selectPlace('深圳')">深圳</A></TD>
+      <TD><A href="javascript: selectPlace('珠海')">珠海</A></TD>
+    </TR>
+  </TABLE>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

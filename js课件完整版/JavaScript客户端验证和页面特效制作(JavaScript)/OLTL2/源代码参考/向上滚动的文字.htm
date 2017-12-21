@@ -1,0 +1,78 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE> 垂直滚动文字</TITLE>
+<STYLE type="text/css">
+A{font-size:13px;
+color:#000000;
+/*无下划线的链接文字样式*/
+text-decoration:none;
+line-height:22px;}
+A:hover{font-size:13px;
+color:#FF0000;
+/*无下划线的链接文字样式*/
+text-decoration:underline;
+line-height:22px;}
+</STYLE>
+
+</HEAD>
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<TABLE width="252" border="0" cellspacing="0" cellpadding="0" align="center">
+  <TR>
+    <TD><IMG src="image/bgtop.gif"></TD>
+  </TR>
+  <TR>
+    <TD background="image/bg.gif" ><DIV id="dome" style="overflow:hidden;height:150px; width=245px;">
+<DIV id="dome1" >
+<A  href="http://forum.taobao.com/forum-150/show_info----10893713-0-.htm" 
+              target=_blank>·恭喜"ech***"双色球喜中3000元</A> <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893726-0-.htm" 
+              target=_blank>·恭喜"dhx***"双色球喜中2675元</A>
+              <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893765-0-.htm" 
+              target=_blank>·恭喜"风之***"双色球喜中1680元 </A>
+              <BR><A  href="http://forum.taobao.com/forum-150/show_info----10893783-0-.htm" 
+              target=_blank>·恭喜"沫沫***"双色球喜中1470元</A>
+              <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893797-0-.htm" 
+              target=_blank>·恭喜"ralf***"双色球喜中1390元</A>
+              <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893812-0-.htm" 
+              target=_blank>·恭喜"f_h_***"3D喜中2000元</A>
+              <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893830-0-.htm" 
+              target=_blank>·恭喜"lsmx***"3D喜中9108.1元</A>
+              <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893845-0-.htm" 
+              target=_blank>·恭喜"梅子花***"排列3喜中8000元</A>
+              <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893854-0-.htm" 
+              target=_blank>·恭喜"洞头***"排列3喜中1000元</A>
+              <BR><A 
+              href="http://forum.taobao.com/forum-150/show_info----10893867-0-.htm" 
+              target=_blank>·恭喜"gxh***"排列3喜中1000元</A>
+</DIV>
+<DIV id=dome2></DIV>
+</DIV></TD>
+  </TR>
+  <TR>
+    <TD><IMG src="image/bgend.gif"></TD>
+  </TR>
+</TABLE>
+<SCRIPT language="JavaScript">
+   var speed=50;  //设置文字滚动速度
+   dome2.innerHTML=dome1.innerHTML //复制dome1为dome2
+   function Marquee(){
+   if(dome2.offsetTop-dome.scrollTop<=0) //当滚动至dome1与dome2交界时
+   dome.scrollTop-=dome1.offsetHeight  //dome跳到最顶端
+   else{
+   dome.scrollTop++
+   }
+   }
+   var MyMar=setInterval(Marquee,speed) //设置定时器
+   dome.onmouseover=function() {clearInterval(MyMar)}//鼠标移上时清除定时器达到滚动停止的目的
+   dome.onmouseout=function() {MyMar=setInterval(Marquee,speed)}//鼠标移开时重设定时器，继续滚动
+</SCRIPT>
+</BODY>
+</HTML>

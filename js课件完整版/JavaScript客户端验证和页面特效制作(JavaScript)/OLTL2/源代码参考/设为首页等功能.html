@@ -1,0 +1,62 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>综合功能</TITLE>
+<STYLE type="text/css">
+td{font-size:13px;color:#000000;line-height:28px;}
+A{text-decoration:none;font-size:13px;color:#00aa00;line-height:28px;}
+</STYLE>
+<SCRIPT language="JavaScript">
+function click(){
+alert('您这是干什么呢？')  //点击右键时，弹出警告框，屏蔽右键
+return false;
+// oncontextmenu="return false;"
+}
+
+function sc(){
+window.external.addFavorite('http://www.taobao.com','淘宝网')    //收藏本站
+}
+
+
+	function detectBrowser()
+	{	
+		var sAgent = navigator.userAgent.toLowerCase();
+		this.isIE = (sAgent.indexOf("msie")!=-1);   //IE6.0-7浏览器
+		this.isFF = (sAgent.indexOf("firefox")!=-1);  //firefox浏览器
+		this.isSa = (sAgent.indexOf("safari")!=-1);  //safari浏览器
+		this.isOp = (sAgent.indexOf("opera")!=-1);  //opera浏览器
+		this.isNN = (sAgent.indexOf("netscape")!=-1);   //netscape浏览器
+		this.isMa =(sAgent.indexOf("maxthon")!=-1);  //maxthon浏览器
+		this.isOther = (!this.isIE && !this.isFF && !this.isSa && !this.isOp && !this.isNN && !this.isSa);   //未知的浏览器
+	if(this.isIE)
+	document.write("\nIE浏览器");
+	if(this.isFF)
+	document.write("\nfirefox浏览器");
+	if(this.isSa)
+	document.write("\nsafari浏览器");
+	if(this.isOp)
+	document.write("\nopera浏览器");
+	if(this.isNN)
+	document.write("\nnetscape浏览器");
+	if(this.isMa)
+	document.write("\nMaxthon浏览器");
+	if(this.isOther)
+	document.write("\n您的浏览器未知");
+	}
+
+
+document.oncontextmenu=click;
+</SCRIPT>
+</HEAD>
+
+<BODY topmargin="0">
+<TABLE width="765" border="0" cellspacing="0" cellpadding="0" align="center" background="image/taobao-top.jpg" height="155" >
+  <TR><td width="50%"></td>
+    <TD valign="top"><A  style="cursor:hand"  onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.taobao.com');return false;" > 
+      【设为首页】</A>&nbsp;&nbsp;<A href="javascript:sc()">【收藏本站】</A><br>您的浏览器类型：<FONT color="#FF0000"><SCRIPT language="JavaScript">detectBrowser()
+</SCRIPT></FONT></TD>
+ </TR>
+</TABLE>
+</BODY>
+</HTML>

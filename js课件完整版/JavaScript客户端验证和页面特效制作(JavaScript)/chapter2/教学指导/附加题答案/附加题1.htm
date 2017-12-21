@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML><HEAD><TITLE>状 态 栏 滚 动 文 字 </TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function scroll(seed)
+{
+var m1 = "  ****欢迎您的光临**** "
+var m2 = "网页素材，各类教程，相关软件下载，应有尽有"
+var msg=m1+m2; 
+var out = " ";
+var c = 1;
+if (seed > 100) {
+seed--;
+var cmd="scroll(" + seed + ")";
+timerTwo=window.setTimeout(cmd,100);
+}
+else if (seed <= 100 && seed > 0) {
+for (c=0 ; c < seed ; c++) {
+out+=" ";
+}
+out+=msg;
+seed--;
+var cmd="scroll(" + seed + ")";
+window.status=out;
+timerTwo=window.setTimeout(cmd,100);
+} else if (seed <= 0) {
+if (-seed < msg.length) {
+out+=msg.substring(-seed,msg.length);
+seed--;
+var cmd="scroll(" + seed + ")";
+window.status=out;
+timerTwo=window.setTimeout(cmd,100);
+}
+else {
+window.status=" ";
+timerTwo=window.setTimeout("scroll(100)",7);
+}
+}
+}
+timerONE=window.setTimeout('scroll(100)',50);
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY ><center>看看状态栏滚动的文字哟！
+

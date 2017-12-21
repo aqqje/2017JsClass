@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>层的显示和隐藏</TITLE>
+<STYLE type="text/css">
+<!--
+#advLayer {
+	position:absolute;
+	left:5px;
+	top:101px;
+	width:100px;
+	height:224px;
+	z-index:1;
+}
+#closeLayer {
+	position:absolute;
+	left:70px;
+	top:329px;
+	width:35px;
+	height:22px;
+	z-index:2;
+}
+-->
+</STYLE>
+<SCRIPT language="javascript" >
+function closeMe( )
+{
+    
+    document.getElementById("closeLayer").style.display="none";
+	document.getElementById("advLayer").style.display="none";
+	 
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<DIV id="advLayer"><IMG src="images/adv.jpg" width="110"  ></DIV>
+<DIV id="closeLayer" onClick="closeMe( )"><IMG src="images/closePic.jpg" width="42" height="14"></DIV>
+<TABLE   border="0" align="center">
+  <TR>
+    <TD width="100%"  height="100%"  ><IMG src="images/sohu_back.jpg" width="761" height="616"> </TD>
+  </TR>
+</TABLE>
+</BODY>
+</HTML>

@@ -1,0 +1,87 @@
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>用户注册</TITLE>
+<SCRIPT language="javascript" src="check.js"></SCRIPT>
+</HEAD>
+<STYLE  type="text/css">
+td{font-size:12px;line-height:30px;}
+div{font-size:12px;line-height:30px;}
+.p1{border-left:1 #61B4D3 solid;  border-bottom:1 #61B4D3 solid; background-color:#D3EAF3;text-align:right;}
+.p2{border-left:1 #cccccc solid;  border-bottom:1 #cccccc solid; }
+.p3{border-right:1 #cccccc solid;  border-bottom:1 #cccccc solid; }
+.font_error{font-size:12px;color:#ff0000;}
+.font_true{font-size:12px;color:#56B429;}
+</STYLE>
+<SCRIPT language="JavaScript" >
+<!--下拉框级联开始-->
+var cityList = new Array( );  
+      cityList['北京'] = ['朝阳区','东城区','西城区', '海淀区','宣武区','丰台区','怀柔','延庆','房山'];
+	 cityList['上海'] = ['宝山区','长宁区','丰贤区', '虹口区','黄浦区','青浦区','南汇区','徐汇区','卢湾区'];
+	 cityList['河南省'] = ['郑州','洛阳','开封', '新乡','焦作','周口','南阳','安阳','信阳'];
+     cityList['山东省'] = ['济南', '青岛', '淄博', '枣庄', '东营', '烟台', '潍坊', '济宁', '泰安', '威海', '日照'];
+	 cityList['四川省'] =['成都', '绵阳', '德阳', '自贡', '内江', '乐山', '南充', '雅安', '眉山', '甘孜', '凉山', '泸州'];
+     cityList['湖北省'] = ['武汉', '宜昌', '荆州', '襄樊', '黄石', '荆门', '黄冈', '十堰', '恩施', '潜江'];
+  function changeCity( )
+  {
+     var province=document.myform.province.value; 
+	 document.myform.city.options.length=0;
+	 for (var i in cityList) 
+	 {
+	        if (i == province) 
+			{
+                for (var j in cityList[i]) 
+				{
+                     document.myform.city.options.add(new Option(cityList[i][j], cityList[i][j]));
+                }
+            }
+       }
+	 document.myform.city.options.selctIndex=0;
+  }
+  
+  function loadAll( )
+  { for (var i in cityList)  
+	   { document.myform.province.options.add(new Option(i, i)); 
+		}
+        document.myform.province.selectedIndex = 0; 
+  }
+ <!--下拉框级联结束--> 
+
+</SCRIPT>
+<BODY onLoad="loadAll( )">
+<DIV align="center"><IMG src="image/top.jpg"><BR><BR>
+  <FONT color="#FF0000" size="3"><STRONG>以下为必填项</STRONG></FONT><BR>
+  <BR></DIV>
+<TABLE width="762" border="0" cellspacing="0" cellpadding="0" align="center">
+ <FORM action="success.htm" method="post" name="myform" target="_blank">
+  <TR>
+    <TD class="p1" style="border-top:1 #61B4D3 solid;" width="120">用户名：</TD>
+	<TD width="180" class="p2" style="border-top:1 #cccccc solid;">&nbsp;<INPUT name="username" type="text" size="25" onBlur="checkUser(username);"></TD>
+	<TD class="p3" style="border-top:1 #cccccc solid;"><DIV id="userNameInfor">4-20个字符(可使用字母、数字、下划线)</DIV>
+	</TD>
+  </TR>
+  <TR>
+    <TD class="p1" >密码：</TD>
+	<TD class="p2">&nbsp;<INPUT name="pass" type="password" size="27" onBlur="checkpass(pass)"> </TD>
+	<TD class="p3"><DIV id="passinfor">密码由6-16个字符(可使用字母、数字、下划线)</DIV></TD>
+  </TR>
+   <TR>
+    <TD class="p1"> 确认密码：</TD>
+	<TD class="p2">&nbsp;<INPUT name="repass" type="password" size="27" onBlur="checkrepass(pass,repass)"></TD>
+	<TD class="p3"><DIV id="repassinfor">请再输入一遍您上面输入的密码</DIV></TD>
+  </TR>
+   <TR>
+    <TD class="p1"> 电子邮件地址：</TD>
+	<TD class="p2">&nbsp;<INPUT name="email" type="text" size="25" onBlur="checkemail(email)"></TD>
+	<TD class="p3"><DIV id="emailinfor">请输入电子邮件地址</DIV></TD>
+  </TR>
+   <TR>
+    <TD class="p1"> 城市：</TD>
+	<TD class="p2" colspan="2" style="border-right:1 #cccccc solid;">&nbsp;<SELECT name="province"  id="province" onChange="changeCity( )"><OPTION>--请选择省份--</OPTION></SELECT>&nbsp;<SELECT name="city" id="city" >
+      <OPTION>--请选择城市--</OPTION></SELECT></TD>
+  </TR>
+  <TR>
+    <TD colspan="3" align="center" height="50" class="p2" style="border-right:1 #cccccc solid;"><A href="success.htm"><IMG src="image/reg.jpg" border="0"></A></TD>
+  </TR></FORM>
+</TABLE>
+</BODY>
+</HTML>

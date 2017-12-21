@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>弹出关闭层</TITLE>
+<STYLE type="text/css">
+<!--
+.STYLE1 {color: #FF0066}
+/*当去掉DIV的样式时，display:none与visibility:hidden的才会有区别。
+否则没有区别，您可以测试测试。
+#advLayer {
+	position:absolute;
+	left:11px;
+	top:112px;
+	width:325px;
+	height:135px;
+	z-index:1;
+}
+*/
+-->
+</STYLE>
+</HEAD>
+
+<BODY>
+<P><SPAN class="STYLE1">注意：</SPAN>当去掉DIV的样式时，display:none与visibility:hidden的才会有区别，如下例所示：</P>
+<P>
+  <INPUT name="placeButton" type="button"   value="   display:none关闭层    " onClick="javascript: document.getElementById('advLayer').style.display='none'">
+  <INPUT name="placeButton2" type="button"   value="    display:block弹出层    " onClick=" javascript: document.getElementById('advLayer').style.display='block'">
+</P>
+<P>
+  <INPUT name="placeButton3" type="button"   value="   visibility:hidden关闭层    " onClick=" javascript: document.getElementById('advLayer').style.visibility='hidden'">
+  <INPUT name="placeButton22" type="button"   value="    visibility:visible弹出层    " onClick="javascript: document.getElementById('advLayer').style.visibility='visible'">
+</P>
+
+<DIV id="advLayer"><IMG src="images/advPic.jpg" width="360" height="190"   ></DIV>
+
+ 
+<H1>层下方的内容</H1>
+<H1>层下方的内容</H1>
+<H1>层下方的内容</H1>
+<H1>层下方的内容</H1>
+<H1>层下方的内容</H1>
+<H1>层下方的内容</H1>
+
+</BODY>
+</HTML>

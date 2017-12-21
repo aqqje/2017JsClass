@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>模式窗口</TITLE>
+<SCRIPT type="text/javascript" language="javascript">
+function closeWindow(){
+	window.returnValue=document.myform.address.value;
+	window.close();
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODy>
+<FORM name="myform" action="" method="post">
+请填写你的家庭住址:<BR><INPUT name="address" type="text" size="40"><BR>
+<INPUT type="button" name="btn" value="确认" onClick="closeWindow()">
+</FORM>
+</BODY>
+</HTML>

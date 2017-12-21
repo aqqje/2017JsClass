@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>商品类目</TITLE>
+<STYLE type="text/css">
+/*定义超接样式*/
+.A1{font-size:12px;text-decoration:none;color:#000000;width:90px;
+background-image:url(images/bg.gif);/*链接文字背景*/
+line-height:25px;}
+.A1:hover{font-size:12px;color:#ffffff;
+background-image:url(images/bg1.gif);/*鼠标移动链接上时，链接文字背景*/
+width:90px;height:27px;
+border:1px  #319ede  solid;}
+td{font-size:13PX;line-height:24px;}
+</STYLE>
+<SCRIPT language="JavaScript">
+function show(d1){
+var i;
+for(i=1;i<5;i++){
+if(i==d1){
+document.getElementById(d1).style.display='block';
+}
+else
+{document.getElementById(i).style.display='none';}
+}
+}
+</SCRIPT>
+</HEAD>
+
+<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<TABLE width="785" border="0" cellspacing="0" cellpadding="0" align="center">
+  <TR>
+    <TD height="29" background="images/MenuBg.gif"><TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+  <TR>
+    <TD width="100" align="center" height="27" background="images/bg1.gif" style="border:1px #319ede solid;" ><FONT color="#FFFFFF" ><B>商品类目</B></FONT></TD>
+	<TD width="95" align="center"  valign="middle"><A href="#" class=" A1"  onMouseOver="javascript:show('1')">QQ专区</A></TD>
+    <TD width="95" align="center"><A href="#"   class=" A1" onMouseOver="javascript:show('2')">时尚饰品</A></TD>
+	<TD width="95" align="center"><A href="#"  class=" A1" onMouseOver="javascript:show('3')">一元专区</A></TD>
+	<TD width="95" align="center"><A href="#"  class=" A1" onMouseOver="javascript:show('4')"> 彩妆</A></TD>
+    <TD>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+  </TR>
+  <TR>
+    <TD><DIV id="1"  style="display:block;"><IMG src="images/pic1.jpg"></DIV>
+	<DIV id="2"  style="display:none;"><IMG src="images/pic2.jpg"></DIV>
+	<DIV id="3" style="display:none;"><IMG src="images/pic3.jpg"></DIV>
+	<DIV id="4"  style="display:none;"><IMG src="images/pic4.jpg"></DIV>
+	</TD>
+  </TR>
+</TABLE>
+
+
+</BODY>
+</HTML>

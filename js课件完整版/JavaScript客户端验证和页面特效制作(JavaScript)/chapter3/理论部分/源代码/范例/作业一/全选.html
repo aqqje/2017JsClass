@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>全选特效</TITLE>
+
+<SCRIPT type="text/javascript">
+function selectAll()
+{
+	var allCheckBoxs=document.getElementsByName("logo") ;
+	var desc = document.getElementById("car").value;
+   for (var i=0;i<allCheckBoxs.length ;i++)
+   {
+       if(allCheckBoxs[i].type=="checkbox"){  //可能有重名的其他类型元素，如图片、控件等，所以要判断类型
+	   		if(allCheckBoxs[i].checked)
+	        	allCheckBoxs[i].checked=false ;  //检查是否选中用checked，而不是value
+			else
+				allCheckBoxs[i].checked=true ; 
+		}
+   }  
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM>
+<table width="570" border="1">
+<TR><TD colspan="4" align="center"><h3>世界顶级跑车你认识几款？</h3></TD></TR>
+<TR>
+<td colspan="4" align="center"><INPUT id="car"  type="checkbox" name="car" onClick="selectAll()">我是超级车迷，全部都认识</td>
+</TR>
+<tr>
+<td width="86" align="center"><INPUT type="checkbox" name="logo"></td>
+<td width="178" align="center"><IMG src="images/frali.jpg"></td>
+<td width="78" align="center"><INPUT type="checkbox" name="logo"></td>
+<td width="208" align="center"><IMG src="images/skoda.jpg"></td>
+</tr>
+<tr>
+<td align="center"><INPUT type="checkbox" name="logo"></td>
+<td align="center"><IMG src="images/binli.jpg"></td>
+<td align="center"><INPUT type="checkbox" name="logo" ></td>
+<td align="center"><IMG src="images/lamborghini.jpg"></td>
+</tr>
+<TR>
+<td align="center"><INPUT type="checkbox" name="logo"></td>
+<td align="center"><IMG src="images/porsche.jpg"></td>
+<td align="center"><INPUT type="checkbox" name="logo"></td>
+<td align="center"><IMG src="images/alefromeo.jpg"></td>
+</tr>
+</table>
+</FORM>
+</BODY>
+
+</HTML>

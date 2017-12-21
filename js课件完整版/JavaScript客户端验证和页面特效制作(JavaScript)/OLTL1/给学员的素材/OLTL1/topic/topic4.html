@@ -1,0 +1,99 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>带按扭的轮换横幅广告</TITLE>
+<STYLE type="text/css">
+a{/*设置无下划线、文字背景超连接样式*/
+color:#ffffff;
+font-size:13px;
+text-decoration:none;
+background-color:#ff0000;
+width:20px;
+}
+.A1{font-size:12px;line-height:20px;text-decoration:none;width:150px;text-align:center;}
+.A1:hover{font-size:12px;line-height:20px;text-decoration:none;width:150px;text-align:center;}
+div{font-size:12px;line-height:20px;}
+.red {color: #FF0000}
+</STYLE>
+<SCRIPT language="JavaScript">
+                var NowFrame = 1;//最先显示第一张图片
+				var MaxFrame = 4;//一共四张图片
+				function show(d1) {
+				if(Number(d1)){
+				clearTimeout(theTimer);  //当触动按扭时，清除计时器
+				NowFrame=d1;                //设当前显示图片
+				}
+					for(var i=1;i<(MaxFrame+1);i++){
+					if(i==NowFrame)
+					document.getElementById('div'+NowFrame).style.display ='';   //当前图片示
+					else
+					document.getElementById('div'+i).style.display ='none';    //隐藏其他图片层
+					}
+			       { if(NowFrame == MaxFrame)   //设置下一个显示的图片
+					NowFrame = 1;
+				   else
+					NowFrame++;}
+					 theTimer=setTimeout('show()', 3000);   //设置定时器，显示下一张图片
+				}
+				
+function look(){
+if(event.CtrlKey)
+alert("禁止按Ctrl键!"); //可以换成ALT　CTRL
+}
+document.onkeydown=look;
+
+</SCRIPT>
+</HEAD>
+
+<BODY onLoad="show();" ONCONTEXTMENU="return false;">
+<DIV>
+<IMG src="image/ad-01.jpg" style="display:none;" id="div1" border="0">
+<IMG src="image/ad-02.jpg" style="display:none;" id="div2" border="0">
+<IMG src="image/ad-03.jpg" style="display:none;" id="div3" border="0">
+<IMG src="image/ad-04.jpg" style="display:none;" id="div4" border="0">
+<DIV  style="position:relative;left:-120px;top:-30px;"  align="center"><A href="javascript:show(1)">1</A>&nbsp;<A href="javascript:show(2)">2</A>&nbsp;<A href="javascript:show(3)">3</A>&nbsp;<A href="javascript:show(4)">4</A>
+</DIV>
+</DIV>
+
+<DIV style="padding-left:10px;">一、四张带按钮的图片轮换显示，点击相看上面的图片轮换效果<BR>
+二、实现思路<BR>
+<DIV style="padding-left:20px;">1、在网页适当位置插入四张带ID名称的图片及按钮数字，例如：<BR>
+< IMG src="image/ad-01.jpg" style="display:none;" id="div1" border="0"><BR>
+< IMG src="image/ad-02.jpg" style="display:none;" id="div2" border="0"><BR>
+< IMG src="image/ad-03.jpg" style="display:none;" id="div3" border="0"><BR>
+< IMG src="image/ad-04.jpg" style="display:none;" id="div4" border="0"><BR>
+每张图片ID号最后加上数字，方便函数调用<BR>
+< DIV  <SPAN class="red">style="position:relative;left:-120px;top:-30px;"</SPAN>  align="center"><BR>< A href="<SPAN class="red">javascript:show(1)</SPAN>">1< /A><BR>< A href="<SPAN class="red">javascript:show(2)</SPAN>">2< /A><BR>< A href="<SPAN class="red">javascript:show(3)</SPAN>">3< /A><BR>< A href="<SPAN class="red">javascript:show(4)</SPAN>">4< /A>
+< /DIV><BR>
+按钮层：style="position:relative;left:-120px;top:-30px;"相对图片的位置，让数字按钮在图片上显示；触动按钮，相对应的图片显示<BR>
+2、在页面载入时，调用三张图片轮换显示的函数:onLoad="show();"<BR>
+3、函数实现的思路：首页定义两个全局变量，NowFrame和MaxFrame；分别表示页面载入时显示的第一张图片及轮换显示的图片张数；其次函数开始，判断show( )参数是否存在，如果存在，设定当前显示的图片为传递参数的图片，否则按原顺序显示下一张图片，通过for循环显示每一张图片，并且使其他不显示的图片处于隐藏状态；最后用setTimeout( )函数的定时器功能，间隔一段一间显示下一张图片；最终实现四张带按钮图片不间断的轮换显示效果</DIV>
+三、主要的源代码
+<DIV style="padding-left:20px;background-color:#efefef;">
+<SPAN class="red">var NowFrame = 1;</SPAN>//最先显示第一张图片<BR>
+				<SPAN class="red">var MaxFrame = 4;</SPAN>//一共四张图片<BR>
+				function show(d1) {//d1是按钮对应显示图片参数<BR>
+				<SPAN class="red">if(Number(d1))</SPAN>{//判断参数是否存在，如果存在重新设置当前显示的图片<BR>
+				<SPAN class="red">clearTimeout(theTimer);</SPAN>  //当触动按扭时，参数存在，清除计时器<BR>
+				<SPAN class="red">NowFrame=d1;</SPAN>                //设当前显示图片为按钮触动要显示的图片<BR>
+				}<BR>
+					<SPAN class="red">for(var i=1;i<(MaxFrame+1);i++){<BR>
+					if(i==NowFrame)<BR>
+					document.getElementById('div'+NowFrame).style.display ='';</SPAN>   //当前图片示<BR>
+					<SPAN class="red">else<BR>
+					document.getElementById('div'+i).style.display ='none';</SPAN>    //隐藏其他图片层<BR>
+					}<BR>
+			       {//设置下一个显示的图片,如果当前显示最后一张图片，那么下一张显示图片是第一张<BR><SPAN class="red"> if(NowFrame == MaxFrame)<BR>
+					NowFrame = 1;<BR>
+				   else<BR>
+					NowFrame++;}<BR>
+					 theTimer=setTimeout('show()', 3000);</SPAN>   //设置定时器，3秒钟后显示下一张图片<BR>
+				}
+
+
+</DIV>
+四、制作五张带按钮的图片轮换显横幅广告，<a href="z-2.html" class="A1">效果查看链接效果图</a>
+</DIV>
+</BODY>
+</HTML>

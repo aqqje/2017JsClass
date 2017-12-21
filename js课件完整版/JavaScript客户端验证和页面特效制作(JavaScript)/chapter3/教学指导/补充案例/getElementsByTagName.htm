@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>Byname,tag</title>
+<style type="text/css">
+<!--
+#docid1,#docid2{
+margin:10px;
+height:400px;
+width:400px;
+background-color:#999;}
+-->
+</style>
+</head>
+<body>
+<div name="docname" id="docid1" onClick="bgcolor()"></div>
+<div name="docname" id="docid2" onClick="bgcolor()"></div>
+</body>
+</html>
+<script language="javascript" type="text/javascript">
+<!--
+function bgcolor(){
+var docnObj=document.getElementsByTagName("div");
+docnObj[0].style.backgroundColor = "red";
+docnObj[1].style.backgroundColor = "blue";
+}
+-->
+</script>

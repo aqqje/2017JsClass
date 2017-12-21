@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>全选特效</TITLE>
+
+<SCRIPT type="text/javascript">
+function selectAll()
+{
+	var allCheckBoxs=document.getElementsByName("coffee") ;//获得checkbox对象的集合
+	var desc = document.getElementById("btn").value;		//获得按钮对象
+   
+   if(desc=="全喜欢") {  
+	document.getElementById("btn").value="都不喜欢";
+		for (var i=0;i<allCheckBoxs.length ;i++)			//循环checkbox对象集合，设置每一个checkbox的状态
+	   {
+		   allCheckBoxs[i].checked=true ;  
+	   }  
+	}else{
+		document.getElementById("btn").value="全喜欢";
+		for (var i=0;i<allCheckBoxs.length ;i++)
+	   {
+		   allCheckBoxs[i].checked=false ;  
+	   }  
+	}
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<P>你喜欢喝哪种类型咖啡</P>
+<FORM>
+
+<BR>
+<INPUT type="checkbox" name="coffee" value="cream">蓝山咖啡<BR />
+<INPUT type="checkbox" name="coffee" value="sugar">摩卡<BR />
+<INPUT type="checkbox" name="coffee" value="sugar">拿铁<BR />
+<INPUT type="checkbox" name="coffee" value="sugar">卡布其诺<BR />
+<INPUT type="checkbox" name="coffee" value="sugar">爱尔兰咖啡<BR />
+<INPUT  id="btn" type="button" onClick="selectAll()" value="全喜欢">
+</FORM>
+</BODY>
+
+</HTML>

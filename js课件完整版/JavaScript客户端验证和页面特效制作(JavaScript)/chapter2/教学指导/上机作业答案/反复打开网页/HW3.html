@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>作业三</TITLE>
+<SCRIPT language="JavaScript">
+  function open1( num)
+  {
+  	var count=parseInt(num);
+	count++;
+	if(count<=6){
+      open("adv.htm","", "toolbars=0, scrollbars=0, location=0, statusbars=0, menubars=0, resizable=0, width=500, height=700");
+	  setTimeout("open1("+count+")",1000);
+	 }else{
+		alert("恭喜你，你中奖了！！！");
+	}
+  }
+ </SCRIPT>
+</HEAD>
+
+<BODY >
+<INPUT name="openButton" type="button" id="openButton1" value="病毒警告" onClick=" open1('1') ">
+</BODY>
+</HTML>

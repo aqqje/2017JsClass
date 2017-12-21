@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>下拉列表框</TITLE>
+<script type="text/javascript">
+function showPic(num){
+	if(num!=""){
+		for(var i=1;i<9;i++){
+			if(num==i){
+				document.getElementById("pic"+i).style.display="block";
+			}else{
+			  	document.getElementById("pic"+i).style.display="none";
+			}
+		}
+	}else{
+		for(var i=1;i<9;i++){
+			  	document.getElementById("pic"+i).style.display="none";
+		}
+	}
+}
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+<FORM action="" method="post" name="myform">
+<TABLE width="666" cellpadding="0" cellspacing="0" background="images/bg.jpg" align="center">
+  <TR>
+    <TD  height="70" align="center"><H3>魔兽世界八大种族(图)</H3></TD>
+  </TR>
+  <TR>
+    <TD height="44" align="center">
+	<SELECT name="artType" onChange="showPic(this.value)">
+	  <option value="">--请选择一个种族--</option>
+	  <OPTION value="1">人类</OPTION>
+	  <OPTION value="2">暗夜精灵</OPTION>
+	  <OPTION value="3">矮人</OPTION>
+	  <OPTION value="4">侏儒</OPTION>
+	  <OPTION value="5">兽人</OPTION>
+	  <OPTION value="6">牛头人</OPTION>
+	  <OPTION value="7">亡灵</OPTION>
+	  <OPTION value="8">巨魔</OPTION>
+	</SELECT>
+	</TD>
+  </TR>
+  <TR>
+    <td align="center" height="234">
+	    <DIV id="pic1" style="display:none"><IMG src="images/humans-small.jpg"></DIV>
+	    <DIV id="pic4" style="display:none"><IMG src="images/gnomes-small.jpg"></DIV>
+	    <DIV id="pic3" style="display:none"><IMG src="images/dwarves-small.jpg"></DIV>
+	    <DIV id="pic2" style="display:none"><IMG src="images/nightelves-small.jpg"></DIV>
+	    <DIV id="pic5" style="display:none"><IMG src="images/orcs-small.jpg"></DIV>
+	    <DIV id="pic6" style="display:none"><IMG src="images/tauren-small.jpg"></DIV>
+	    <DIV id="pic7" style="display:none"><IMG src="images/undead-small.jpg"></DIV>
+	    <DIV id="pic8" style="display:none"><IMG src="images/trolls-small.jpg"></DIV></td>
+  </TR>
+</TABLE>
+
+</FORM>
+</BODY>
+</HTML>

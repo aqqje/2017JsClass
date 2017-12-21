@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>作业：横向菜单</TITLE>
+<STYLE type="text/css">
+td {
+	FONT-SIZE: 13px; COLOR: #000000; LINE-HEIGHT: 22px;
+}
+div{/*设置层背景样式*/
+background-color:#669933;
+text-align:center;position:absolute;z-index:2;display:none; }
+A {FONT-SIZE: 13px; COLOR: #000000; TEXT-DECORATION: none;
+/*文字链接的背影样式*/
+background-color:#dfdfdf;
+width:100px;line-height:22px;text-align:center;border-bottom:1 #FFFFFF solid;}
+A:hover {FONT-SIZE: 13px; COLOR: #FFFFFF;
+/*鼠标在文字链接上时的文字背景样式*/
+background-color:#cc0000;
+width:100px;line-height:22px;text-align:center;}
+
+</STYLE>
+<SCRIPT language="JavaScript">
+function show(d1){
+document.getElementById(d1).style.display='block';  //显示层
+}
+
+function hide(d1){
+document.getElementById(d1).style.display='none';  //隐藏层
+}
+</SCRIPT>
+</HEAD>
+
+<BODY><TABLE width="610" border="0" cellspacing="0" cellpadding="0" align="center">
+<TR>
+    <TD><A href="#"  onMouseMove="show('s1')" onMouseOut="hide('s1')">关于中信</A></TD>
+    <TD><A href="#" onMouseMove="show('s2')" onMouseOut="hide('s2')">公司业务</A></TD>
+    <TD><A href="#" onMouseMove="show('s3')" onMouseOut="hide('s3')">公益事业</A></TD>
+	<TD><A href="#"  onMouseMove="show('s4')" onMouseOut="hide('s4')">中信研究</A></TD>
+    <TD><A href="#" onMouseMove="show('s5')" onMouseOut="hide('s5')">推荐招聘</A></TD>
+    <TD><A href="#" onMouseMove="show('s6')" onMouseOut="hide('s6')">特色推荐</A></TD>
+ </TR>
+  <TR>
+    <TD><DIV  id="s1" onMouseMove="show('s1')" onMouseOut="hide('s1')"><A href="#">公司简介</A><BR><A href="#">集团领导</A><BR><A href="#">领导题词</A><BR><A href="#">业务回顾</A><BR><A href="#">公司历史</A><BR><A href="#">中信风格</A><BR><A href="#">公司年报</A><BR><A href="#">公司要闻</A></DIV></TD>
+    <TD><DIV  id="s2"    onMouseMove="show('s2')" onMouseOut="hide('s2')"><A href="#">金融</A><BR><A href="#">非金融</A></DIV></TD>
+    <TD><DIV  id="s3"    onMouseMove="show('s3')" onMouseOut="hide('s3')"><A href="#">扶贫</A><BR><A href="#">绿化</A><BR><A href="#">援藏</A></DIV></TD>
+	 <TD><DIV  id="s4" onMouseMove="show('s4')" onMouseOut="hide('s4')"></DIV></TD>
+    <TD><DIV  id="s5"    onMouseMove="show('s5')" onMouseOut="hide('s5')"></DIV></TD>
+    <TD><DIV  id="s6"    onMouseMove="show('s6')" onMouseOut="hide('s6')"><A href="#">网络金融</A><BR><A href="#">中信出版</A><BR><A href="#">会展服务</A></DIV></TD>
+  </TR></TABLE>
+</BODY>
+</HTML>

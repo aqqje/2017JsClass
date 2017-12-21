@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>层的显示和隐藏</TITLE>
+<STYLE type="text/css">
+td{font-size:12px; color:#FFB468}
+</STYLE>
+<SCRIPT type="text/javascript">
+function showDiv(){
+var object = document.getElementById("right").style.display;
+	if(object=="block"){
+	document.getElementById("word").innerText="注册前请先阅读会员权益和义务";
+	 document.getElementById("right").style.display="none";
+	}else{
+	document.getElementById("word").innerText="点击关闭";
+	 document.getElementById("right").style.display="block";}
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<TABLE width="381" border="0" cellspacing="0" cellpadding="0">
+  <TR>
+    <TD  colspan="3"><IMG src="images/sign_up_top.gif"></TD>
+  </TR>
+  <TR>
+    <TD width="50"><IMG src="images/sign_up_line.jpg"></TD>
+	<TD valign="top">
+	<TABLE>
+	<TR><TD ><IMG src="images/bg.jpg"></TD></TR>
+	<TR><TD height="28" align="center" ><A href="javascript:showDiv()" id="word">注册前请先阅读会员权益和义务</A></TD>
+	</TR>
+	<TR><TD align="center"><DIV style="display:none" id="right"><IMG src="images/right.jpg"></DIV></TD></TR>
+	<TR><TD align="center"><IMG src="images/sign_up.gif"></TD></TR>
+	</TABLE>
+	</TD>
+    
+	<TD width="46" align="right"><IMG src="images/sign_up_line.jpg"></TD>
+  </TR>
+  <TR>
+    <TD  colspan="3" ><IMG src="images/sign_up_down.gif"></TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>

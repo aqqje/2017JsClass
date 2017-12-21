@@ -1,0 +1,158 @@
+
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>级联菜单</TITLE>
+<STYLE  type="text/css">
+td{font-size:12px;line-height:22px;color:#FFFFFF;}
+div{font-size:12px;line-height:22px;}
+.red {color: #FF0000}
+</STYLE>
+<SCRIPT language="JavaScript" >
+<!--下拉框级联开始-->
+var cityList = new Array( );  
+      cityList['北京'] = ['朝阳区','东城区','西城区', '海淀区','宣武区','丰台区','怀柔','延庆','房山'];
+	 cityList['上海'] = ['宝山区','长宁区','丰贤区', '虹口区','黄浦区','青浦区','南汇区','徐汇区','卢湾区'];
+	 cityList['广州'] = ['天河区','海珠区','南沙区', '白云区','嘉湾区','越秀区','黄埔区','罗岗区','番寓区','花都区'];
+     cityList['深圳'] = ['福田区', '罗湖区', '盐田区', '宝安区', '龙岗区', '南山区', '深圳周边'];
+	 cityList['重庆'] =['俞中区', '南岸区', '江北区', '沙坪坝区', '九龙坡区', '渝北区', '大渡口区', '北碚区', '巴南区', '万盛区', '涪凌', '江津'];
+     cityList['天津'] = ['和平区', '河西区', '南开区', '河北区', '河东区', '红桥区', '塘古区', '开发区', '西青区', '津南区','东丽区'];
+  function changeCity( )
+  {
+     var province=document.myform.province.value; 
+	 document.myform.city.options.length=0;
+	 for (var i in cityList) 
+	 {
+	        if (i == province) 
+			{
+                for (var j in cityList[i]) 
+				{
+                     document.myform.city.options.add(new Option(cityList[i][j], cityList[i][j]));
+                }
+            }
+       }
+	 document.myform.city.options.selctIndex=0;
+  }
+  
+  function loadAll( )
+  { for (var i in cityList)  
+	   { document.myform.province.options.add(new Option(i, i)); 
+		}
+        document.myform.province.selectedIndex = 0; 
+  }
+ <!--下拉框级联结束--> 
+
+</SCRIPT>
+</HEAD>
+
+<BODY leftmargin="0" topmargin="0"  onLoad="loadAll( )" ONCONTEXTMENU="return false;"><DIV>
+<TABLE width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <TR><TD height="5"></TD></TR>
+  <FORM action="" method="post" name="myform">
+  <TR>
+    <TD HEGIHT="30" bgcolor="#50baf6">&nbsp;&nbsp;<B>房源查询：</B>&nbsp;
+	<SELECT name="province"  id="province" onChange="changeCity()">
+	<OPTION>--请选择城市--</OPTION></SELECT>
+	<SELECT name="city" id="city" >
+      <OPTION>--请选择区域--</OPTION>
+	  </SELECT>
+	  <SELECT ><OPTION> 物业类型</OPTION>
+	  <OPTION> 普通住宅</OPTION>
+	  <OPTION> 公寓</OPTION>
+	  <OPTION> 别墅</OPTION>
+	  <OPTION> 经济适用房</OPTION>
+	  <OPTION> 商住楼</OPTION>
+	  <OPTION> 写字楼</OPTION>
+	  </SELECT>&nbsp;&nbsp;<INPUT name="b1" type="submit" value=" 查 询 "></TD>
+  </TR></FORM>
+<TR><TD height="5"></TD></TR>
+</TABLE></DIV>
+<DIV style="padding-left:20px;padding-top:10px;">
+一、级联下拉框（<SPAN class="red">实现效果如上，请点击查看效果</SPAN>）<BR>
+二、实现的思路<BR>
+<DIV style="padding-left:20px;">
+1、定义数组，实现下拉框级联<BR>
+var cityList = new Array( ); <BR>
+2、对数组赋值<BR>
+cityList['北京'] = ['朝阳区','东城区','西城区', '海淀区','宣武区','丰台区','怀柔','延庆','房山'];<BR>
+3、创建城市列表函数loadAll( )，在BODY中调用loadAll( )函数，在载入页面时，各个城市显示在“请选择城市”列表中<BR>
+4、根把城市的不同，动态创建城市区域option函数changeCity( )函数<BR>
+5、在城市下拉列表框中调用区域函数，动态创建城市区域<BR>
+< SELECT name="province"  id="province" onChange="changeCity()">
+	 < OPTION>--请选择城市--< /OPTION>< /SELECT>
+</DIV>
+三、源代码
+<DIV style="padding-left:20px;background-color:#efefef;">&lt;HTML&gt;<BR>
+&lt;HEAD&gt;<BR>
+&lt;META http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot;&gt;<BR>
+&lt;TITLE&gt;级联菜单&lt;/TITLE&gt;<BR>
+&lt;STYLE  type=&quot;text/css&quot;&gt;<BR>
+    td{font-size:12px;line-height:22px;color:#FFFFFF;}<BR>
+    div{font-size:12px;line-height:22px;}<BR>
+    .red {color: #FF0000}<BR>
+&lt;/STYLE&gt;<BR>
+&lt;SCRIPT language=&quot;JavaScript&quot; &gt;<BR>
+&lt;!--下拉框级联开始--&gt;<BR>
+    <SPAN class="red">var cityList = new Array( );</SPAN> //定义城市数组<BR>
+    cityList['北京'] = ['朝阳区','东城区','西城区', '海淀区','宣武区','丰台区','怀柔','延庆','房山'];<BR>
+    cityList['上海'] = ['宝山区','长宁区','丰贤区', '虹口区','黄浦区','青浦区','南汇区','徐汇区','卢湾区'];<BR>
+    cityList['广州'] = ['天河区','海珠区','南沙区', '白云区','嘉湾区','越秀区','黄埔区','罗岗区','番寓区','花都区'];<BR>
+    cityList['深圳'] = ['福田区', '罗湖区', '盐田区', '宝安区', '龙岗区', '南山区', '深圳周边'];<BR>
+    cityList['重庆'] =['俞中区', '南岸区', '江北区', '沙坪坝区', '九龙坡区', '渝北区', '大渡口区', '北碚区', '巴南区', '万盛区', '涪凌', '江津'];<BR>
+    cityList['天津'] = ['和平区', '河西区', '南开区', '河北区', '河东区', '红桥区', '塘古区', '开发区', '西青区', '津南区','东丽区'];<BR>
+    function changeCity( )<BR>
+    {<BR>
+    <SPAN class="red">var province=document.myform.province.value; <BR>
+    document.myform.city.options.length=0;<BR>
+    for (var i in cityList) <BR>
+    {<BR>
+    if (i == province) <BR>
+    {<BR>
+    for (var j in cityList[i])</SPAN> //根把对应城市动态创建区域option<BR>
+    {<BR>
+    <SPAN class="red">document.myform.city.options.add(new Option(cityList[i][j], cityList[i][j]));</SPAN><BR>
+    }<BR>
+    }<BR>
+    }<BR>
+    <SPAN class="red">document.myform.city.options.selctIndex=0;</SPAN><BR>
+    }<BR>
+    <BR>
+    function loadAll( ) //动态创建城市option<BR>
+    { <SPAN class="red">for (var i in cityList) <BR>
+    { document.myform.province.options.add(new Option(i, i)); <BR>
+    }<BR>
+    document.myform.province.selectedIndex = 0;</SPAN> <BR>
+    }<BR>
+&lt;!--下拉框级联结束--&gt; 
+<P>&lt;/SCRIPT&gt;<BR>
+    &lt;/HEAD&gt;</P>
+  <P>&lt;BODY leftmargin=&quot;0&quot; topmargin=&quot;0&quot;  <SPAN class="red">onLoad=&quot;loadAll( )&quot;</SPAN>&gt;&lt;DIV&gt;<BR>
+    &lt;TABLE width=&quot;760&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; align=&quot;center&quot;&gt;<BR>
+  &lt;TR&gt;&lt;TD height=&quot;5&quot;&gt;&lt;/TD&gt;&lt;/TR&gt;<BR>
+  &lt;FORM action=&quot;&quot; method=&quot;post&quot; name=&quot;myform&quot;&gt;<BR>
+  &lt;TR&gt;<BR>
+  &lt;TD HEGIHT=&quot;30&quot; bgcolor=&quot;#50baf6&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;B&gt;房源查询：&lt;/B&gt;&amp;nbsp;<BR>
+  &lt;SELECT <SPAN class="red">name=&quot;province&quot;  id=&quot;province&quot; onChange=&quot;changeCity()&quot;</SPAN>&gt;<BR>
+  &lt;OPTION&gt;--请选择城市--&lt;/OPTION&gt;&lt;/SELECT&gt;<BR>
+  &lt;SELECT<SPAN class="red"> name=&quot;city&quot; id=&quot;city&quot;</SPAN> &gt;<BR>
+  &lt;OPTION&gt;--请选择区域--&lt;/OPTION&gt;<BR>
+  &lt;/SELECT&gt;<BR>
+  &lt;SELECT &gt;&lt;OPTION&gt; 物业类型&lt;/OPTION&gt;<BR>
+  &lt;OPTION&gt; 普通住宅&lt;/OPTION&gt;<BR>
+  &lt;OPTION&gt; 公寓&lt;/OPTION&gt;<BR>
+  &lt;OPTION&gt; 别墅&lt;/OPTION&gt;<BR>
+  &lt;OPTION&gt; 经济适用房&lt;/OPTION&gt;<BR>
+  &lt;OPTION&gt; 商住楼&lt;/OPTION&gt;<BR>
+  &lt;OPTION&gt; 写字楼&lt;/OPTION&gt;<BR>
+  &lt;/SELECT&gt;&amp;nbsp;&amp;nbsp;&lt;INPUT name=&quot;b1&quot; type=&quot;submit&quot; value=&quot; 查 询 &quot;&gt;&lt;/TD&gt;<BR>
+  &lt;/TR&gt;&lt;/FORM&gt;<BR>
+  &lt;TR&gt;&lt;TD height=&quot;5&quot;&gt;&lt;/TD&gt;&lt;/TR&gt;<BR>
+  &lt;/TABLE&gt;&lt;/DIV&gt;<BR>
+  &lt;/BODY&gt;<BR>
+  &lt;/HTML&gt;</P>
+</DIV>
+四、在注册页面中制作级联下拉框，<A href="reg.htm" target="_blank">点击查看效果</A>
+</DIV>
+
+</BODY>
+</HTML>

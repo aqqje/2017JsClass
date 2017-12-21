@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>无标题文档</TITLE>
+<SCRIPT language="javascript">
+ var i=0; 
+ function check( )
+ {
+    var keycode = event.keyCode ;
+  　var realkey = String.fromCharCode(event.keyCode+32) ;
+     var str=document.getElementById("test").innerText;
+	 if (str.substring(i,i+1)==realkey )
+	       document.getElementById("myspan"+i).className='STYLE2 ';
+	 i++;
+	
+ }
+</SCRIPT>
+<STYLE type="text/css">
+<!--
+.STYLE1 {color: black}
+.STYLE2 {color: red}
+-->
+</STYLE>
+</HEAD>
+
+<BODY>
+<P>&nbsp;</P>
+<FORM name="form1" method="post" action=""  >
+  打字练习：<DIV id="test"  style="display:inline">
+  <SCRIPT language="javascript">
+   var str="hello，welcome to study center！" //希望练习的内容
+   var htmlstr="";
+   for(var j=0;j<str.length;j++)
+      htmlstr=htmlstr+"<SPAN class='STYLE1' id='myspan"+j+"'>"+str.substring(j,j+1)+"</SPAN>";
+  document.write(htmlstr) ;
+ </SCRIPT>
+ </div>
+  <P>键入内容：
+    <INPUT name="textfield" type="text" size="50" onKeyDown="check( )">
+  </P>
+</FORM>
+
+<P>&nbsp;</P>
+</BODY>
+
+</HTML>

@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>javascript基本语法四</TITLE>
+<SCRIPT type="text/javascript" language="javascript">
+/*
+计算圆的周长和面积：周长=2*3.14*半径
+面积=3.14*半径的平方
+*/
+function cal(){
+	var num=parseFloat(document.form.r.value); //类型转换
+	document.form.zc.value=num*3.14*2;
+	document.form.mj.value=3.14*num*num; 
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM action="" method="get" name="form">
+ <TABLE width="268" border="0" cellspacing="1" cellpadding="0" align="center">
+   <TR>
+   	<TH height="27" colspan="2">计算圆的周长和面积</TH>
+   </TR>
+  <TR>
+    <TD width="72" align="center">半径：</TD>
+    <TD width="171">&nbsp;<INPUT name="r" type="text" size="20"></TD>
+  </TR>
+  <TR >
+    <TD align="center">周长：</TD>
+    <TD>&nbsp;<INPUT name="zc" type="text" size="20"></TD>
+  </TR>
+  <TR>
+    <TD align="center">面积：</TD>
+	<TD>&nbsp;<INPUT name="mj" type="text" size="20"></TD>
+  </TR>
+  <TR align="center">
+    <TD height="35" colspan="2"><INPUT name="btn" type="button" value="  计算  " onClick="cal()"></TD>
+  </TR>
+</TABLE>
+
+  
+</FORM>
+
+</BODY>
+</HTML>

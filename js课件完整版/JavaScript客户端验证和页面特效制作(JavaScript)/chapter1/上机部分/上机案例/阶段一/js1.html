@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>javascript基本语法</TITLE>
+<SCRIPT type="text/javascript" language="javascript">
+/*
+*在javascript中的注释与java中的注释是一样的方法
+*/
+var i,j,k;
+for(i=0;i<=3;i++){   //一共打印4行
+  for(j=0;j<=2-i;j++){   //一行打印2－i个空格，也就是打印3个空格
+   document.write("&nbsp;");
+   }
+  for(k=0;k<=2*i;k++){   //一行打印2乘i个星号
+   	document.write("*");
+   }
+  	document.write("<BR>");
+  }
+
+ for(i=0;i<=2;i++){  //下面倒过来的三角形 打印3行
+  for(j=0;j<=i;j++){  //第一行打印一个空格 因为i＝0
+    document.write("&nbsp;");
+   }
+   for(k=0;k<=4-2*i;k++){ //第一行打印4－2乘i个星号
+    	document.write("*");
+    }
+ 	document.write("<BR>");
+ }
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<HR width='300' size='1' align="left">
+<FONT color="#FF0000"><H1>这是没有用JAVASCRIPT的显示</H1></FONT>
+</BODY>
+</HTML>
